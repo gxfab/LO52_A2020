@@ -18,8 +18,8 @@ public class SecondaryActivity extends AppCompatActivity {
             if (intent.hasExtra("UserName")){
                 UserName = intent.getStringExtra("UserName");
             }
-            TextView Hello2 = (TextView) findViewById(R.id.WelcomeText);
-            Hello2.setText("Welcome to LO52 " + UserName);
+            TextView WelcomeText = (TextView) findViewById(R.id.WelcomeText);
+            WelcomeText.setText("Welcome to LO52 " + UserName);
         }
     }
 

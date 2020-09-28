@@ -1,0 +1,3 @@
+Durant ce premier TP, nous avons installé android studio et préparé le repository git. 
+Nous n'avions pas pu lancer l'application Hello World dut au manque d'espace sur le disque dur des ordinateurs UTBM necessaire pour créer un android virtuel.
+Nous allons donc pour la semaine prochaine préparer un espace de travail sur nos ordinateurs personels.

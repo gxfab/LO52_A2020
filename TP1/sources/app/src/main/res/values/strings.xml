@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Hello World</string>
+    <string name="naviguate_hello_activity">Naviguer vers une nouvelle activité</string>
+</resources>

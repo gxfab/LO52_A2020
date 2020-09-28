@@ -14,12 +14,14 @@
         android:backgroundTint="#FFEB3B"
         android:text="Click Here"
         android:textSize="25sp"
+        android:onClick="ChangeActivity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.592" />
+        app:layout_constraintVertical_bias="0.592"
+        tools:ignore="OnClick" />
 
     <EditText
         android:id="@+id/NameField"

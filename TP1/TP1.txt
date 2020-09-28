@@ -1,0 +1,17 @@
+Auteurs: Aymeric Robitaille, Anaïs Jarno
+
+Rapport du TP 1 : mise en place de l’environnement de développement
+
+`git clone https://github.com/gxfab/LO52_A2020`
+
+`git config --global user.name "John Doe"`
+`git config --global user.email johndoe@example.com`
+
+`cd LO52_A2020`
+
+`git checkout -b RobitailleAymeric_JarnoAnais`
+
+`git add .`
+`git commit -m "TP1 Création de branche"`
+`git push -u origin RobitailleAymeric_JarnoAnais`
+

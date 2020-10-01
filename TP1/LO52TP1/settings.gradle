@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name = "LO52 TP1"

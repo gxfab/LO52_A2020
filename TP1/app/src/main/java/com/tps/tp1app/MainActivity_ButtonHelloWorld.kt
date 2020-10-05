@@ -9,10 +9,9 @@ class MainActivity_ButtonHelloWorld : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_button_hello_world)
 
-        val message = "Plop"
-
-        // Capture the layout's TextView and set the string as its text
+        //Focus la zone de texte, puis ajoute le texte voulu
         val textView = findViewById<TextView>(R.id.textView_HelloWorld).apply {
-            text = message
+            text = "Hello World !"
+        }
     }
 }

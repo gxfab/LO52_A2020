@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
     fun buttonHelloWorldClick(view: View) {
-        // Do something in response to button
+        // Do something in response to buttonh
     }
 }

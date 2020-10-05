@@ -1,0 +1,20 @@
+
+---------------------------------------------- TP1------------------------------------------------
+____________Git____________
+Pour setup notre branche, nous avons fait les commandes git suivantes :
+"git clone https://github.com/gxfab/LO52_A2020 pour cloner le repo
+"git branch GaujourBastien_PalermoEnzo" pour créer la branche en local
+"git checkout GaujourBastien_PalermoEnzo" pour se positionner sur la branche
+"git push -u" pour envoyer la branche sur le serveur distant
+
+Nous avons choisi kotlin comme langage car c'est une amélioration du java qui lui corrige beaucoup de ses défauts, il est donc plus judicieux de se concentrer sur ce langage.
+
+___________Cahier des charges___________ 
+Un bouton : Au clic ouvre un nouveau panel avec "hello world" 
+-> Donc 2 activités, 1 avec le bouton, 1 avec le texte "hello world". Le clic sur le bouton lance la 2ème activité.
+
+___________Doc android_____________
+MainActivity.kt = l'activité qui s'ouvre au lancement de l'application
+Activity_main.xml = interface de MainActivity.kt
+AndroidManifest.xml = décrit les caractéristiques de l'application et défini ses composants
+

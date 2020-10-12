@@ -1,0 +1,41 @@
+# Mise en place:
+
+
+# Downloading sources and build tools
+```bash
+mkdir android-kernel && cd android-kernel
+../repo init -u https://android.googlesource.com/kernel/manifest -b hikey-linaro-android-4.19
+repo sync
+```
+# Building the kernel
+```bash
+build/build.sh
+```
+
+# config
+```bash
+export ARCH=mips
+make defconfig
+```
+```bash
+=> configuration written to .config
+```
+
+# PISTE D'INVESTIGATION:
+```bash
+BUILD_CONFIG=hikey-linaro/arch/mips/configs/generic/board-ranchu.config build/build.sh
+```
+
+
+# Building the kernel Manually
+```bash
+cd hikey-linaro
+export ARCH=mips64
+export CROSS_COMPILE=aarch64-linux-android-
+make hikey_defconfig
+make
+```
+
+# Récupérer la toolchain
+git clone https://android.googlesource.com/platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9
+

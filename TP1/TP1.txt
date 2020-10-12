@@ -1,3 +1,15 @@
 Durant ce premier TP, nous avons installé android studio et préparé le repository git. 
 Nous n'avions pas pu lancer l'application Hello World dut au manque d'espace sur le disque dur des ordinateurs UTBM necessaire pour créer un android virtuel.
 Nous allons donc pour la semaine prochaine préparer un espace de travail sur nos ordinateurs personels.
+
+Mise a jour:
+J'ai finalement reussit a faire fonctionner tous sur les machines de l'utbm pour cela j'ai utilise des liens symbolique afin d'utiliser de na pas avoir a changer d'options dans Android Studio. Les liens redirige vers /vm ou nous avons acces a l'espace de stockage du pc (illimité).
+```bash
+ln -s /vm/.android ./.android
+ln -s /vm/LO52_A2020 ./LO52_A2020
+```
+Il y a encore un dossier .AndroidStudio4.0 dans mon home, ca ressemble a des fichier de config donc je n'ai pas fait de lien pour ce dossier.
+
+Afin de faire tourner l'application, on utilise open AVD manager afin de creer un telephone virtuel. Le telephone utiliser est le suivant:
+Pixel 2 avec Android 10.0+
+

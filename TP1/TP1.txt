@@ -1,0 +1,15 @@
+
+-- Organisation de travail -- 
+
+Configuration git 
+
+
+
+
+Git clone https://github.com/gxfab/LO52_A2020
+Git branch Agotsigedeon
+git checkout -b Agotsigedeon
+
+
+
+--- Je travaille en solo ----

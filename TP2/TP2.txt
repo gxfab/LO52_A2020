@@ -1,1 +1,2 @@
 Noyau téléchargé : hikey-linaro-android-4.19
+test depuis ubuntu 20.04

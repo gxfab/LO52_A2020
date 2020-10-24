@@ -13,3 +13,15 @@ On donne enfin les droits d'execution au fichier repo avec chmod.
 
 Note : il faut penser à donner les droits d'execution au script au préalable avec la commande suivante (depuis le répertoire du script):
 "$ chmod +x InstallRepo.sh"
+Ou bien utiliser sudo pour exécuter
+
+
+
+------------Script RecupBranch.sh-----------------
+Ce script créé un un répertoire "android-kernel" dans le répertoire courant et se place das celui-ci
+
+On demande ensuite à l'utilisateur de rentrer le nom de la branche à récupérer, puis on execute la commande repo correspondante pour initialiser le repo.
+Enfin on execute un "repo sync"
+
+Note : Repo doit d'abord être installé, et il faut au préalable autoriser le fichier à s'executer comme pour le script précédent.
+Ou bien utiliser sudo pour exécuter

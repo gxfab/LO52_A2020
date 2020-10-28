@@ -1,0 +1,56 @@
+But du TP = intégrer un composant (libusb du dossier libusb1.0.3) à un produit android (kernel du TP2, dossier device)
+
+
+-------------------Makefiles------------------------
+Il faut un fichier Android.mk dans le dossier libusb-1.0.3 qui va appeler les makesfiles des sous-dossiers :
+"LOCAL_PATH := $(call my-dir)
+ ubdirs := $(addprefix $(LOCAL_PATH)/,$(addsuffix /Android.mk, \
+		libusb \
+ ))
+ include $(subdirs)"
+
+Et un Android.mk dans le dossier "libusb-1.0.3/libusb" qui définit les sources et les headers : 
+"LOCAL_PATH := $(call my-dir)
+ include $(CLEAR_VARS)
+
+ LOCAL_SRC_FILES := core.c descriptor.c io.c sync.c os/linux_usbfs.c
+ LOCAL_C_INCLUDES += $(LOCAL_PATH) $(LOCAL_PATH)/os/
+ LOCAL_C_FLAGS += -pthread
+ LOCAL_MODULE := libusb
+ LOCAL_MODULE_TAGS := optional
+
+ include $(BUILD_SHARED_LIBRARY)"
+ 
+---------------------Erreurs de compilation-----------------
+Pour la 1ère erreur, il faut définir cette macro en rajoutant le code suivant dans le fichier io.c :
+"#define TIMESPEC_TO_TIMEVAL(tv, ts)                                     \
+         do {                                                            \
+                 (tv)->tv_sec = (ts)->tv_sec;                            \
+                 (tv)->tv_usec = (ts)->tv_nsec / 1000;                   \
+         } while (0)"
+        
+Pour la seconde, il faut rajouter la librairie dans le fichier "./build/core/prelink-linux-arm.map"
+"libusb.so"
+
+-> compiler avec "build/_setup_env.sh" depuis le dossier android-kernel (build/envsetup.sh deprecated)
+
+-------------------Implémentation nouveau produit----------------
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+

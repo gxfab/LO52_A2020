@@ -1,9 +1,21 @@
 branche téléchargée : hikey-linaro-android-4.19
 
-Il faut identifier le fichier build.config qui correspond à une carte ranchu64 dans le dossier hikey-linaro 
-https://android.googlesource.com/platform/prebuilts/qemu-kernel/+/refs/heads/master/build-kernel.sh
-Dans ce lien ligne 205 on y voit que mips64 est utilisé pour une carte ranchu64
-Pas compris la suite
+Le but = construire une android device virtuelle pour pouvoir l'utiliser dans android studio?
+
+Useful link : https://android.googlesource.com/platform/external/qemu/+/emu-master-dev/android/docs/ANDROID-KERNEL.TXT
+-> ligne 65 on nous indique les 3 options possibles pour reconstruire un noyau ranchu selon l'architecture du processeur. Pour ARMv8, arch=arm64
+
+On est donc sensé avoir des fichiers config qui corresondent à ranchu mais il n'y a que les options pour kasan (4.19) et goldfish/cuttlefish (4.14)....
+
+https://releases.linaro.org/members/arm/openembedded/aarch64/15.07/
+-> test avec build.config.gki.aarch64 (gki = generic kernel image)
+"BUILD_CONFIG=hikey-linaro/build.config.gki.aarch64 build/build.sh"
+
+- Quelques erreurs de chemin, test de remplacer le dossier "common" par "hikey-linaro" dans les 3 premieres lignes du fichier config ci-dessus et du fichier build.config.common
+- Une erreur de librairie dans un fichier "extract-cert" : <openssl/bio.h> not found. On installe ce qu'il faut avec "sudo apt-get install libssl-dev"
+-> Build terminé
+
+
 
 ------------Script InstallRepo.sh----------------
 On utilise le shell bash car c'est le plus répandu sur linux.

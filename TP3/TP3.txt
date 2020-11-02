@@ -1,4 +1,4 @@
-Dans cette partie nous avons écrit des Makefile Android relatifs à l’intégrationd’un composant et d’un produit Android.
+Dans cette partie nous avons écrit des Makefile Android relatifs à l’intégration d’un composant et d’un produit Android.
 
 Avant tout, nous avons implémenté la libusb :
 
@@ -28,4 +28,6 @@ Enfin, nous rajoutons la librairie dans la liste des maps préliés trouvés dan
 
 libqcamera.so       0xA9400000
 libusb.so           0xA8000000
+
+
 

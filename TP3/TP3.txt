@@ -29,5 +29,22 @@ Enfin, nous rajoutons la librairie dans la liste des maps préliés trouvés dan
 libqcamera.so       0xA9400000
 libusb.so           0xA8000000
 
+On créé un devide linaro
 
+$(call inherit-product, device/Linaro/hikey.mk)
+#
+# Overrides
+PRODUCT_NAME := lo52_AbbeMagsen_PereiraMaxime
+PRODUCT_DEVICE := lo52_AbbeMagsen_PereiraMaxime
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.hw=lo_52 \
+    net.dns1=8.8.8.8 \
+    net.dns2=4.4.4.4
 
+On surcharge
+
+PRODUCT_PACKAGE_OVERLAYS := overlay/
+
+On rajoute libusb aux package
+
+PRODUCT_PACKAGES+= libusb

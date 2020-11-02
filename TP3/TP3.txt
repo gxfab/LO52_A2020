@@ -1,0 +1,31 @@
+Dans cette partie nous avons écrit des Makefile Android relatifs à l’intégrationd’un composant et d’un produit Android.
+
+Avant tout, nous avons implémenté la libusb :
+
+Dans le Android.mk, nous rajoutons les sources et les headers :
+
+LOCAL_PATH:= $(call my-dir)
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES:= \
+#Liste des fichiers sources
+
+LOCAL_C_INCLUDES += \
+#Liste des fichiers headers
+
+LOCAL_MODULE:= libusb
+include $(BUILD_SHARED_LIBRARY)
+
+Puis nous definissons TIMESPEC_TO_INTERVAL
+
+#define TIMESPEC_TO_TIMEVAL(tv, ts)                                     \
+        do {                                                            \
+                (tv)->tv_sec = (ts)->tv_sec;                            \
+                (tv)->tv_usec = (ts)->tv_nsec / 1000;                   \
+        } while (0)
+        
+Enfin, nous rajoutons la librairie dans la liste des maps préliés trouvés dans build/core/prelink-linux-arm.map
+
+libqcamera.so       0xA9400000
+libusb.so           0xA8000000
+

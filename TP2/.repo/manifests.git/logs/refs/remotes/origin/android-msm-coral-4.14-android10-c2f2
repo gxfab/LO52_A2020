@@ -1,0 +1,1 @@
+0000000000000000000000000000000000000000 fab56d02bf09cf4ab75360bb7da100cd2e3803b7 Nicolas Lépy <33573107+nicolasLepy@users.noreply.github.com> 1603108530 +0200	fetch --quiet --progress origin --tags +refs/heads/*:refs/remotes/origin/* +refs/heads/hikey-linaro-android-4.19:refs/remotes/origin/hikey-linaro-android-4.19 +refs/tags/*:refs/tags/*: storing head

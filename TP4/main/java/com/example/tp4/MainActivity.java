@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity
         left.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text.setText("LEFTBUTTONCLICKED");
+                text.setText("左");
             }
         });
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity
         up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text.setText("UPBUTTONCLICKED");
+                text.setText("アップ");
             }
         });
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
         down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text.setText("DOWNBUTTONCLICKED");
+                text.setText("ダウン");
             }
         });
 
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity
         right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text.setText("RIGHTBUTTONCLICKED");
+                text.setText("正しい");
             }
         });
 

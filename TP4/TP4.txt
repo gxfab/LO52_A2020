@@ -15,5 +15,5 @@ Une fois l'interface prepare, nous pouvons definir le comportement des boutons d
 Nous declarons chaqun des element graphique dans la classe,
 nous recuprerons l'element de l'interface graphique via "element=findViewById(R.id.[the ID we defined in the xml]);",
 nous redefinissons le comportement de chaque bouton via 
-"element.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) {[the comportement we want]}"
+"element.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) {[the comportement we want]}",
 par example, pour le read, nous fesons "read.setText("READ : "+ Math.pow(rand.nextInt(10),2));".

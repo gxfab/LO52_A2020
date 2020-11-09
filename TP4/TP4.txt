@@ -1,0 +1,19 @@
+Avant tout tout, pour cette application, il faut créer l'interface graphique
+
+Pour cela, nous nous sommes rendu dans res/layout/activity_main.xml et avons utilisé l'editeur de layout.
+Nous avons supprimé le TextView utilise pour le HelloWorld et l'avons remplacé par un PlainText, qui est editable.
+
+Nous avons aussi rajoute 6 boutons comme demande, LEFT, UP, DOWN, RIGHT, READ and WRITE.
+Pour chaqun, nous avons rajoute : 
+-un ID, pour pouvoir le recuperer depuis le code 
+-un texte pour savoir quel boutton on appuie 
+-des contraintes pour le positioner dans la fenetre
+
+
+Une fois l'interface prepare, nous pouvons definir le comportement des boutons dans le code via MainActivity.java
+
+Nous declarons chaqun des element graphique dans la classe,
+nous recuprerons l'element de l'interface graphique via "element=findViewById(R.id.[the ID we defined in the xml]);",
+nous redefinissons le comportement de chaque bouton via 
+"element.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) {[the comportement we want]}"
+par example, pour le read, nous fesons "read.setText("READ : "+ Math.pow(rand.nextInt(10),2));".

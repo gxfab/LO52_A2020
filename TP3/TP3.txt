@@ -29,7 +29,7 @@ Enfin, nous rajoutons la librairie dans la liste des maps préliés trouvés dan
 libqcamera.so       0xA9400000
 libusb.so           0xA8000000
 
-On créé un devide linaro
+On créé un device linaro
 
 $(call inherit-product, device/Linaro/hikey.mk)
 #

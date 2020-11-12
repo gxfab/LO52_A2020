@@ -1,0 +1,15 @@
+--------------Installation du NDK-----------------------
+
+Création d'une activité native C/C++
+Tools -> SDK Manager > SDK Tools > cocher NDK, CMake
+
+--------------Code boutons directions-----------------------------------
+
+Le code initialise 1 Listener pour chaque bouton, qui lors du click vont initialiser une variable String ("direction"), et lancer la fonction C++ avec le nom du bouton correspondant en paramètre.
+
+La fonction C++ récupère la String en paramètre, la convertie en un format String compatible C++ (const char*), puis compare cette String avec le texte du bouton grace à "strcmp()".
+Si il s'agit du bon bouton, le texte en japonais est renvoyé sous format String compatible kotlin, et copié dans la variable de départ ("direction").
+
+Enfin, la zone de texte prend la variable direction pour valeur.
+
+PS: Grosse difficulté pour le passage en paramètre au moment de l'appel de la fonction du au fait que kotlin ne considère pas la propriété ".text" d'une zone de texte éditable comme une String classique. (D'où la ligne un peu étrange pour éditer sa valeur avec "setText")

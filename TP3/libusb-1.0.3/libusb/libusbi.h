@@ -40,6 +40,11 @@ struct list_head {
 	struct list_head *prev, *next;
 };
 
+# define TIMESPEC_TO_TIMEVAL(tv, ts) {                                   \
+        (tv)->tv_sec = (ts)->tv_sec;                                    \
+        (tv)->tv_usec = (ts)->tv_nsec / 1000;
+}
+
 /* Get an entry from the list 
  * 	ptr - the address of this list_head element in "type" 
  * 	type - the data type that contains "member"

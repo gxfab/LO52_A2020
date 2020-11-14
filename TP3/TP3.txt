@@ -1,0 +1,29 @@
+mkdir AOSP && cd AOSP
+
+# Get the AOSP
+repo init -u https://android.googlesource.com/platform/manifest -b master
+repo sync -j16
+
+# Setup environment variables
+source ./envsetup.sh
+
+# Clean
+make clean
+
+# Creating the device
+mkdir device/utbm
+mkdir device/utbm/lo52_RobitailleAymeric_JarnoAnais && cd device/utbm/lo52_RobitailleAymeric_JarnoAnais
+
+# Now add files describing the new device by following https://source.android.com/setup/develop/new-device
+
+# Re-source
+source ./envsetup.sh
+
+# Then select our board
+lunch
+
+# Add libusb
+cp ~/LO52_A2020/TP3/libusb . -r
+
+# Make the device
+m -j16

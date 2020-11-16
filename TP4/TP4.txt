@@ -1,0 +1,9 @@
+This time there is no need to use the command line, Android Studio can handles all command for us by following this sequence :
+	* Open Android Studio and create a new project, select the Native C++ code snippet
+	* During the Graddle and project sync an error should occur if you do not have a ndk, click on the error and let the
+	  prompted dialog do its magic (download and installation of the last NDK version).
+	  You can let the download in background to start coding but since the sync is not done, Android Studio code 
+	  analysis and completion are disabled
+	  Note: on linux I did not had the problem but once downloaded it can be necessary to manually point to the good 
+	  ndk location, if the error persist (as it's always fun on windows) you can go in the SDK manager, remove CMake and NDK, update the SDK if not done then re-install CMake and NDK
+	* Then it is possible to code and run the application in the same way as explained in the TP1

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Hello NDK</string>
+    <string name="activity.main.up">up</string>
+    <string name="activity.main.down">down</string>
+    <string name="activity.main.left">left</string>
+    <string name="activity.main.right">right</string>
+
+    <string name="activity.main.write">write</string>
+    <string name="activity.main.read">read</string>
+    <string name="activity.main.txt.input">Def</string>
+
+    <string name="activity.main.error.input">This is not a number…</string>
+</resources>

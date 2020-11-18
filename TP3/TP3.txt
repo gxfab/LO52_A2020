@@ -1,0 +1,45 @@
+Ecrire des Makefile Android relatifs à l’intégration d’un composant et d’un produit Android
+=> Composant
+
+Implémentation de la libusb :
+	- les fichiers sources et les headers pour la compilation d’une libusb dans le Android.mk
+	LOCAL_PATH:= $(call my-dir)
+	include $( CLEAR_VARS )
+	# nom du module
+	LOCAL_MODULE := libusb
+	# .h
+	LOCAL_C_INCLUDES += $( LOCAL_PATH )/ include $( LOCAL_PATH )/os
+	# Sources à compiler
+	LOCAL_SRC_FILES := core.c descriptor.c io.c sync.c
+	include $( BUILD_SHARED_LIBRARY )
+
+Compilation :
+sudo make
+
+Une erreur se produit sur la macro TIMESPEC_TO_TIMEVAL. Correction dans io.c : 
+#define TIMESPEC_TO_TIMEVAL(tv,ts){
+	(tv)->tv_sec = (ts)->tv_sec;
+	(tv)->tv_usec = (ts)->tv_nsec/1000;
+} 
+
+Deuxième erreur build/tools/apriori/prelinkmap.c(137) : library "libusb.so" not in prelink
+map :
+Ajout de la map libusb.so trouvé dans build/core/prelink-linux-arm.map
+libusb.so 0xA8000000
+
+=> Produit héritant du produit hikey de Linaro
+
+$(call inherit-product, device/Linaro/hikey.mk)
+PRODUCT_PACKAGES+= libusb
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.hw=lo_52 \
+    net.dns1=8.8.8.8 \
+    net.dns2=4.4.4.4
+PRODUCT_PACKAGE_OVERLAYS := overlay/
+PRODUCT_NAME := lo52_GASSERTatiana_MARINLoic
+PRODUCT_BRAND := lo52
+PRODUCT_DEVICE := lo52_GASSERTatiana_MARINLoic
+PRODUCT_MODEL := GASSERTatiana_MARINLoic
+
+Vous surchargerez le fichier sym_keyboard_delete.png :
+device/overlay/samples/SoftKeyboard/res/drawable-mdpi/sym_keyboard_delete.png

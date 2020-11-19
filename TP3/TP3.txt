@@ -1,0 +1,9 @@
+repo init -u https://android.googlesource.com/platform/manifest -b master
+repo sync -j16
+source ./envsetup.sh
+mkdir device/utbm
+mkdir device/utbm/lo52_GuillemailleTimothee_MontangeAimeric 
+cd device/utbm/lo52_GuillemailleTimothee_MontangeAimeric
+lunch
+cp ~/LO52_A2020/TP3/libusb . -r
+m -j16

@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         te_name = (EditText) findViewById(R.id.editText_name);
         te_fname = (EditText) findViewById(R.id.editText_fname);
         participants = new ArrayList<Participant>();
+        for(int i=0;i<30;i++){
+            participants.add(new Participant("John"+i,"Doe",5));
+        }
+
         /*Level*/
         tv_lvl = (TextView) findViewById(R.id.textView_lvl);
         Button b_lvl = (Button) findViewById(R.id.button_lvl);// on click of button display the dialog_number

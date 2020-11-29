@@ -1,0 +1,43 @@
+mkdir ~/bin
+PATH=~/bin:$PATH
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+sudo apt install curl
+chmod a+x ~/bin/repo
+mkdir android-kernel && cd android-kernel
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+repo init
+repo init -u https://android.googlesource.com/kernel/manifest -b hikey-linaro-android-4.19 
+repo sync
+mkdir ~/toolchain
+cd ~/toolchain
+wget httŝ://releases.linaro.org/coponents/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+wget https://releases.linaro.org/coponents/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+wget https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+tar -xf gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+cd android-kernel/hikey-linaro
+export CROSS_COMPILE=~/toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
+export ARCH=arm6
+mkdir ../../configurations
+cp defconfig ../../configurations/defconfig_first_version
+make hikey_defconfig
+make clean
+make board-ranchu.config
+make savedefconfig
+kdiff3 defconfig ../../configurations/defconfig_first_version
+make xconfig
+make savedefconfig
+cp defconfig ../../configurations/defconfig_optimise
+#A ce niveau nous avons copié les fichiers depuis le dossier configuration vers arch/arm64/configs pour les compilation 
+export ARCH=arm64
+export CROSS_COMPILE=~/toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
+make clean
+make defconfig_premiere_version
+make
+cp arch/arm64/boot/Image.gz-dtb ../../images/Image-premiere-version.gz-dtb
+make clean
+make defconfig_optimise
+make
+cp arch/arm64/boot/Image.gz-dtb ../../images/Image-optimise.gz-dtb
+#Pour générer l'historique des commandes
+history>../../TP2.txt

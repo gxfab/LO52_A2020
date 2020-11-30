@@ -1,0 +1,39 @@
+Gestion de la BDD :
+
+Plugin Room et DAO : Data base acces object
+permet de créer l'abstraction par rapport aux données
+avoir une répresentation objet des tables
+room utilise SQL lite disponible sur Android
+
+Notes sur le code :
+"extends RoomDatabase"
+instancier objet DAO
+objet = table
+fonction de cette objet = query SQL
+@Dao
+data base inspector
+@Insert
+@Update
+onConflict = OnConflictStrategy.Replace
+dans la MainActivity :
+OnCreate
+il y a une action en plus si on ne passe pas par un émulateur mais pas une vraie tablette
+
+************************
+
+Activité versus fragment
+
+Une activité = une fonction de l'application, exemple, l'appli mail est une activité, et écrire un mail est une autre activité
+un fragment permet de garder une seule activité "MainActivity", et en fonction du choix, on créer un fragment, la page d'acceuil est le HomeFragment
+Il vaut mieux changer de fragment plutot que de générer une autre activité
+
+Les 2 possibilités sont viables, mais implementer trop d'activités peut faire ramer
+les fragments permettent de beneficier du redimensionnement
+
+************************
+
+Notes random :
+
+pour la pres on peut préremplir la BDD avec 25 participants pour ne pas rentrer les 30, ou meme les rentrer en brut
+rendre un compte rendu de tous les TP avant la soutenance sur le github
+

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="521dp"
+        android:text="F1 Levier"
+        android:textColor="#009688"
+        android:textSize="60sp" />
+
+    <EditText
+        android:id="@+id/editText_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="225dp"
+        android:layout_marginTop="303dp"
+        android:ems="10"
+        android:hint="Nom"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText_fname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="475dp"
+        android:layout_marginTop="303dp"
+        android:ems="10"
+        android:hint="Prénom"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView_lvl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="311dp"
+        android:layout_marginEnd="469dp"
+        android:text="Niveau"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/button_lvl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="306dp"
+        android:layout_marginEnd="232dp"
+        android:backgroundTint="#C3C3C3"
+        android:text="Selectionner le niveau" />
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="326dp"
+        android:layout_marginBottom="293dp"
+        android:backgroundTint="#C3C3C3"
+        android:text="Ajouter le participant" />
+
+    <Button
+        android:id="@+id/button_check"
+        android:layout_width="261dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="712dp"
+        android:layout_marginBottom="293dp"
+        android:background="#7A7A7A"
+        android:text="Vérifier la liste des participants"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="529dp"
+        android:layout_marginBottom="82dp"
+        android:backgroundTint="#009688"
+        android:text="Lancer la compétition" />
+
+    <Button
+        android:id="@+id/button_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="187dp"
+        android:backgroundTint="#C3C3C3"
+        android:text="Définir l'ordre de passage" />
+
+</RelativeLayout>

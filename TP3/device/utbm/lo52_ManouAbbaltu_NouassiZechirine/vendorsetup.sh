@@ -1,0 +1,3 @@
+add_lunch_combo lo52_ManouAbbaltu_NouassiZechirine-eng
+add_lunch_combo lo52_ManouAbbaltu_NouassiZechirine-user
+add_lunch_combo lo52_ManouAbbaltu_NouassiZechirine-userdebug

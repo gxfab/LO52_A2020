@@ -1,6 +1,0 @@
-Ouverture d'Android studio
-Création d'un nouveau projet en native c++
-Selection du standard c++ 17
-Après une erreur lors du chargement, Android studio propose de télécharger le nécessaire pour le NDK
-Modification du fichier native-lib.cpp avec le fonction native
-Creation d'un fichier java avec les élements graphiques à relier

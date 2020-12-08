@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button_CreateRace"
+        android:layout_width="273dp"
+        android:layout_height="187dp"
+        android:layout_marginStart="504dp"
+        android:layout_marginTop="529dp"
+        android:layout_marginEnd="503dp"
+        android:layout_marginBottom="84dp"
+        android:text="@string/button_CreateRace"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="378dp"
+        android:layout_height="223dp"
+        android:layout_marginStart="547dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="546dp"
+        android:layout_marginBottom="380dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.631"
+        app:srcCompat="@drawable/les_15_meilleures_chaussures_de_running" />
+
+    <TextView
+        android:id="@+id/textView_AppTitle"
+        android:layout_width="607dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="337dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="336dp"
+        android:layout_marginBottom="642dp"
+        android:fontFamily="@font/bungee_inline"
+        android:text="@string/textView_AppTitle"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="293dp"
+        android:layout_height="268dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="266dp"
+        android:layout_marginEnd="874dp"
+        android:layout_marginBottom="266dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/il_570xn_1661294395_6tf6" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="293dp"
+        android:layout_height="267dp"
+        android:layout_marginStart="879dp"
+        android:layout_marginTop="266dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="267dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/il_570xn_1661294395_6tf6___copie" />
+</androidx.constraintlayout.widget.ConstraintLayout>

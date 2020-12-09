@@ -21,4 +21,13 @@
     <string name="button_Terminer">TerminerCréationEquipe</string>
     <string name="textView_AppTitle">F1 Running Race - by CODEP25</string>
     <string name="button_CreateRace">Créer une course</string>
+    <string name="button_CreateRace2">Créer Course</string>
+    <string name="textView_second">Veuillez rentrer les informations de la course :</string>
+    <string name="textView_Date">Date de début :</string>
+    <string name="textView_Heure">Heure de début :</string>
+    <string name="textView_RaceName">Nom :</string>
+    <string name="editText_Date">jj/mm/yyyy</string>
+    <string name="editText_Heure">hh:mm</string>
+    <string name="editTexte_RaceName">n°1, promo 18....</string>
+    <string name="textView_Note3">Note : Le nom n\'est pas obligatoire</string>
 </resources>

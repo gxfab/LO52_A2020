@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editText_Heure"
+        android:layout_width="254dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="513dp"
+        android:layout_marginTop="329dp"
+        android:layout_marginEnd="513dp"
+        android:layout_marginBottom="425dp"
+        android:ems="10"
+        android:hint="@string/editText_Heure"
+        android:inputType="time"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_Heure"
+        android:layout_width="175dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="322dp"
+        android:layout_marginTop="341dp"
+        android:layout_marginEnd="793dp"
+        android:layout_marginBottom="425dp"
+        android:text="@string/textView_Heure"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_RaceName"
+        android:layout_width="70dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="416dp"
+        android:layout_marginTop="397dp"
+        android:layout_marginEnd="794dp"
+        android:layout_marginBottom="370dp"
+        android:text="@string/textView_RaceName"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_Date"
+        android:layout_width="171dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="333dp"
+        android:layout_marginTop="282dp"
+        android:layout_marginEnd="793dp"
+        android:layout_marginBottom="485dp"
+        android:text="@string/textView_Date"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_CreateRace2"
+        android:layout_width="231dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="539dp"
+        android:layout_marginTop="546dp"
+        android:layout_marginEnd="538dp"
+        android:layout_marginBottom="175dp"
+        android:text="@string/button_CreateRace2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView_second"
+        android:layout_width="419dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="282dp"
+        android:layout_marginTop="204dp"
+        android:layout_marginEnd="579dp"
+        android:layout_marginBottom="560dp"
+        android:text="@string/textView_second"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_Note3"
+        android:layout_width="273dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="369dp"
+        android:layout_marginTop="448dp"
+        android:layout_marginEnd="638dp"
+        android:layout_marginBottom="325dp"
+        android:text="@string/textView_Note3"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_Date"
+        android:layout_width="254dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="513dp"
+        android:layout_marginTop="269dp"
+        android:layout_marginEnd="513dp"
+        android:layout_marginBottom="485dp"
+        android:ems="10"
+        android:hint="@string/editText_Date"
+        android:inputType="date"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_RaceName"
+        android:layout_width="259dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="513dp"
+        android:layout_marginTop="382dp"
+        android:layout_marginEnd="508dp"
+        android:layout_marginBottom="370dp"
+        android:ems="10"
+        android:hint="@string/editTexte_RaceName"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

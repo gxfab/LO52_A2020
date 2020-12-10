@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout12"
+            android:layout_width="616dp"
+            android:layout_height="684dp"
+            tools:layout_conversion_absoluteHeight="794dp"
+            tools:layout_conversion_absoluteWidth="640dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="107dp">
+
+            <FrameLayout
+                android:id="@+id/FrameLayout1"
+                android:layout_width="533dp"
+                android:layout_height="242dp"
+                android:background="@drawable/rectanglebg"
+                android:minHeight="200dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.069"
+                tools:layout_conversion_absoluteHeight="221dp"
+                tools:layout_conversion_absoluteWidth="530dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="533dp"
+                    android:layout_height="242dp"
+                    tools:layout_editor_absoluteX="2dp"
+                    tools:layout_editor_absoluteY="2dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/list_FreeTeams"
+                        android:layout_width="500dp"
+                        android:layout_height="209dp"
+                        app:layout_constrainedHeight="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.514"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.523" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/textView_TeamList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="196dp"
+                android:layout_marginEnd="194dp"
+                android:layout_marginBottom="651dp"
+                android:gravity="center"
+                android:text="@string/textView_TeamList"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_conversion_absoluteHeight="32dp"
+                tools:layout_conversion_absoluteWidth="640dp" />
+
+            <ImageButton
+                android:id="@+id/button_DownTeam"
+                android:layout_width="84dp"
+                android:layout_height="61dp"
+                android:layout_marginStart="331dp"
+                android:layout_marginTop="287dp"
+                android:layout_marginEnd="184dp"
+                android:layout_marginBottom="336dp"
+                android:src="@android:drawable/arrow_down_float"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/button_UpTeam"
+                android:layout_width="84dp"
+                android:layout_height="61dp"
+                android:layout_marginStart="196dp"
+                android:layout_marginTop="287dp"
+                android:layout_marginEnd="336dp"
+                android:layout_marginBottom="336dp"
+                android:src="@android:drawable/arrow_up_float"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:id="@+id/FrameLayout3"
+                android:layout_width="540dp"
+                android:layout_height="265dp"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="440dp"
+                android:layout_marginEnd="38dp"
+                android:layout_marginBottom="69dp"
+                android:background="@drawable/rectanglebg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="540dp"
+                    android:layout_height="261dp"
+                    android:layout_gravity="center"
+                    tools:layout_editor_absoluteX="13dp"
+                    tools:layout_editor_absoluteY="15dp">
+
+                    <ListView
+                        android:id="@+id/list_OrderedTeams"
+                        android:layout_width="515dp"
+                        android:layout_height="233dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.411"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/textView_TeamList2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="152dp"
+                android:layout_marginTop="407dp"
+                android:layout_marginEnd="131dp"
+                android:layout_marginBottom="334dp"
+                android:gravity="center"
+                android:text="@string/textView_TeamList2"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_conversion_absoluteHeight="32dp"
+                tools:layout_conversion_absoluteWidth="640dp" />
+
+            <Spinner
+                android:id="@+id/RaceSelector"
+                android:layout_width="67dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="2dp"
+                android:background="@android:drawable/btn_dropdown"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout10"
+            android:layout_width="661dp"
+            android:layout_height="772dp"
+            tools:layout_editor_absoluteX="594dp">
+
+            <FrameLayout
+                android:id="@+id/FrameLayout2"
+                android:layout_width="526dp"
+                android:layout_height="341dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="446dp"
+                android:background="@drawable/rectanglebg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.244"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout4"
+                    android:layout_width="505dp"
+                    android:layout_height="270dp"
+                    android:layout_gravity="center"
+                    tools:layout_conversion_absoluteHeight="794dp"
+                    tools:layout_conversion_absoluteWidth="640dp"
+                    tools:layout_editor_absoluteX="2dp"
+                    tools:layout_editor_absoluteY="2dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/list_TeamMembers"
+                        android:layout_width="478dp"
+                        android:layout_height="224dp"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="34dp"
+                        android:layout_marginBottom="27dp"
+                        app:layout_constrainedHeight="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.538"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/textView_TeamMemberList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="128dp"
+                android:layout_marginEnd="160dp"
+                android:layout_marginBottom="334dp"
+                android:text="@string/textView_TeamMemberList"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.007" />
+
+            <ImageButton
+                android:id="@+id/button_UpMembers"
+                android:layout_width="73dp"
+                android:layout_height="57dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="569dp"
+                android:layout_marginTop="84dp"
+                android:layout_marginEnd="19dp"
+                android:src="@android:drawable/arrow_up_float"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.048" />
+
+            <ImageButton
+                android:id="@+id/button_DownMembers"
+                android:layout_width="73dp"
+                android:layout_height="57dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="569dp"
+                android:layout_marginTop="176dp"
+                android:layout_marginEnd="19dp"
+                android:layout_marginBottom="134dp"
+                android:src="@android:drawable/arrow_down_float"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.106" />
+
+            <TextView
+                android:id="@+id/textView_Note4"
+                android:layout_width="458dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="77dp"
+                android:layout_marginTop="436dp"
+                android:layout_marginEnd="126dp"
+                android:layout_marginBottom="306dp"
+                android:text="@string/textView_Note4"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_LaunchRace"
+                android:layout_width="187dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="237dp"
+                android:layout_marginTop="576dp"
+                android:layout_marginEnd="237dp"
+                android:layout_marginBottom="151dp"
+                android:text="@string/button_LaunchRace"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_Note5"
+                android:layout_width="412dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="468dp"
+                android:layout_marginEnd="121dp"
+                android:layout_marginBottom="272dp"
+                android:text="@string/textView_Note5"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

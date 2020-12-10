@@ -30,4 +30,10 @@
     <string name="editText_Heure">hh:mm</string>
     <string name="editTexte_RaceName">n°1, promo 18....</string>
     <string name="textView_Note3">Note : Le nom n\'est pas obligatoire</string>
+    <string name="textView_TeamList">Équipes disponibles :</string>
+    <string name="textView_TeamMemberList">Membres de l\'équipe séléctionnée :</string>
+    <string name="button_LaunchRace">Démarrer la course</string>
+    <string name="textView_Note4">Note : Toute modification est immédiatement prise en compte.</string>
+    <string name="textView_TeamList2">Ordre de passage des équipes :</string>
+    <string name="textView_Note5">L\'ordre de passage se fait du haut vers le bas.</string>
 </resources>

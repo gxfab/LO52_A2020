@@ -32,17 +32,27 @@
         tools:layout="@layout/fragment_createteam">
 
         <action
-            android:id="@+id/action_CreateTeamFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_CreateTeamFragment_to_SetOrderFragment"
+            app:destination="@id/SetOrderFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.tps.appf1.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/SetOrderFragment"
+        android:name="com.tps.appf1.SetOrderFragment"
+        android:label="Set Order Fragment"
+        tools:layout="@layout/fragment_setorder">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/CreateTeamFragment" />
+            android:id="@+id/action_SetOrderFragment_to_RaceManagementFragment"
+            app:destination="@id/RaceManagementFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RaceManagementFragment"
+        android:name="com.tps.appf1.RaceManagementFragment"
+        android:label="Race Management Fragment"
+        tools:layout="@layout/fragment_racemanagement">
+
+        <action
+            android:id="@+id/action_SetOrderFragment_to_RaceManagementFragment"
+            app:destination="@id/RaceManagementFragment" />
     </fragment>
 </navigation>

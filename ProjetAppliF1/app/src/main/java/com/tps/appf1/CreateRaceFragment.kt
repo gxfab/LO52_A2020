@@ -1,5 +1,7 @@
 package com.tps.appf1
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,13 +10,18 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_createrace.*
+import java.text.SimpleDateFormat
 import java.time.LocalDateTime
+import java.util.*
+import java.time.LocalTime as LocalTime1
 
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class CreateRaceFragment : Fragment() {
+    lateinit var cal : Calendar
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,11 +33,36 @@ class CreateRaceFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //var date = LocalDateTime.now()
-        //Use autofillhint ? -> convertir date en string et la récupérer pour la mettre dans le champ
-
+        //Verifie que les champs date et heure sont bien remplis lors du clic
         view.findViewById<Button>(R.id.button_CreateRace2).setOnClickListener {
-            findNavController().navigate(R.id.action_CreateRaceFragment_to_CreateTeamFragment)
+            if(editText_Date.text.isNotEmpty() && editText_Heure.text.isNotEmpty()){
+                findNavController().navigate(R.id.action_CreateRaceFragment_to_CreateTeamFragment)
+            }
+        }
+
+        //pré-rempli la date du jour sur le champ date
+        cal = Calendar.getInstance()
+        editText_Date.setText(SimpleDateFormat("dd.MM.yyyy").format(System.currentTimeMillis()))
+        val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+            cal.set(Calendar.YEAR, year)
+            cal.set(Calendar.MONTH, monthOfYear)
+            cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+            val myFormat = "dd.MM.yyyy" // mention the format you need
+            val sdf = SimpleDateFormat(myFormat, Locale.FRANCE)
+            editText_Date.setText(sdf.format(cal.time))
+        }
+
+        //pré-rempli l'heure du jour sur le champ heure
+        var hr = Calendar.getInstance()
+        editText_Heure.setText(SimpleDateFormat("HH:mm").format(System.currentTimeMillis()))
+        val TimeSetListener = TimePickerDialog.OnTimeSetListener { view, hour, minutes ->
+            hr.set(Calendar.HOUR_OF_DAY, hour)
+            hr.set(Calendar.MINUTE, minutes)
+
+            val myHFormat = "HH:mm" // mention the format you need
+            val sdfg = SimpleDateFormat(myHFormat, Locale.FRANCE)
+            editText_Heure.setText(sdfg.format(hr.time))
         }
     }
 }

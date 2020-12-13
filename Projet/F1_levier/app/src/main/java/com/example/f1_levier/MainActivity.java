@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     private TextView tv_lvl;
     private EditText te_name;
     private EditText te_fname;
+    private boolean isCreation = true;
     static ArrayList<Participant> participants;
 
     @Override
@@ -29,9 +30,15 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         /*Name & firstname*/
         te_name = (EditText) findViewById(R.id.editText_name);
         te_fname = (EditText) findViewById(R.id.editText_fname);
-        participants = new ArrayList<Participant>();
-        for(int i=0;i<30;i++){
-            participants.add(new Participant("John"+i,"Doe",5));
+        if(isCreation)
+        {
+            participants = new ArrayList<Participant>();
+            for(int i=0;i<30;i++)
+            {
+                int rand = (int)(Math.random() * 100 + 1);
+                participants.add(new Participant("John"+i,"Doe",rand));
+            }
+            isCreation = false;
         }
 
         /*Level*/

@@ -36,12 +36,8 @@ public class TeamActivity extends AppCompatActivity{
         setContentView(R.layout.activity_team);
 
         /*Team creation*/
-        teams = new ArrayList<Team>();
-        int id = 1;
-        for (int i = 0; i < participants.size(); i = i + 3) {
-            teams.add(new Team(id, participants.get(i), participants.get(i + 1), participants.get(i + 2)));
-            id++;
-        }
+        teams = teamCreation();
+
         /*list view*/
         final ListView listView = (ListView) findViewById(R.id.listView_team);
         // Create the adapter to convert the array to views
@@ -117,6 +113,95 @@ public class TeamActivity extends AppCompatActivity{
             }
         });
 
+    }
+
+    /**
+     * Creates 10 teams with a balanced level
+     * @return ArrayList<Participant> the list of teams
+     */
+    private ArrayList<Team> teamCreation()
+    {
+        ArrayList<Team> result = new ArrayList<Team>();
+        ArrayList<Participant> sortedList = new ArrayList<Participant>();
+
+        // Sort the participants by level in sortedList
+        for(Participant p : participants)
+        {
+            if (sortedList.isEmpty())
+                sortedList.add(p);
+            else {
+                int i = 0;
+                while (sortedList.size() > i && sortedList.get(i).getLevel() < p.getLevel())
+                    i++;
+                sortedList.add(i, p);
+            }
+        }
+
+        ArrayList<ArrayList<Participant>> teamList = new ArrayList<ArrayList<Participant>>();
+        //Put the best runner and the worst one together
+        for(int i = 0; i < 10; i++)
+        {
+            ArrayList<Participant> participantList = new ArrayList<Participant>();
+            participantList.add(sortedList.get(i));
+            participantList.add(sortedList.get(29 - i));
+            teamList.add(participantList);
+        }
+
+        // Adds the other runners to the teams, putting the best one with the team with the lowest level, the worst one with the team with the
+        // highest level
+        for(int i = 19; i > 9; i--)
+        {
+            // Find the worst team in the list
+            int minLevel = 1000000;
+            int worstTeamForTheMoment = -1;
+            for (int j = 0; j < 10; j++)
+            {
+                ArrayList<Participant> team = teamList.get(j);
+                int level = team.get(0).getLevel() + team.get(1).getLevel();
+                if (team.size() == 2 && level < minLevel)
+                {
+                    minLevel = level;
+                    worstTeamForTheMoment = j;
+                }
+            }
+
+            // Adds the worst player remaining in with this team
+            teamList.get(worstTeamForTheMoment).add(sortedList.get(i));
+        }
+
+        // Creates the final result
+        int id = 1;
+        for(ArrayList<Participant> team : teamList)
+        {
+            result.add(new Team(id, team.get(0), team.get(1), team.get(2)));
+            id++;
+        }
+
+        return result;
+    }
+
+
+    /**
+     * Indicates if the teams level are balanced with maximum + or - 15 in team global level
+     * @param teams ArrayList<team> : the list of teams
+     * @return boolean : true if the teams are balanced, false if not
+     */
+    private boolean areTeamBalanced(ArrayList<Team> teams)
+    {
+        int maxLevel = -1;
+        int minLevel = 1000000;
+
+        for(Team t : teams)
+        {
+            if(t.getLevel() > maxLevel)
+                maxLevel = t.getLevel();
+            else if(t.getLevel() < minLevel)
+                minLevel = t.getLevel();
+        }
+
+        if(maxLevel - minLevel > 15)
+            return false;
+        return true;
     }
 }
 

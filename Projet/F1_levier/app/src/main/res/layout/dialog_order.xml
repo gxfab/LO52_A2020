@@ -6,37 +6,40 @@
         android:layout_height="match_parent"
         android:background="#FFFFFF">
 
-        <Spinner
-            android:id="@+id/spinner_p3"
-            android:layout_width="84dp"
-            android:layout_height="41dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="116dp"
-            android:layout_toEndOf="@+id/textView_fname_p3"
-            android:backgroundTint="#000000"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Spinner
+        android:id="@+id/spinner_p3"
+        android:layout_width="84dp"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="116dp"
+        android:backgroundTint="#000000"
+        android:entries="@array/value"
+        android:spinnerMode="dialog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView_name_p1"
-            android:layout_width="237dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
+    <TextView
+        android:id="@+id/textView_n_p1"
+        android:layout_width="237dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
         android:textSize="30sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="25dp" />
 
     <TextView
-        android:id="@+id/textView_fname_p1"
+        android:id="@+id/textView_fn_p1"
         android:layout_width="237dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="268dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="336dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
         android:textSize="30sp"
@@ -44,12 +47,12 @@
         tools:layout_editor_absoluteX="276dp" />
 
     <TextView
-        android:id="@+id/textView_name_p2"
+        android:id="@+id/textView_n_p2"
         android:layout_width="237dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="21dp"
+        android:layout_marginStart="93dp"
         android:layout_marginTop="63dp"
         android:text="TextView"
         android:textSize="30sp"
@@ -57,53 +60,54 @@
         tools:layout_editor_absoluteY="66dp" />
 
     <TextView
-        android:id="@+id/textView_fname_p2"
+        android:id="@+id/textView_fn_p2"
         android:layout_width="237dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="268dp"
-        android:layout_marginTop="65dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="336dp"
+        android:layout_marginTop="63dp"
         android:text="TextView"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="276dp"
         tools:layout_editor_absoluteY="66dp" />
 
     <TextView
-        android:id="@+id/textView_name_p3"
+        android:id="@+id/textView_fn_p3"
         android:layout_width="237dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="112dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="339dp"
+        android:layout_marginTop="115dp"
+        android:text="TextView"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="276dp"
+        tools:layout_editor_absoluteY="66dp" />
+
+    <TextView
+        android:id="@+id/textView_n_p3"
+        android:layout_width="235dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="115dp"
         android:text="TextView"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="116dp" />
 
-    <TextView
-        android:id="@+id/textView_fname_p3"
-        android:layout_width="237dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="268dp"
-        android:layout_marginTop="113dp"
-        android:text="TextView"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="276dp"
-        tools:layout_editor_absoluteY="116dp" />
-
     <Spinner
         android:id="@+id/spinner_p1"
-        android:spinnerMode="dialog"
         android:layout_width="84dp"
         android:layout_height="41dp"
-        android:layout_marginStart="7dp"
         android:layout_marginTop="16dp"
-        android:layout_toEndOf="@+id/textView_fname_p1"
         android:backgroundTint="#000000"
+        android:entries="@array/value"
+        android:spinnerMode="dialog"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -111,10 +115,12 @@
         android:id="@+id/spinner_p2"
         android:layout_width="84dp"
         android:layout_height="41dp"
-        android:layout_marginStart="7dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="64dp"
-        android:layout_toEndOf="@+id/textView_fname_p2"
         android:backgroundTint="#000000"
+        android:entries="@array/value"
+        android:spinnerMode="dialog"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

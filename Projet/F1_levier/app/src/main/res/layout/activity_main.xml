@@ -13,11 +13,22 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="521dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="553dp"
         android:text="F1 Levier"
         android:textColor="#009688"
         android:textSize="60sp" />
+
+    <ImageView
+        android:id="@+id/imageViewP1"
+        android:layout_width="422dp"
+        android:layout_height="289dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="393dp"
+        android:layout_marginTop="84dp"
+        android:src="@drawable/codep" />
 
     <EditText
         android:id="@+id/editText_name"
@@ -25,8 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="225dp"
-        android:layout_marginTop="303dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="393dp"
         android:ems="10"
         android:hint="Nom"
         android:inputType="textPersonName" />
@@ -38,8 +49,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="475dp"
-        android:layout_marginTop="303dp"
+        android:layout_marginStart="483dp"
+        android:layout_marginTop="393dp"
         android:ems="10"
         android:hint="Prénom"
         android:inputType="textPersonName" />
@@ -50,8 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="311dp"
-        android:layout_marginEnd="469dp"
+        android:layout_marginTop="399dp"
+        android:layout_marginEnd="459dp"
         android:text="Niveau"
         android:textSize="25sp" />
 
@@ -61,8 +72,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="306dp"
-        android:layout_marginEnd="232dp"
+        android:layout_marginTop="391dp"
+        android:layout_marginEnd="202dp"
         android:backgroundTint="#C3C3C3"
         android:text="Selectionner le niveau" />
 
@@ -72,8 +83,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="326dp"
-        android:layout_marginBottom="293dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginBottom="222dp"
         android:backgroundTint="#C3C3C3"
         android:text="Ajouter le participant" />
 
@@ -83,8 +94,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="712dp"
-        android:layout_marginBottom="293dp"
+        android:layout_marginStart="715dp"
+        android:layout_marginBottom="221dp"
         android:background="#7A7A7A"
         android:text="Vérifier la liste des participants"
         android:textColor="#000000" />
@@ -99,7 +110,8 @@
         android:layout_marginStart="529dp"
         android:layout_marginBottom="82dp"
         android:backgroundTint="#009688"
-        android:text="Lancer la compétition" />
+        android:text="Lancer la compétition"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/button_team"
@@ -107,7 +119,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="187dp"
+        android:layout_marginBottom="156dp"
         android:backgroundTint="#C3C3C3"
         android:text="Définir l'ordre de passage" />
 

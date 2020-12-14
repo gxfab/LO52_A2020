@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class TeamAdapter extends ArrayAdapter<Team> {
+
     // View lookup cache
     private static class ViewHolder {
         TextView name_p1;

@@ -8,6 +8,7 @@ public class Team {
     private ArrayList<Participant> _team;
     private int _level;
     private int _id;
+    private int _nb_step;
 
     /*Builder*/
     public Team(int id,ArrayList<Participant>team, int lvl){
@@ -32,6 +33,7 @@ public class Team {
         this._team = team;
         this._level=p1.getLevel()+p2.getLevel()+p3.getLevel();
         this._id=id;
+        this._nb_step=0;
     }
 
     /*Getter & Setter*/
@@ -47,6 +49,11 @@ public class Team {
     }
     public ArrayList<Participant> getParticipants(){
         return _team;
+    }
+    public void setParticipant(int n_id,Participant p){
+        getParticipants().get(n_id).setName(p.getName());
+        getParticipants().get(n_id).setFirstName(p.getFirstName());
+        getParticipants().get(n_id).setLevel(p.getLevel());
     }
 
     public void setLevel(int lvl){
@@ -65,5 +72,9 @@ public class Team {
         return _id;
     }
 
+    public void setNb_step(int step){
+        this._nb_step=step;
+    }
 
+    public int getNb_step(){ return _nb_step;}
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,11 +16,13 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static com.example.f1_levier.TeamActivity.teams;
+
 public class MainActivity extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
     private TextView tv_lvl;
     private EditText te_name;
     private EditText te_fname;
-    private boolean isCreation = true;
+    private Button b_start;
     static ArrayList<Participant> participants;
 
     @Override
@@ -30,15 +33,10 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         /*Name & firstname*/
         te_name = (EditText) findViewById(R.id.editText_name);
         te_fname = (EditText) findViewById(R.id.editText_fname);
-        if(isCreation)
-        {
-            participants = new ArrayList<Participant>();
-            for(int i=0;i<30;i++)
-            {
-                int rand = (int)(Math.random() * 100 + 1);
-                participants.add(new Participant("John"+i,"Doe",rand));
-            }
-            isCreation = false;
+        participants = new ArrayList<Participant>();
+        int rand = (int)(Math.random() * 100 + 1);
+        for(int i=0;i<30;i++){
+            participants.add(new Participant("John"+i,"Doe",rand));
         }
 
         /*Level*/
@@ -78,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         });
 
         /*Start*/
-        Button b_start = (Button) findViewById(R.id.button_start);
+        b_start = (Button) findViewById(R.id.button_start);
         b_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         {
             Intent intent = new Intent(this, TeamActivity.class);
             startActivity(intent);
+            b_start.setVisibility(View.VISIBLE);
         }
         else{
             Toast.makeText(MainActivity.this,"Il faut 30 participants",Toast.LENGTH_SHORT).show();
@@ -148,12 +147,12 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     }
 
     public void start() {
-        if (participants.size() == 30) {
+        if (participants.size() == 30 && teams != null) {
             Intent intent = new Intent(this, RunActivity.class);
             startActivity(intent);
         }
         else{
-            Toast.makeText(MainActivity.this,"Il faut 30 participants",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"Il faut 30 participants et avoir les équipes de composées",Toast.LENGTH_SHORT).show();
         }
     }
 }

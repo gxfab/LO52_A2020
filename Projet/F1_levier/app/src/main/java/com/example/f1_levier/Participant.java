@@ -1,8 +1,11 @@
 package com.example.f1_levier;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.text.Editable;
 
-public class Participant {
+public class Participant{
+
     private String _name;
     private String _first_name;
     private int _level;
@@ -13,6 +16,12 @@ public class Participant {
         this._first_name=fname;
         this._level=lvl;
     }
+    public Participant(Participant p){
+        this._name=p.getName();
+        this._first_name=p.getFirstName();
+        this._level=p.getLevel();
+    }
+
 
     /*Getter & Setter*/
     public void setName(String name){

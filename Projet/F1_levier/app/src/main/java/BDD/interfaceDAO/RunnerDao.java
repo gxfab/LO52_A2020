@@ -4,12 +4,14 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 
+import BDD.entity.Runner;
+
 @Dao
 public interface RunnerDao
 {
     @Insert
-    void insertAll(User... users);
+    void insertAll(Runner... runners);
 
     @Delete
-    void delete(User user);
+    void delete(Runner runner);
 }

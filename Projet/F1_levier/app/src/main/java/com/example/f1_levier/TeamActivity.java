@@ -46,6 +46,7 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
         TeamDialog TeamDialog = new TeamDialog();
         TeamDialog.show(getSupportFragmentManager(), "Passage");
     }
+
     @Override
     public void applyTexts(String place) {
         permutation(place);

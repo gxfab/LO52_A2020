@@ -1,7 +1,5 @@
 package com.example.f1_levier;
-import java.util.*;
 
-import android.app.ActionBar;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
@@ -13,9 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-
-import static com.example.f1_levier.MainActivity.participants;
+import static com.example.f1_levier.MainActivity.runners;
 
 public class ParticipantActivity extends AppCompatActivity {
 
@@ -51,18 +47,18 @@ public class ParticipantActivity extends AppCompatActivity {
         });
 
         /*number of participant*/
-        tv_nb.setText(String.valueOf(participants.size()));
+        tv_nb.setText(String.valueOf(runners.size()));
 
         /*Selection of participant*/
         // Create the adapter to convert the array to views
-        adapter = new ParticipantAdapter(this, participants);
+        adapter = new ParticipantAdapter(this, runners);
         // Attach the adapter to a ListView
         listView.setAdapter(adapter);
-        //adapter.addAll(participants);
+        //adapter.addAll(runners);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String name = participants.get(i).getName()+" "+participants.get(i).getFirstName();
+                String name = runners.get(i).getName()+" "+ runners.get(i).getFirstName();
                 id_selected = i;
                 tv_selected.setText(name);
             }
@@ -78,9 +74,9 @@ public class ParticipantActivity extends AppCompatActivity {
             final EditText te_name = (EditText) d_edit.findViewById(R.id.editText_name);
             final EditText te_fname = (EditText) d_edit.findViewById(R.id.editText_fname);
             final EditText te_lvl = (EditText) d_edit.findViewById(R.id.editText_lvl);
-            te_name.setText(participants.get(id_selected).getName());
-            te_fname.setText(participants.get(id_selected).getFirstName());
-            te_lvl.setText(String.valueOf(participants.get(id_selected).getLevel()));
+            te_name.setText(runners.get(id_selected).getName());
+            te_fname.setText(runners.get(id_selected).getFirstName());
+            te_lvl.setText(String.valueOf(runners.get(id_selected).getLevel()));
 
             b_set.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -88,9 +84,9 @@ public class ParticipantActivity extends AppCompatActivity {
                     if (Integer.parseInt(String.valueOf(te_lvl.getText())) < 100 && Integer.parseInt(String.valueOf(te_lvl.getText())) >= 0
                             && !te_name.getText().toString().equals("") && !te_fname.getText().toString().equals("")
                             && !te_name.getText().toString().equals(" ") && !te_fname.getText().toString().equals(" ")) {
-                        participants.get(id_selected).setName(te_name.getText().toString());
-                        participants.get(id_selected).setFirstName(te_fname.getText().toString());
-                        participants.get(id_selected).setLevel(Integer.parseInt(String.valueOf(te_lvl.getText())));
+                        runners.get(id_selected).setName(te_name.getText().toString());
+                        runners.get(id_selected).setFirstName(te_fname.getText().toString());
+                        runners.get(id_selected).setLevel(Integer.parseInt(String.valueOf(te_lvl.getText())));
                         d_edit.dismiss();
                         adapter.notifyDataSetChanged();
                     } else {
@@ -107,8 +103,8 @@ public class ParticipantActivity extends AppCompatActivity {
 
     public void del_participant() {
         if(id_selected != -1) {
-            participants.remove(id_selected);
-            tv_nb.setText(String.valueOf(participants.size()));
+            runners.remove(id_selected);
+            tv_nb.setText(String.valueOf(runners.size()));
             adapter.notifyDataSetChanged();
             id_selected = -1;
             tv_selected.setText("");

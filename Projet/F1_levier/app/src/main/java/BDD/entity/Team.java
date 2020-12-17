@@ -1,23 +1,21 @@
-package com.example.f1_levier;
-
-import android.text.Editable;
+package BDD.entity;
 
 import java.util.ArrayList;
 
 public class Team {
-    private ArrayList<Participant> _team;
+    private ArrayList<Runner> _team;
     private int _level;
     private int _id;
     private int _nb_step;
 
     /*Builder*/
-    public Team(int id,ArrayList<Participant>team, int lvl){
+    public Team(int id, ArrayList<Runner>team, int lvl){
         this._team = team;
         this._level=lvl;
         this._id=id;
     }
-    public Team(int id,Participant p1, Participant p2,Participant p3,int lvl){
-        ArrayList<Participant> team = new ArrayList<Participant>();
+    public Team(int id, Runner p1, Runner p2, Runner p3, int lvl){
+        ArrayList<Runner> team = new ArrayList<Runner>();
         team .add(p1);
         team.add(p2);
         team.add(p3);
@@ -25,8 +23,8 @@ public class Team {
         this._level=lvl;
         this._id=id;
     }
-    public Team(int id,Participant p1, Participant p2,Participant p3){
-        ArrayList<Participant> team = new ArrayList<Participant>();
+    public Team(int id, Runner p1, Runner p2, Runner p3){
+        ArrayList<Runner> team = new ArrayList<Runner>();
         team.add(p1);
         team.add(p2);
         team.add(p3);
@@ -37,20 +35,20 @@ public class Team {
     }
 
     /*Getter & Setter*/
-    public void setParticipants(ArrayList<Participant> team){
+    public void setParticipants(ArrayList<Runner> team){
         this._team=team;
     }
-    public void setParticipants(Participant p1, Participant p2,Participant p3){
-        ArrayList<Participant> team = new ArrayList<Participant>();
+    public void setParticipants(Runner p1, Runner p2, Runner p3){
+        ArrayList<Runner> team = new ArrayList<Runner>();
         team .add(p1);
         team.add(p2);
         team.add(p3);
         this._team = team;
     }
-    public ArrayList<Participant> getParticipants(){
+    public ArrayList<Runner> getParticipants(){
         return _team;
     }
-    public void setParticipant(int n_id,Participant p){
+    public void setParticipant(int n_id, Runner p){
         getParticipants().get(n_id).setName(p.getName());
         getParticipants().get(n_id).setFirstName(p.getFirstName());
         getParticipants().get(n_id).setLevel(p.getLevel());

@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class ParticipantAdapter extends ArrayAdapter<Participant> {
+import BDD.entity.Runner;
+
+public class ParticipantAdapter extends ArrayAdapter<Runner> {
     // View lookup cache
     private static class ViewHolder {
         TextView name;
@@ -17,14 +19,14 @@ public class ParticipantAdapter extends ArrayAdapter<Participant> {
         TextView level;
     }
 
-    public ParticipantAdapter(Context context, ArrayList<Participant> p) {
+    public ParticipantAdapter(Context context, ArrayList<Runner> p) {
         super(context, R.layout.item_participant, p);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        Participant p = getItem(position);
+        Runner p = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         ViewHolder viewHolder; // view lookup cache stored in tag
         if (convertView == null) {

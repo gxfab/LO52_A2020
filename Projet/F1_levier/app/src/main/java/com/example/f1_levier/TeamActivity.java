@@ -1,26 +1,18 @@
 package com.example.f1_levier;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.telephony.mbms.StreamingServiceInfo;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.Console;
 import java.util.ArrayList;
 
-import static com.example.f1_levier.MainActivity.participants;
+import BDD.entity.Runner;
+import BDD.entity.Team;
+
+import static com.example.f1_levier.MainActivity.runners;
 
 public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDialogListener{
 
@@ -61,31 +53,31 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
     }
     
     void permutation(String place){
-        Participant temp;
+        Runner temp;
         switch(place) {
             case "1,3,2":
-                temp =  new Participant(teams.get(item_selected).getParticipants().get(1));//sauv 2
+                temp =  new Runner(teams.get(item_selected).getParticipants().get(1));//sauv 2
                 teams.get(item_selected).setParticipant(1,teams.get(item_selected).getParticipants().get(2));
                 teams.get(item_selected).setParticipant(2,temp);
                 break;
             case "2,1,3":
-                temp = new Participant(teams.get(item_selected).getParticipants().get(0));//sauv 1
+                temp = new Runner(teams.get(item_selected).getParticipants().get(0));//sauv 1
                 teams.get(item_selected).setParticipant(0,teams.get(item_selected).getParticipants().get(1));
                 teams.get(item_selected).setParticipant(1,temp);
                 break;
             case "3,1,2":
-                temp = new Participant(teams.get(item_selected).getParticipants().get(0));//sauv 1
+                temp = new Runner(teams.get(item_selected).getParticipants().get(0));//sauv 1
                 teams.get(item_selected).setParticipant(0,teams.get(item_selected).getParticipants().get(1));
                 teams.get(item_selected).setParticipant(1,teams.get(item_selected).getParticipants().get(2));
                 teams.get(item_selected).setParticipant(2,temp);
                 break;
             case "3,2,1":
-                temp = new Participant(teams.get(item_selected).getParticipants().get(0)); //sauv 1
+                temp = new Runner(teams.get(item_selected).getParticipants().get(0)); //sauv 1
                 teams.get(item_selected).setParticipant(0,teams.get(item_selected).getParticipants().get(2));
                 teams.get(item_selected).setParticipant(2,temp);
                 break;
             case "2,3,1":
-                temp = new Participant(teams.get(item_selected).getParticipants().get(0)); //sauv 1
+                temp = new Runner(teams.get(item_selected).getParticipants().get(0)); //sauv 1
                 teams.get(item_selected).setParticipant(0,teams.get(item_selected).getParticipants().get(2));
                 teams.get(item_selected).setParticipant(2,teams.get(item_selected).getParticipants().get(1));
                 teams.get(item_selected).setParticipant(1,temp);
@@ -96,15 +88,15 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
 
     /**
      * Creates 10 teams with a balanced level
-     * @return ArrayList<Participant> the list of teams
+     * @return ArrayList<Runner> the list of teams
      */
     private ArrayList<Team> teamCreation()
     {
         ArrayList<Team> result = new ArrayList<Team>();
-        ArrayList<Participant> sortedList = new ArrayList<Participant>();
+        ArrayList<Runner> sortedList = new ArrayList<Runner>();
 
-        // Sort the participants by level in sortedList
-        for(Participant p : participants)
+        // Sort the runners by level in sortedList
+        for(Runner p : runners)
         {
             if (sortedList.isEmpty())
                 sortedList.add(p);
@@ -116,14 +108,14 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
             }
         }
 
-        ArrayList<ArrayList<Participant>> teamList = new ArrayList<ArrayList<Participant>>();
+        ArrayList<ArrayList<Runner>> teamList = new ArrayList<ArrayList<Runner>>();
         //Put the best runner and the worst one together
         for(int i = 0; i < 10; i++)
         {
-            ArrayList<Participant> participantList = new ArrayList<Participant>();
-            participantList.add(sortedList.get(i));
-            participantList.add(sortedList.get(29 - i));
-            teamList.add(participantList);
+            ArrayList<Runner> runnerList = new ArrayList<Runner>();
+            runnerList.add(sortedList.get(i));
+            runnerList.add(sortedList.get(29 - i));
+            teamList.add(runnerList);
         }
 
         // Adds the other runners to the teams, putting the best one with the team with the lowest level, the worst one with the team with the
@@ -135,7 +127,7 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
             int worstTeamForTheMoment = -1;
             for (int j = 0; j < 10; j++)
             {
-                ArrayList<Participant> team = teamList.get(j);
+                ArrayList<Runner> team = teamList.get(j);
                 int level = team.get(0).getLevel() + team.get(1).getLevel();
                 if (team.size() == 2 && level < minLevel)
                 {
@@ -150,7 +142,7 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
 
         // Creates the final result
         int id = 1;
-        for(ArrayList<Participant> team : teamList)
+        for(ArrayList<Runner> team : teamList)
         {
             result.add(new Team(id, team.get(0), team.get(1), team.get(2)));
             id++;

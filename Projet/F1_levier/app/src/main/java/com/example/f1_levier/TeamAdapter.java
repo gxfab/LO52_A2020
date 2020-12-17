@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import BDD.entity.Team;
+
 public class TeamAdapter extends ArrayAdapter<Team> {
 
     // View lookup cache

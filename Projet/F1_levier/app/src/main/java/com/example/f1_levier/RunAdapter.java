@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import BDD.entity.Team;
+
 public class RunAdapter extends ArrayAdapter<Team> {
     private static class ViewHolder {
         TextView name;

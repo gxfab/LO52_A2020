@@ -1,65 +1,72 @@
 package com.example.f1_levier;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 
-import BDD.entity.Team;
+public class RunAdapter extends RecyclerView.Adapter<RunAdapter.MyViewHolder> {
 
-public class RunAdapter extends ArrayAdapter<Team> {
-    private static class ViewHolder {
-        TextView name;
-        TextView fname;
-        TextView id_team;
-        TextView id_step;
-        ImageView p1;
-        ImageView sprint;
+    private ArrayList<Data> dataSet;
 
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+
+        TextView textViewName;
+        TextView textViewIdTeam;
+        ImageView imageViewPerson;
+        TextView textViewIdStep;
+        ImageView imageViewStep;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            this.textViewName = itemView.findViewById(R.id.textView_name);
+            this.textViewIdTeam = itemView.findViewById(R.id.textView_id_team);
+            this.imageViewPerson = itemView.findViewById(R.id.imageView_person);
+            this.textViewIdStep = itemView.findViewById(R.id.textView_id_step);
+            this.imageViewStep = itemView.findViewById(R.id.imageView_step);
+        }
     }
 
-    public RunAdapter(Context context, ArrayList<Team> team) {
-        super(context, R.layout.item_run, team);
+    public RunAdapter(ArrayList<Data> data) {
+        this.dataSet = data;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        // Get the data item for this position
-        Team t = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
-        RunAdapter.ViewHolder viewHolder; // view lookup cache stored in tag
-        if (convertView == null) {
-            // If there's no view to re-use, inflate a brand new view for row
-            viewHolder = new RunAdapter.ViewHolder();
-            LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.item_run, parent, false);
-            viewHolder.name = (TextView) convertView.findViewById(R.id.textViewName);
-            viewHolder.fname = (TextView) convertView.findViewById(R.id.textViewFName);
-            viewHolder.id_team = (TextView) convertView.findViewById(R.id.textView_id_team);
-            viewHolder.id_step= (TextView) convertView.findViewById(R.id.textView_id_pass);
-            viewHolder.p1 = (ImageView) convertView.findViewById(R.id.imageViewP1);
-            viewHolder.sprint = (ImageView) convertView.findViewById(R.id.imageViewSprt);
-            // Cache the viewHolder object inside the fresh view
-            convertView.setTag(viewHolder);
-        } else {
-            // View is being recycled, retrieve the viewHolder object from tag
-            viewHolder = (RunAdapter.ViewHolder) convertView.getTag();
-        }
-        // Populate the data from the data object via the viewHolder object
-        // into the template view.
-        viewHolder.name.setText(t.getParticipants().get(0).getName());
-        viewHolder.fname.setText(t.getParticipants().get(0).getFirstName());
-        viewHolder.id_team.setText(String.valueOf(t.getId()));
-        viewHolder.id_step.setText(String.valueOf(1));
-        viewHolder.p1.setVisibility(View.VISIBLE);
-        viewHolder.sprint.setVisibility(View.VISIBLE);
+    public MyViewHolder onCreateViewHolder(ViewGroup parent,
+                                           int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_run, parent, false);
 
-        // Return the completed view to render on screen
-        return convertView;
+        view.setOnClickListener(RunActivity.myOnClickListener);
+
+        MyViewHolder myViewHolder = new MyViewHolder(view);
+        return myViewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
+
+        TextView textViewName = holder.textViewName;
+        TextView textViewIdTeam = holder.textViewIdTeam;
+        ImageView imageViewPerson = holder.imageViewPerson;
+        TextView textViewIdStep= holder.textViewIdStep;
+        ImageView imageViewStep = holder.imageViewStep;
+
+        textViewName.setText(dataSet.get(listPosition).getName());
+        textViewIdTeam.setText(String.valueOf(dataSet.get(listPosition).getIdTeam()));
+        imageViewPerson.setImageResource(dataSet.get(listPosition).getImagePerson());
+        textViewIdStep.setText(String.valueOf(dataSet.get(listPosition).getIdStep()));
+        imageViewStep.setImageResource(dataSet.get(listPosition).getImageStep());
+    }
+
+    @Override
+    public int getItemCount() {
+        return dataSet.size();
     }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,8 +16,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import BDD.entity.Runner;
-
 import static com.example.f1_levier.TeamActivity.teams;
 
 public class MainActivity extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     private EditText te_name;
     private EditText te_fname;
     private Button b_start;
-    static ArrayList<Runner> runners;
+    static ArrayList<Participant> participants;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,9 +33,11 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         /*Name & firstname*/
         te_name = (EditText) findViewById(R.id.editText_name);
         te_fname = (EditText) findViewById(R.id.editText_fname);
-        runners = new ArrayList<Runner>();
-        for(int i=0;i<30;i++)
-            runners.add(new Runner("John" + i, "Doe", (int) (Math.random() * 100 + 1)));
+        participants = new ArrayList<Participant>();
+        for(int i=0;i<30;i++){
+            int rand = (int)(Math.random() * 100 + 1);
+            participants.add(new Participant("John"+i,"Doe",rand));
+        }
 
         /*Level*/
         tv_lvl = (TextView) findViewById(R.id.textView_lvl);
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
 
     public void add_participant() {
         if(!te_name.getText().toString().equals("") && !te_fname.getText().toString().equals("") && !te_name.getText().toString().equals(" ") && !te_fname.getText().toString().equals(" ") && !tv_lvl.getText().toString().equals("Niveau")) {
-            runners.add(new Runner(te_name.getText().toString(), te_fname.getText().toString(), Integer.parseInt(tv_lvl.getText().toString())));
+            participants.add(new Participant(te_name.getText().toString(), te_fname.getText().toString(), Integer.parseInt(tv_lvl.getText().toString())));
             Log.i(te_name.getText().toString() + te_fname.getText().toString(), tv_lvl.getText().toString());
             te_name.setText("");
             te_fname.setText("");
@@ -123,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     }
 
     public void check_participant() {
-        if(runners.size() >= 1)
+        if(participants.size() >= 1)
         {
             Intent intent = new Intent(this, ParticipantActivity.class);
             startActivity(intent);
@@ -134,24 +135,32 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     }
 
     public void team() {
-        if (runners.size() == 30)
+        if (participants.size() == 30)
         {
             Intent intent = new Intent(this, TeamActivity.class);
             startActivity(intent);
             b_start.setVisibility(View.VISIBLE);
         }
         else{
-            Toast.makeText(MainActivity.this,"Il faut 30 runners",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"Il faut 30 participants",Toast.LENGTH_SHORT).show();
         }
     }
 
     public void start() {
-        if (runners.size() == 30 && teams != null) {
+        if (participants.size() == 30 && teams != null) {
+            MyData.nameArray = new ArrayList<>();
+            for (int i = 0; i < teams.size(); i++) {
+                ArrayList<String> t = new ArrayList<>();
+                t.add(teams.get(i).getParticipants().get(0).getName()+" "+teams.get(i).getParticipants().get(0).getFirstName());
+                t.add(teams.get(i).getParticipants().get(1).getName()+" "+teams.get(i).getParticipants().get(1).getFirstName());
+                t.add(teams.get(i).getParticipants().get(2).getName()+" "+teams.get(i).getParticipants().get(2).getFirstName());
+                MyData.nameArray.add(t);
+            }
             Intent intent = new Intent(this, RunActivity.class);
             startActivity(intent);
         }
         else{
-            Toast.makeText(MainActivity.this,"Il faut 30 runners et avoir les équipes de composées",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"Il faut 30 participants et avoir les équipes de composées",Toast.LENGTH_SHORT).show();
         }
     }
 }

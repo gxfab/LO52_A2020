@@ -30,7 +30,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".RunActivity">
+        <activity android:name=".RunActivity" android:launchMode="singleTask">
+
+        </activity>
+        <activity android:name=".StatActivity" android:launchMode="singleTask">
 
         </activity>
     </application>

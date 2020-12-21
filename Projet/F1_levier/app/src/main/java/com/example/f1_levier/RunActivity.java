@@ -1,6 +1,7 @@
 package com.example.f1_levier;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
@@ -29,13 +30,17 @@ public class RunActivity extends AppCompatActivity {
     static View.OnClickListener myOnClickListener;
     private static ArrayList<Data> data_init;
     public static boolean isClickable = false;
+    public static Button b_stat;
+    public static ArrayList<Integer> win_team;
+   private static Chronometer cdt;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_run);
 
-        final Chronometer cdt = findViewById(R.id.chronometer);
-        final Button start = findViewById(R.id.button_start);
+        cdt = findViewById(R.id.chronometer);
+        final Button b_start = findViewById(R.id.button_start);
+        b_stat = findViewById(R.id.button_stat);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView_run);
 
         myOnClickListener = new MyOnClickListener(this);
@@ -54,10 +59,12 @@ public class RunActivity extends AppCompatActivity {
         adapter = new RunAdapter(data_init);
         recyclerView.setAdapter(adapter);
 
-        start.setOnClickListener(new View.OnClickListener() {
+        win_team = new ArrayList<>();
+
+        b_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                start.setVisibility(View.INVISIBLE);
+                b_start.setVisibility(View.INVISIBLE);
 
                 for(int i=0;i<teams.size();i++){
                     RecyclerView.ViewHolder viewHolder
@@ -69,6 +76,13 @@ public class RunActivity extends AppCompatActivity {
                 cdt.setBase(SystemClock.elapsedRealtime());
                 cdt.start();
                 isClickable = true;
+            }
+        });
+
+        b_stat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stat();
             }
         });
     }
@@ -84,6 +98,11 @@ public class RunActivity extends AppCompatActivity {
         public void onClick(View v) {
             if(isClickable) {
                 editItem(v);
+            }
+            if(win_team.size() == 10){
+                b_stat.setVisibility(View.VISIBLE);
+                isClickable=false;
+                cdt.stop();
             }
         }
 
@@ -119,6 +138,8 @@ public class RunActivity extends AppCompatActivity {
                         teams.get(selectedItemPosition).setIdP(teams.get(selectedItemPosition).getIdP() + 1);
                     } else {
                         imageViewStep.setImageResource(MyData.drawableArray[7]);
+                        win_team.add(selectedItemPosition+1);
+
                     }
                     break;
                 default:
@@ -127,5 +148,10 @@ public class RunActivity extends AppCompatActivity {
                     }
             }
         }
+    }
+
+    public void stat(){
+        Intent intent = new Intent(this, StatActivity.class);
+        startActivity(intent);
     }
 }

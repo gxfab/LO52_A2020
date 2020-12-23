@@ -5,16 +5,23 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 
 import BDD.entity.Runner;
 import BDD.interfaceDAO.RunnerDao;
+import BDD.interfaceDAO.TeamDAO;
+import BDD.interfaceDAO.TeamWithRunnersDAO;
 
-@Database(entities =  {Runner.class}, version = 1)
+@Database(entities = {Runner.class}, version = 1)
+@TypeConverters({Converters.class})
 public abstract class AppDataBase extends RoomDatabase
 {
     // Singleton
     private static AppDataBase instance;
+
+    public abstract TeamDAO teamDAO();
     public abstract RunnerDao runnerDao();
+    public TeamWithRunnersDAO teamWithRunnersDAO;
 
     /**
      * Get the application database instance

@@ -1,4 +1,4 @@
-package com.example.f1_levier;
+package com.example.f1_levier.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +8,16 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.f1_levier.utils.Card;
+import com.example.f1_levier.utils.Card;
+import com.example.f1_levier.R;
+import com.example.f1_levier.view.RunActivity;
+
 import java.util.ArrayList;
 
 public class RunAdapter extends RecyclerView.Adapter<RunAdapter.MyViewHolder> {
 
-    private ArrayList<Data> dataSet;
+    private ArrayList<Card> cardSet;
 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
@@ -33,8 +38,8 @@ public class RunAdapter extends RecyclerView.Adapter<RunAdapter.MyViewHolder> {
         }
     }
 
-    public RunAdapter(ArrayList<Data> data) {
-        this.dataSet = data;
+    public RunAdapter(ArrayList<Card> card) {
+        this.cardSet = card;
     }
 
     @Override
@@ -58,15 +63,15 @@ public class RunAdapter extends RecyclerView.Adapter<RunAdapter.MyViewHolder> {
         TextView textViewIdStep= holder.textViewIdStep;
         ImageView imageViewStep = holder.imageViewStep;
 
-        textViewName.setText(dataSet.get(listPosition).getName());
-        textViewIdTeam.setText(String.valueOf(dataSet.get(listPosition).getIdTeam()));
-        imageViewPerson.setImageResource(dataSet.get(listPosition).getImagePerson());
-        textViewIdStep.setText(String.valueOf(dataSet.get(listPosition).getIdStep()));
-        imageViewStep.setImageResource(dataSet.get(listPosition).getImageStep());
+        textViewName.setText(cardSet.get(listPosition).getName());
+        textViewIdTeam.setText(String.valueOf(cardSet.get(listPosition).getIdTeam()));
+        imageViewPerson.setImageResource(cardSet.get(listPosition).getImagePerson());
+        textViewIdStep.setText(String.valueOf(cardSet.get(listPosition).getIdStep()));
+        imageViewStep.setImageResource(cardSet.get(listPosition).getImageStep());
     }
 
     @Override
     public int getItemCount() {
-        return dataSet.size();
+        return cardSet.size();
     }
 }

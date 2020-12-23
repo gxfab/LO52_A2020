@@ -1,10 +1,8 @@
-package BDD.interfaceDAO;
+package com.example.f1_levier.BDD.interfaceDAO;
 
 import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
 
-import BDD.entity.Team;
+import com.example.f1_levier.BDD.entity.Team;
 
 @Dao
 public interface TeamDAO

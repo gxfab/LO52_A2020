@@ -1,12 +1,13 @@
-package com.example.f1_levier;
+package com.example.f1_levier.view;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import static com.example.f1_levier.RunActivity.win_team;
-import java.util.ArrayList;
+
+import com.example.f1_levier.R;
+
+import static com.example.f1_levier.view.RunActivity.win_team;
 
 public class StatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {

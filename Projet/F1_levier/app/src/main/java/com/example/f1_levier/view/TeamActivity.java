@@ -1,28 +1,22 @@
-package com.example.f1_levier;
+package com.example.f1_levier.view;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.telephony.mbms.StreamingServiceInfo;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.Console;
+import com.example.f1_levier.model.Participant;
+import com.example.f1_levier.R;
+import com.example.f1_levier.model.Team;
+import com.example.f1_levier.adapter.TeamAdapter;
+
 import java.util.ArrayList;
 
-import static com.example.f1_levier.MainActivity.participants;
+import static com.example.f1_levier.view.MainActivity.participants;
 
-public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDialogListener{
+public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDialogListener {
 
     static ArrayList<Team> teams;
     static TeamAdapter adapter;

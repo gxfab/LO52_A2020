@@ -1,8 +1,4 @@
-package com.example.f1_levier;
-
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.text.Editable;
+package com.example.f1_levier.model;
 
 public class Participant{
     private String _name;

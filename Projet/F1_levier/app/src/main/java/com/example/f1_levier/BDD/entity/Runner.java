@@ -1,4 +1,5 @@
-package BDD.entity;
+package com.example.f1_levier.BDD.entity;
+
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

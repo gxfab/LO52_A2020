@@ -1,4 +1,4 @@
-package com.example.f1_levier;
+package com.example.f1_levier.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.example.f1_levier.R;
+import com.example.f1_levier.model.Team;
 
 import java.util.ArrayList;
 

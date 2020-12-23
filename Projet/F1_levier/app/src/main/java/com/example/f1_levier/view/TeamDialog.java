@@ -1,4 +1,4 @@
-package com.example.f1_levier;
+package com.example.f1_levier.view;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -14,10 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
+import com.example.f1_levier.R;
+
 import java.util.Objects;
 
-import static com.example.f1_levier.TeamActivity.teams;
-import static com.example.f1_levier.TeamActivity.item_selected;;
+import static com.example.f1_levier.view.TeamActivity.teams;
+import static com.example.f1_levier.view.TeamActivity.item_selected;;
 
 public class TeamDialog extends AppCompatDialogFragment {
 

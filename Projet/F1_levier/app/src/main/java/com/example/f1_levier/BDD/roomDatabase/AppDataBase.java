@@ -1,4 +1,4 @@
-package BDD.roomDatabase;
+package com.example.f1_levier.BDD.roomDatabase;
 
 import android.content.Context;
 
@@ -7,10 +7,10 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-import BDD.entity.Runner;
-import BDD.interfaceDAO.RunnerDao;
-import BDD.interfaceDAO.TeamDAO;
-import BDD.interfaceDAO.TeamWithRunnersDAO;
+import com.example.f1_levier.BDD.entity.Runner;
+import com.example.f1_levier.BDD.interfaceDAO.RunnerDao;
+import com.example.f1_levier.BDD.interfaceDAO.TeamDAO;
+import com.example.f1_levier.BDD.interfaceDAO.TeamWithRunnersDAO;
 
 @Database(entities = {Runner.class}, version = 1)
 @TypeConverters({Converters.class})

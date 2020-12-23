@@ -1,7 +1,5 @@
-package com.example.f1_levier;
-import java.util.*;
+package com.example.f1_levier.view;
 
-import android.app.ActionBar;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
@@ -13,9 +11,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
+import com.example.f1_levier.R;
+import com.example.f1_levier.adapter.ParticipantAdapter;
 
-import static com.example.f1_levier.MainActivity.participants;
+import static com.example.f1_levier.view.MainActivity.participants;
 
 public class ParticipantActivity extends AppCompatActivity {
 

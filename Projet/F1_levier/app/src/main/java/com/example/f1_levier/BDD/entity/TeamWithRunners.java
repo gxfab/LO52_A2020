@@ -1,7 +1,9 @@
-package BDD.entity;
+package com.example.f1_levier.BDD.entity;
 
 import androidx.room.Embedded;
 import androidx.room.Relation;
+
+import com.example.f1_levier.model.Team;
 
 import java.util.List;
 

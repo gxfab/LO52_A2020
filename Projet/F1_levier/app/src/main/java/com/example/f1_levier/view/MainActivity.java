@@ -1,11 +1,10 @@
-package com.example.f1_levier;
+package com.example.f1_levier.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,9 +13,13 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.f1_levier.model.Participant;
+import com.example.f1_levier.R;
+import com.example.f1_levier.utils.ElementCard;
+
 import java.util.ArrayList;
 
-import static com.example.f1_levier.TeamActivity.teams;
+import static com.example.f1_levier.view.TeamActivity.teams;
 
 public class MainActivity extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
     private TextView tv_lvl;
@@ -148,13 +151,13 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
 
     public void start() {
         if (participants.size() == 30 && teams != null) {
-            MyData.nameArray = new ArrayList<>();
+            ElementCard.nameArray = new ArrayList<>();
             for (int i = 0; i < teams.size(); i++) {
                 ArrayList<String> t = new ArrayList<>();
                 t.add(teams.get(i).getParticipants().get(0).getName()+" "+teams.get(i).getParticipants().get(0).getFirstName());
                 t.add(teams.get(i).getParticipants().get(1).getName()+" "+teams.get(i).getParticipants().get(1).getFirstName());
                 t.add(teams.get(i).getParticipants().get(2).getName()+" "+teams.get(i).getParticipants().get(2).getFirstName());
-                MyData.nameArray.add(t);
+                ElementCard.nameArray.add(t);
             }
             Intent intent = new Intent(this, RunActivity.class);
             startActivity(intent);

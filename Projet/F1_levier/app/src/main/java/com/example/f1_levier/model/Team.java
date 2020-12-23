@@ -1,6 +1,6 @@
-package com.example.f1_levier;
+package com.example.f1_levier.model;
 
-import android.text.Editable;
+import com.example.f1_levier.model.Participant;
 
 import java.util.ArrayList;
 

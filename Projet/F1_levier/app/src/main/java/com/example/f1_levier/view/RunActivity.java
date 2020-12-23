@@ -1,9 +1,7 @@
-package com.example.f1_levier;
+package com.example.f1_levier.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
@@ -16,19 +14,22 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.OptionalDataException;
+import com.example.f1_levier.R;
+import com.example.f1_levier.adapter.RunAdapter;
+import com.example.f1_levier.utils.Card;
+import com.example.f1_levier.utils.ElementCard;
+
 import java.util.ArrayList;
-import static com.example.f1_levier.TeamActivity.teams;
+import static com.example.f1_levier.view.TeamActivity.teams;
 
 public class RunActivity extends AppCompatActivity {
+    public static View.OnClickListener myOnClickListener;
     private static RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
-    static View.OnClickListener myOnClickListener;
-    private static ArrayList<Data> data_init;
+    private static ArrayList<Card> cards;
     public static boolean isClickable = false;
     public static Button b_stat;
     public static ArrayList<Integer> win_team;
@@ -48,15 +49,15 @@ public class RunActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        data_init = new ArrayList<Data>();
+        cards = new ArrayList<Card>();
         for (int i = 0; i < teams.size(); i++) {
-            data_init.add(new Data(
-                    MyData.nameArray.get(i).get(0),
-                    MyData.id_team[i]
+            cards.add(new Card(
+                    ElementCard.nameArray.get(i).get(0),
+                    ElementCard.id_team[i]
             ));
         }
 
-        adapter = new RunAdapter(data_init);
+        adapter = new RunAdapter(cards);
         recyclerView.setAdapter(adapter);
 
         win_team = new ArrayList<>();
@@ -70,7 +71,7 @@ public class RunActivity extends AppCompatActivity {
                     RecyclerView.ViewHolder viewHolder
                   = recyclerView.findViewHolderForAdapterPosition(i);
                     ImageView imageViewStep = viewHolder.itemView.findViewById(R.id.imageView_step);
-                    imageViewStep.setImageResource(MyData.drawableArray[4]);
+                    imageViewStep.setImageResource(ElementCard.drawableArray[4]);
                 }
 
                 cdt.setBase(SystemClock.elapsedRealtime());
@@ -119,32 +120,33 @@ public class RunActivity extends AppCompatActivity {
             Log.i("value is",""+step);
             switch (step) {
                 case 2:
-                    textViewIdStep.setText(String.valueOf(MyData.id_step[1]));
-                    imageViewStep.setImageResource(MyData.drawableArray[4]);
+                    textViewIdStep.setText(String.valueOf(ElementCard.id_step[1]));
+                    imageViewStep.setImageResource(ElementCard.drawableArray[4]);
                     break;
                 case 3:
-                    imageViewStep.setImageResource(MyData.drawableArray[5]);
+                    imageViewStep.setImageResource(ElementCard.drawableArray[5]);
                     if (teams.get(selectedItemPosition).getIdP() == 3) {
                         teams.get(selectedItemPosition).setGoal(true);
                     }
                     break;
                 case 4:
                     if (!teams.get(selectedItemPosition).getGoal()) {
-                        textViewName.setText(MyData.nameArray.get(selectedItemPosition).get(teams.get(selectedItemPosition).getIdP()));
-                        textViewIdStep.setText(String.valueOf(MyData.id_step[0]));
-                        imageViewStep.setImageResource(MyData.drawableArray[4]);
-                        imageViewPerson.setImageResource(MyData.drawableArray[teams.get(selectedItemPosition).getIdP()]);
+                        textViewName.setText(ElementCard.nameArray.get(selectedItemPosition).get(teams.get(selectedItemPosition).getIdP()));
+                        textViewIdStep.setText(String.valueOf(ElementCard.id_step[0]));
+                        imageViewStep.setImageResource(ElementCard.drawableArray[4]);
+                        imageViewPerson.setImageResource(ElementCard.drawableArray[teams.get(selectedItemPosition).getIdP()]);
                         teams.get(selectedItemPosition).setNb_step(0);
                         teams.get(selectedItemPosition).setIdP(teams.get(selectedItemPosition).getIdP() + 1);
                     } else {
-                        imageViewStep.setImageResource(MyData.drawableArray[7]);
+                        imageViewStep.setImageResource(ElementCard.drawableArray[7]);
                         win_team.add(selectedItemPosition+1);
+                        //TODO enregistré chrono DB
 
                     }
                     break;
                 default:
                     if (!teams.get(selectedItemPosition).getGoal()) {
-                        imageViewStep.setImageResource(MyData.drawableArray[4 + step + 1]);
+                        imageViewStep.setImageResource(ElementCard.drawableArray[4 + step + 1]);
                     }
             }
         }

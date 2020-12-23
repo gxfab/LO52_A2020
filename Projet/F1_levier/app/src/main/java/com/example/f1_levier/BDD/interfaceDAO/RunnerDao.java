@@ -1,14 +1,13 @@
-package BDD.interfaceDAO;
+package com.example.f1_levier.BDD.interfaceDAO;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 
-import BDD.entity.Runner;
+import com.example.f1_levier.BDD.entity.Runner;
 
 @Dao
-public interface RunnerDao
-{
+public interface RunnerDao {
     @Insert
     void insertAll(Runner... runners);
 

@@ -1,0 +1,60 @@
+installation de repo
+sudo apt-get install repo
+
+#Téléchargement de linaro toolchain 
+mkdir ~/toolchain
+cd ~/toolchain
+wget https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+tar -xf gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+
+Creation du dossier android-kernel
+mkdir ~/android-kernel  
+cd ~/android-kernel
+
+#Initialisation du repo du kernel hikey-linaro-android-4.19
+repo init  -u https://android.googlesource.com/kernel/manifest -b hikey-linaro-android-4.19
+
+#Synchronisation (Recupération du code source)
+repo  sync
+
+#Environnement
+export CROSS_COMPILE=~/toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
+export ARCH=arm64
+
+#on se positionne dans le dossier hikey-linaro 
+cd ~/android-kernel/hikey-linaro
+et on tape make defconfig pour charger 
+la configuration par défaut et 
+on tape la commande make savedefconfig pour sauvegarder la configuration
+par défaut
+
+#Dossier pour sauvegarder les configurations
+mkdir ~/config
+
+#on sauvegarde la configuration par défaut cp defconfig ~/config/defconfig_default .
+make clean
+
+#Après avoir détecter l'emplacement pour MIP on copier la configuration
+vers le dossier avec la commande
+cp arch/mips/configs/generic/board-ranchu.config arch/arm64/configs/
+
+pour charger la configuration par défaut
+make board-ranchu.config
+pour sauvegarder le fichier
+make savedefconfig
+
+
+copie la configuration pour la carte ranch64 u dans le dossierconfiguration
+La différence est sauvegardée dans une pétite vidéo
+cp defconfig ~/config/defconfig_ranchu64
+
+Ajout des fonctinalités et modification
+make xconfig
+
+hardware crypto=device
+make savedefconfig
+
+cp defconfig ~/config/defconfig_ranchu64_optimise
+
+
+

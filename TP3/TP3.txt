@@ -1,0 +1,44 @@
+#Telecharger hikey linaro
+git clone https://android.googlesource.com/device/linaro/hikey
+
+#Telecharger les ressources images
+git clone https://android.googlesource.com/platform/frameworks/base 
+
+#Android.mk de libusb
+
+LOCAL_PATH := $(call my-dir)
+
+#La variable CLEAR_VARS pointe vers un Makefile GNU 
+#spécial qui efface de nombreuses variables LOCAL_XXX, 
+#telles que LOCAL_MODULE, LOCAL_SRC_FILES 
+#et LOCAL_STATIC_LIBRARIES
+include $(CLEAR_VARS)
+
+#Definir le module à build ici libusb
+LOCAL_MODULE := libusb
+
+#Enumérer les fichiers sources à compiler
+LOCAL_SRC_FILES := core.c descriptor.c io.c sync.c os/darwin_usb.c os/darwin_usbfs.c
+
+#La variable BUILD_SHARED_LIBRARY pointe vers un script 
+#GNU Makefile qui collecte toutes les informations que 
+#vous avez définies dans les variables LOCAL_XXX depuis 
+#faut construire et comment le faire.
+include $(BUILD_SHARED_LIBRARY)
+
+#Première erreur de compilation
+#define TIMESPEC_TO_TIMEVAL(tv, ts)           \
+    do                                        \
+    {                                         \
+        (tv)->tv_sec = (ts)->tv_sec;          \
+        (tv)->tv_usec = (ts)->tv_nsec / 1000; \
+    } while (0)
+
+#source
+source ./envsetup.sh
+
+#lubch
+lunch
+
+
+# Le reste des commandes se trouven dans le document.

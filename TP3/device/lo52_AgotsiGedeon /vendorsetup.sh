@@ -1,0 +1,2 @@
+add_lunch_combo lo52_AgotsiGedeon-user
+add_lunch_combo lo52_AgotsiGedeon-userdebug

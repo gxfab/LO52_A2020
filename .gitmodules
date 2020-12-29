@@ -1,0 +1,6 @@
+[submodule "TP3/device/hickey"]
+	path = TP3/device/hickey
+	url = https://android.googlesource.com/device/linaro/hikey
+[submodule "TP3/device/hikey"]
+	path = TP3/device/hikey
+	url = https://android.googlesource.com/device/linaro/hikey

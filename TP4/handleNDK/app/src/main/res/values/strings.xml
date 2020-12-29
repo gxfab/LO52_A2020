@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HandleNDK</string>
+    <string name="UP">UP</string>
+    <string name="DOWN">DOWN</string>
+    <string name="LEFT">LEFT</string>
+    <string name="RIGHT">RIGHT</string>
+    <string name="READ">READ</string>
+    <string name="WRITE">WRITE</string>
+    <string name="TEXT">Def</string>
+</resources>

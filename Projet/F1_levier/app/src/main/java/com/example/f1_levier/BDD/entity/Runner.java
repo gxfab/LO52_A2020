@@ -17,6 +17,7 @@ public class Runner
     @ColumnInfo(name = "first_name")
     private String firstName;
     private int level;
+    private int teamId;
     private long time1;
     private long time2;
     private long time3;
@@ -31,26 +32,14 @@ public class Runner
         this.runnerId = _id;
         this.lastName=name;
         this.firstName =fname;
-        this.level =lvl;
+        this.level = lvl;
+        this.teamId = -1;
         this.time1 = -1;
         this.time2 = -1;
         this.time3 = -1;
         this.time4 = -1;
         this.time5 = -1;
     }
-
-    public Runner(Runner p){
-        this.runnerId=p.getRunnerId();
-        this.lastName=p.getLastName();
-        this.firstName =p.getFirstName();
-        this.level =p.getLevel();
-        this.time1 = p.getTime1();
-        this.time2 = p.getTime2();
-        this.time3 = p.getTime3();
-        this.time4 = p.getTime4();
-        this.time5 = p.getTime5();
-    }
-
 
     /*Getter & Setter*/
 
@@ -122,6 +111,14 @@ public class Runner
 
     public void setRunnerId(int runnerId) {
         this.runnerId = runnerId;
+    }
+
+    public int getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(int teamId) {
+        this.teamId = teamId;
     }
 
     public long getTime (int id)

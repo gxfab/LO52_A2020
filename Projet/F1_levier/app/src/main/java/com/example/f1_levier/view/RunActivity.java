@@ -23,8 +23,6 @@ import com.example.f1_levier.utils.Card;
 import com.example.f1_levier.utils.ElementCard;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import static com.example.f1_levier.view.TeamActivity.teams;
 import static com.example.f1_levier.view.MainActivity.db;
@@ -143,39 +141,19 @@ public class RunActivity extends AppCompatActivity {
             switch (step)
             {
                 case 0:
-                    if(currentRunner.getRunnerId() == teams.get(selectedItemPosition).getFirstRunnerId())
-                    {
-                        currentRunner.setTime1(SystemClock.elapsedRealtime() - cdt.getBase());
-                        System.out.println("first time 1: " + currentRunner.getTime1());}
-                    //If it isn't the first runner in the team, we compare to the time5 of the previous runner in this team
-                    else
-                    {
-                        if(currentRunner.getRunnerId() == teams.get(selectedItemPosition).getSecondRunnerId()){
-                            currentRunner.setTime1(SystemClock.elapsedRealtime() - cdt.getBase() - db.getRunnerFromId(runnerList, teams.get(selectedItemPosition).getFirstRunnerId()).getTime5());
-                            System.out.println("second time 1: " + currentRunner.getTime1());}
-                        else
-                        {
-                            if (currentRunner.getRunnerId() == teams.get(selectedItemPosition).getThirdRunnerId()){
-                                currentRunner.setTime1(SystemClock.elapsedRealtime() - cdt.getBase() - db.getRunnerFromId(runnerList, teams.get(selectedItemPosition).getSecondRunnerId()).getTime5());
-                                System.out.println("third time 1: " + currentRunner.getTime1());}
-                        }
-                    }
+                    currentRunner.setTime1(SystemClock.elapsedRealtime() - cdt.getBase());
                     break;
                 case 1:
-                    currentRunner.setTime2(SystemClock.elapsedRealtime() - cdt.getBase() - currentRunner.getTime1());
-                    System.out.println("time2: " + currentRunner.getTime2());
+                    currentRunner.setTime2(SystemClock.elapsedRealtime() - cdt.getBase());
                     break;
                 case 2:
-                    currentRunner.setTime3(SystemClock.elapsedRealtime() - cdt.getBase() - currentRunner.getTime2());
-                    System.out.println("time3: " + currentRunner.getTime3());
+                    currentRunner.setTime3(SystemClock.elapsedRealtime() - cdt.getBase());
                     break;
                 case 3:
-                    currentRunner.setTime4(SystemClock.elapsedRealtime() - cdt.getBase() - currentRunner.getTime3());
-                    System.out.println("time4: " + currentRunner.getTime4());
+                    currentRunner.setTime4(SystemClock.elapsedRealtime() - cdt.getBase());
                     break;
                 case 4:
-                    currentRunner.setTime5(SystemClock.elapsedRealtime() - cdt.getBase() - currentRunner.getTime4());
-                    System.out.println("time5: " + currentRunner.getTime5());
+                    currentRunner.setTime5(SystemClock.elapsedRealtime() - cdt.getBase());
                     break;
             }
 
@@ -207,8 +185,8 @@ public class RunActivity extends AppCompatActivity {
                         teams.get(selectedItemPosition).setRating(win_team.size() + 1);
                         win_team.add(selectedItemPosition+1);
                         teams.get(selectedItemPosition).setTime(SystemClock.elapsedRealtime() - cdt.getBase());
-                        System.out.println("time ::::::" + teams.get(selectedItemPosition).getTime());
-                        System.out.println("classement ::::::" + teams.get(selectedItemPosition).getRating());
+//                        System.out.println("time ::::::" + teams.get(selectedItemPosition).getTime());
+//                        System.out.println("classement ::::::" + teams.get(selectedItemPosition).getRating());
                         db.teamDAO().updateTeam(teams.get(selectedItemPosition));
                     }
                     break;

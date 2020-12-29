@@ -148,7 +148,11 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
         for(ArrayList<Runner> team : teamList)
         {
             int level = team.get(0).getLevel() + team.get(1).getLevel() + team.get(2).getLevel();
-            result.add(new Team(id, level, team.get(0).getRunnerId(), team.get(1).getRunnerId(), team.get(2).getRunnerId()));
+            team.get(0).setTeamId(id);
+            team.get(1).setTeamId(id);
+            team.get(2).setTeamId(id);
+            Team newTeam = new Team(id, level, team.get(0).getRunnerId(), team.get(1).getRunnerId(), team.get(2).getRunnerId());
+            result.add(newTeam);
             id++;
         }
 

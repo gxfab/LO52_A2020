@@ -7,10 +7,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.f1_levier.BDD.entity.Team;
 import com.example.f1_levier.R;
-import com.example.f1_levier.model.Team;
 
 import java.util.ArrayList;
+
+import static com.example.f1_levier.view.MainActivity.db;
+import static com.example.f1_levier.view.MainActivity.runnerList;
 
 public class TeamAdapter extends ArrayAdapter<Team> {
 
@@ -33,7 +36,7 @@ public class TeamAdapter extends ArrayAdapter<Team> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        Team t = getItem(position);
+        Team team = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         ViewHolder viewHolder; // view lookup cache stored in tag
         if (convertView == null) {
@@ -57,14 +60,14 @@ public class TeamAdapter extends ArrayAdapter<Team> {
         }
         // Populate the data from the data object via the viewHolder object
         // into the template view.
-        viewHolder.name_p1.setText(t.getParticipants().get(0).getName());
-        viewHolder.name_p2.setText(t.getParticipants().get(1).getName());
-        viewHolder.name_p3.setText(t.getParticipants().get(2).getName());
-        viewHolder.fname_p1.setText(t.getParticipants().get(0).getFirstName());
-        viewHolder.fname_p2.setText(t.getParticipants().get(1).getFirstName());
-        viewHolder.fname_p3.setText(t.getParticipants().get(2).getFirstName());
-        viewHolder.level.setText(String.valueOf(t.getLevel()));
-        viewHolder.id_team.setText(String.valueOf(t.getId()));
+        viewHolder.name_p1.setText(db.getRunnerFromId(runnerList, team.getFirstRunnerId()).getLastName());
+        viewHolder.name_p2.setText(db.getRunnerFromId(runnerList, team.getSecondRunnerId()).getLastName());
+        viewHolder.name_p3.setText(db.getRunnerFromId(runnerList, team.getThirdRunnerId()).getLastName());
+        viewHolder.fname_p1.setText(db.getRunnerFromId(runnerList, team.getFirstRunnerId()).getFirstName());
+        viewHolder.fname_p2.setText(db.getRunnerFromId(runnerList, team.getSecondRunnerId()).getFirstName());
+        viewHolder.fname_p3.setText(db.getRunnerFromId(runnerList, team.getThirdRunnerId()).getFirstName());
+        viewHolder.level.setText(String.valueOf(team.getLevel()));
+        viewHolder.id_team.setText(String.valueOf(team.getTeamId()));
         // Return the completed view to render on screen
         return convertView;
     }

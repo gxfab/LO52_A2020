@@ -5,40 +5,38 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 public class Runner
 {
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     private int runnerId;
     @ColumnInfo(name = "last_name")
     private String lastName;
     @ColumnInfo(name = "first_name")
-    private int isInTeamId;
     private String firstName;
     private int level;
-    private Date time1;
-    private Date time2;
-    private Date time3;
-    private Date time4;
-    private Date time5;
+    private long time1;
+    private long time2;
+    private long time3;
+    private long time4;
+    private long time5;
 
     /*Builder*/
-    public Runner()
+    public Runner(){}
+
+    public Runner(int _id, String name, String fname, int lvl)
     {
-
-    }
-
-    public Runner(String name, String fname, int lvl){
+        this.runnerId = _id;
         this.lastName=name;
         this.firstName =fname;
         this.level =lvl;
-        this.time1 = null;
-        this.time2 = null;
-        this.time3 = null;
-        this.time4 = null;
-        this.time5 = null;
+        this.time1 = -1;
+        this.time2 = -1;
+        this.time3 = -1;
+        this.time4 = -1;
+        this.time5 = -1;
     }
 
     public Runner(Runner p){
@@ -78,51 +76,43 @@ public class Runner
         this.lastName = lastName;
     }
 
-    public int getIsInTeamId() {
-        return isInTeamId;
-    }
-
-    public void setIsInTeamId(int isInTeamId) {
-        this.isInTeamId = isInTeamId;
-    }
-
-    public Date getTime1() {
+    public long getTime1() {
         return time1;
     }
 
-    public void setTime1(Date time1) {
+    public void setTime1(long time1) {
         this.time1 = time1;
     }
 
-    public Date getTime2() {
+    public long getTime2() {
         return time2;
     }
 
-    public void setTime2(Date time2) {
+    public void setTime2(long time2) {
         this.time2 = time2;
     }
 
-    public Date getTime3() {
+    public long getTime3() {
         return time3;
     }
 
-    public void setTime3(Date time3) {
+    public void setTime3(long time3) {
         this.time3 = time3;
     }
 
-    public Date getTime4() {
+    public long getTime4() {
         return time4;
     }
 
-    public void setTime4(Date time4) {
+    public void setTime4(long time4) {
         this.time4 = time4;
     }
 
-    public Date getTime5() {
+    public long getTime5() {
         return time5;
     }
 
-    public void setTime5(Date time5) {
+    public void setTime5(long time5) {
         this.time5 = time5;
     }
 

@@ -8,11 +8,13 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 import com.example.f1_levier.BDD.entity.Runner;
-import com.example.f1_levier.BDD.interfaceDAO.RunnerDao;
+import com.example.f1_levier.BDD.entity.Team;
+import com.example.f1_levier.BDD.interfaceDAO.RunnerDAO;
 import com.example.f1_levier.BDD.interfaceDAO.TeamDAO;
-import com.example.f1_levier.BDD.interfaceDAO.TeamWithRunnersDAO;
 
-@Database(entities = {Runner.class}, version = 1)
+import java.util.List;
+
+@Database(entities = {Runner.class, Team.class}, version = 6)
 @TypeConverters({Converters.class})
 public abstract class AppDataBase extends RoomDatabase
 {
@@ -20,8 +22,7 @@ public abstract class AppDataBase extends RoomDatabase
     private static AppDataBase instance;
 
     public abstract TeamDAO teamDAO();
-    public abstract RunnerDao runnerDao();
-    public TeamWithRunnersDAO teamWithRunnersDAO;
+    public abstract RunnerDAO runnerDAO();
 
     /**
      * Get the application database instance
@@ -36,4 +37,22 @@ public abstract class AppDataBase extends RoomDatabase
         }
         return instance;
     }
+
+    /**
+     * Return a runner in a List<Runner> based on its ID
+     * @param runnerList : List<Runner>, the runner list
+     * @param id : int, the runner ID
+     * @return Runner, the runner with this ID
+     */
+    public Runner getRunnerFromId(List<Runner> runnerList, int id)
+    {
+        for(Runner r : runnerList)
+        {
+            if(r.getRunnerId() == id)
+                return r;
+        }
+        return null;
+    }
+
+
 }

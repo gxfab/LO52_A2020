@@ -7,14 +7,15 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.f1_levier.model.Participant;
+import com.example.f1_levier.BDD.entity.Runner;
 import com.example.f1_levier.R;
-import com.example.f1_levier.model.Team;
+import com.example.f1_levier.BDD.entity.Team;
 import com.example.f1_levier.adapter.TeamAdapter;
 
 import java.util.ArrayList;
 
-import static com.example.f1_levier.view.MainActivity.participants;
+import static com.example.f1_levier.view.MainActivity.db;
+import static com.example.f1_levier.view.MainActivity.runnerList;
 
 public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDialogListener {
 
@@ -55,37 +56,37 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
     }
     
     void permutation(String place){
-        Participant temp;
+        int temp;
         switch(place) {
             case "1,3,2":
-                temp =  new Participant(teams.get(item_selected).getParticipants().get(1));//sauv 2
-                teams.get(item_selected).setParticipant(1,teams.get(item_selected).getParticipants().get(2));
-                teams.get(item_selected).setParticipant(2,temp);
+                temp =  teams.get(item_selected).getSecondRunnerId();//sauv 2
+                teams.get(item_selected).setSecondRunnerId(teams.get(item_selected).getThirdRunnerId());
+                teams.get(item_selected).setThirdRunnerId(temp);
                 break;
             case "2,1,3":
-                temp = new Participant(teams.get(item_selected).getParticipants().get(0));//sauv 1
-                teams.get(item_selected).setParticipant(0,teams.get(item_selected).getParticipants().get(1));
-                teams.get(item_selected).setParticipant(1,temp);
+                temp = teams.get(item_selected).getFirstRunnerId();//sauv 1
+                teams.get(item_selected).setFirstRunnerId(teams.get(item_selected).getSecondRunnerId());
+                teams.get(item_selected).setSecondRunnerId(temp);
                 break;
             case "3,1,2":
-                temp = new Participant(teams.get(item_selected).getParticipants().get(0));//sauv 1
-                teams.get(item_selected).setParticipant(0,teams.get(item_selected).getParticipants().get(1));
-                teams.get(item_selected).setParticipant(1,teams.get(item_selected).getParticipants().get(2));
-                teams.get(item_selected).setParticipant(2,temp);
+                temp = teams.get(item_selected).getFirstRunnerId();//sauv 1
+                teams.get(item_selected).setFirstRunnerId(teams.get(item_selected).getThirdRunnerId());
+                teams.get(item_selected).setThirdRunnerId(teams.get(item_selected).getSecondRunnerId());
+                teams.get(item_selected).setSecondRunnerId(temp);
                 break;
             case "3,2,1":
-                temp = new Participant(teams.get(item_selected).getParticipants().get(0)); //sauv 1
-                teams.get(item_selected).setParticipant(0,teams.get(item_selected).getParticipants().get(2));
-                teams.get(item_selected).setParticipant(2,temp);
+                temp = teams.get(item_selected).getFirstRunnerId(); //sauv 1
+                teams.get(item_selected).setFirstRunnerId(teams.get(item_selected).getThirdRunnerId());
+                teams.get(item_selected).setThirdRunnerId(temp);
                 break;
             case "2,3,1":
-                temp = new Participant(teams.get(item_selected).getParticipants().get(0)); //sauv 1
-                teams.get(item_selected).setParticipant(0,teams.get(item_selected).getParticipants().get(2));
-                teams.get(item_selected).setParticipant(2,teams.get(item_selected).getParticipants().get(1));
-                teams.get(item_selected).setParticipant(1,temp);
+                temp = teams.get(item_selected).getFirstRunnerId(); //sauv 1
+                teams.get(item_selected).setFirstRunnerId(teams.get(item_selected).getSecondRunnerId());
+                teams.get(item_selected).setSecondRunnerId(teams.get(item_selected).getThirdRunnerId());
+                teams.get(item_selected).setThirdRunnerId(temp);
                 break;
         }
-
+        db.teamDAO().updateTeam(teams.get(item_selected));
     }
 
     /**
@@ -95,10 +96,10 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
     private ArrayList<Team> teamCreation()
     {
         ArrayList<Team> result = new ArrayList<Team>();
-        ArrayList<Participant> sortedList = new ArrayList<Participant>();
+        ArrayList<Runner> sortedList = new ArrayList<Runner>();
 
         // Sort the participants by level in sortedList
-        for(Participant p : participants)
+        for(Runner p : runnerList)
         {
             if (sortedList.isEmpty())
                 sortedList.add(p);
@@ -110,11 +111,11 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
             }
         }
 
-        ArrayList<ArrayList<Participant>> teamList = new ArrayList<ArrayList<Participant>>();
+        ArrayList<ArrayList<Runner>> teamList = new ArrayList<ArrayList<Runner>>();
         //Put the best runner and the worst one together
         for(int i = 0; i < 10; i++)
         {
-            ArrayList<Participant> participantList = new ArrayList<Participant>();
+            ArrayList<Runner> participantList = new ArrayList<Runner>();
             participantList.add(sortedList.get(i));
             participantList.add(sortedList.get(29 - i));
             teamList.add(participantList);
@@ -129,7 +130,7 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
             int worstTeamForTheMoment = -1;
             for (int j = 0; j < 10; j++)
             {
-                ArrayList<Participant> team = teamList.get(j);
+                ArrayList<Runner> team = teamList.get(j);
                 int level = team.get(0).getLevel() + team.get(1).getLevel();
                 if (team.size() == 2 && level < minLevel)
                 {
@@ -142,14 +143,19 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
             teamList.get(worstTeamForTheMoment).add(sortedList.get(i));
         }
 
+        int id = 0;
         // Creates the final result
-        int id = 1;
-        for(ArrayList<Participant> team : teamList)
+        for(ArrayList<Runner> team : teamList)
         {
-            result.add(new Team(id, team.get(0), team.get(1), team.get(2)));
+            int level = team.get(0).getLevel() + team.get(1).getLevel() + team.get(2).getLevel();
+            result.add(new Team(id, level, team.get(0).getRunnerId(), team.get(1).getRunnerId(), team.get(2).getRunnerId()));
             id++;
         }
 
+        for(Team t : result)
+        {
+            db.teamDAO().insertTeam(t);
+        }
         return result;
     }
 

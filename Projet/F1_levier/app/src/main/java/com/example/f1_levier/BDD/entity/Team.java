@@ -10,68 +10,32 @@ import java.util.Date;
 @Entity
 public class Team {
 
-    @PrimaryKey (autoGenerate = true)
+    @PrimaryKey
     private int teamId;
     private int level;
     private int rating;
-    private Date time;
+    private long time;
     private int nb_step;
+    private int firstRunnerId;
+    private int secondRunnerId;
+    private int thirdRunnerId;
+    private boolean _goal;
+    private int _id_p;
 
+    public Team(){};
 
-
-    /**
-     * Builder
-     * @param id
-     * @param lvl
-     */
-    public Team(int id, int lvl){
+    public Team(int _id, int lvl, int first, int second, int third){
+        this.teamId = _id;
         this.level=lvl;
-        this.teamId=id;
         this.rating = 0;
-        this.time = null;
+        this.time = -1;
         this.nb_step =0;
+        this.firstRunnerId = first;
+        this.secondRunnerId = second;
+        this.thirdRunnerId = third;
+        this._goal = false;
+        this._id_p = 1;
     }
-
-    /**
-     * Builder
-     * @param id
-     * @param p1
-     * @param p2
-     * @param p3
-     * @param lvl
-     */
-    public Team(int id, Runner p1, Runner p2, Runner p3, int lvl){
-        ArrayList<Runner> team = new ArrayList<Runner>();
-        team .add(p1);
-        team.add(p2);
-        team.add(p3);
-        this.level=lvl;
-        this.teamId=id;
-        this.rating = 0;
-        this.time = null;
-        this.nb_step =0;
-    }
-
-    /**
-     * Builder
-     * @param id
-     * @param p1
-     * @param p2
-     * @param p3
-     */
-    public Team(int id, Runner p1, Runner p2, Runner p3){
-        ArrayList<Runner> team = new ArrayList<Runner>();
-        team.add(p1);
-        team.add(p2);
-        team.add(p3);
-        this.level=p1.getLevel()+p2.getLevel()+p3.getLevel();
-        this.teamId=id;
-        this.nb_step =0;
-    }
-
-
-
-
 
     public void setLevel(int lvl){
         this.level=lvl;
@@ -111,11 +75,51 @@ public class Team {
         this.rating = rating;
     }
 
-    public Date getTime() {
+    public long getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(long time) {
         this.time = time;
+    }
+
+    public int getFirstRunnerId() {
+        return firstRunnerId;
+    }
+
+    public void setFirstRunnerId(int firstRunnerId) {
+        this.firstRunnerId = firstRunnerId;
+    }
+
+    public int getSecondRunnerId() {
+        return secondRunnerId;
+    }
+
+    public void setSecondRunnerId(int secondRunnerId) {
+        this.secondRunnerId = secondRunnerId;
+    }
+
+    public int getThirdRunnerId() {
+        return thirdRunnerId;
+    }
+
+    public void setThirdRunnerId(int thirdRunnerId) {
+        this.thirdRunnerId = thirdRunnerId;
+    }
+
+    public boolean is_goal() {
+        return _goal;
+    }
+
+    public void set_goal(boolean _goal) {
+        this._goal = _goal;
+    }
+
+    public int get_id_p() {
+        return _id_p;
+    }
+
+    public void set_id_p(int _id_p) {
+        this._id_p = _id_p;
     }
 }

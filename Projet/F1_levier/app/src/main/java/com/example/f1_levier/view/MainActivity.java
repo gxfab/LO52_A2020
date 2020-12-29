@@ -13,7 +13,8 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.f1_levier.model.Participant;
+import com.example.f1_levier.BDD.entity.Runner;
+import com.example.f1_levier.BDD.roomDatabase.AppDataBase;
 import com.example.f1_levier.R;
 import com.example.f1_levier.utils.ElementCard;
 
@@ -26,20 +27,25 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     private EditText te_name;
     private EditText te_fname;
     private Button b_start;
-    static ArrayList<Participant> participants;
+    public static AppDataBase db;
+    public static ArrayList<Runner> runnerList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        db = db.getInstance(this);
 
         /*Name & firstname*/
         te_name = (EditText) findViewById(R.id.editText_name);
         te_fname = (EditText) findViewById(R.id.editText_fname);
-        participants = new ArrayList<Participant>();
-        for(int i=0;i<30;i++){
+        runnerList = new ArrayList<Runner>();
+        for(int i=0;i<30;i++)
+        {
             int rand = (int)(Math.random() * 100 + 1);
-            participants.add(new Participant("John"+i,"Doe",rand));
+            Runner newRunner = new Runner(i, "John"+i,"Doe",rand);
+            runnerList.add(newRunner);
+            db.runnerDAO().insertRunner(newRunner);
         }
 
         /*Level*/
@@ -114,8 +120,11 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     }
 
     public void add_participant() {
-        if(!te_name.getText().toString().equals("") && !te_fname.getText().toString().equals("") && !te_name.getText().toString().equals(" ") && !te_fname.getText().toString().equals(" ") && !tv_lvl.getText().toString().equals("Niveau")) {
-            participants.add(new Participant(te_name.getText().toString(), te_fname.getText().toString(), Integer.parseInt(tv_lvl.getText().toString())));
+        if(!te_name.getText().toString().equals("") && !te_fname.getText().toString().equals("") && !te_name.getText().toString().equals(" ") && !te_fname.getText().toString().equals(" ") && !tv_lvl.getText().toString().equals("Niveau"))
+        {
+            Runner newRunner = new Runner(runnerList.size(), te_name.getText().toString(), te_fname.getText().toString(), Integer.parseInt(tv_lvl.getText().toString()));
+            runnerList.add(newRunner);
+            db.runnerDAO().insertRunner(newRunner);
             Log.i(te_name.getText().toString() + te_fname.getText().toString(), tv_lvl.getText().toString());
             te_name.setText("");
             te_fname.setText("");
@@ -127,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     }
 
     public void check_participant() {
-        if(participants.size() >= 1)
+        if(runnerList.size() >= 1)
         {
             Intent intent = new Intent(this, ParticipantActivity.class);
             startActivity(intent);
@@ -138,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     }
 
     public void team() {
-        if (participants.size() == 30)
+        if (runnerList.size() == 30)
         {
             Intent intent = new Intent(this, TeamActivity.class);
             startActivity(intent);
@@ -150,13 +159,13 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     }
 
     public void start() {
-        if (participants.size() == 30 && teams != null) {
+        if (runnerList.size() == 30 && teams != null) {
             ElementCard.nameArray = new ArrayList<>();
             for (int i = 0; i < teams.size(); i++) {
                 ArrayList<String> t = new ArrayList<>();
-                t.add(teams.get(i).getParticipants().get(0).getName()+" "+teams.get(i).getParticipants().get(0).getFirstName());
-                t.add(teams.get(i).getParticipants().get(1).getName()+" "+teams.get(i).getParticipants().get(1).getFirstName());
-                t.add(teams.get(i).getParticipants().get(2).getName()+" "+teams.get(i).getParticipants().get(2).getFirstName());
+                t.add(db.getRunnerFromId(runnerList, teams.get(i).getFirstRunnerId()).getLastName()+" "+db.getRunnerFromId(runnerList, teams.get(i).getFirstRunnerId()).getFirstName());
+                t.add(db.getRunnerFromId(runnerList, teams.get(i).getSecondRunnerId()).getLastName()+" "+db.getRunnerFromId(runnerList, teams.get(i).getSecondRunnerId()).getFirstName());
+                t.add(db.getRunnerFromId(runnerList, teams.get(i).getThirdRunnerId()).getLastName()+" "+db.getRunnerFromId(runnerList, teams.get(i).getThirdRunnerId()).getFirstName());
                 ElementCard.nameArray.add(t);
             }
             Intent intent = new Intent(this, RunActivity.class);

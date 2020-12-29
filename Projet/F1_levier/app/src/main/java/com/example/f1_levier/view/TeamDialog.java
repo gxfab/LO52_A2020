@@ -21,6 +21,9 @@ import java.util.Objects;
 import static com.example.f1_levier.view.TeamActivity.teams;
 import static com.example.f1_levier.view.TeamActivity.item_selected;;
 
+import static com.example.f1_levier.view.MainActivity.db;
+import static com.example.f1_levier.view.MainActivity.runnerList;
+
 public class TeamDialog extends AppCompatDialogFragment {
 
     private Spinner s_p1;
@@ -69,13 +72,13 @@ public class TeamDialog extends AppCompatDialogFragment {
         s_p2 = (Spinner) view.findViewById(R.id.spinner_p2);
         s_p3 = (Spinner) view.findViewById(R.id.spinner_p3);
 
-        name_p1.setText(teams.get(item_selected).getParticipants().get(0).getName());
-        name_p2.setText(teams.get(item_selected).getParticipants().get(1).getName());
-        name_p3.setText(teams.get(item_selected).getParticipants().get(2).getName());
+        name_p1.setText(db.getRunnerFromId(runnerList, teams.get(item_selected).getFirstRunnerId()).getLastName());
+        name_p2.setText(db.getRunnerFromId(runnerList, teams.get(item_selected).getSecondRunnerId()).getLastName());
+        name_p3.setText(db.getRunnerFromId(runnerList, teams.get(item_selected).getThirdRunnerId()).getLastName());
 
-        fname_p1.setText(teams.get(item_selected).getParticipants().get(0).getFirstName());
-        fname_p2.setText(teams.get(item_selected).getParticipants().get(1).getFirstName());
-        fname_p3.setText(teams.get(item_selected).getParticipants().get(2).getFirstName());
+        fname_p1.setText(db.getRunnerFromId(runnerList, teams.get(item_selected).getFirstRunnerId()).getFirstName());
+        fname_p2.setText(db.getRunnerFromId(runnerList, teams.get(item_selected).getSecondRunnerId()).getFirstName());
+        fname_p3.setText(db.getRunnerFromId(runnerList, teams.get(item_selected).getThirdRunnerId()).getFirstName());
 
         return builder.create();
     }

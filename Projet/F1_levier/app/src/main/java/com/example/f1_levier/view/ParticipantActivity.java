@@ -14,7 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.f1_levier.R;
 import com.example.f1_levier.adapter.ParticipantAdapter;
 
-import static com.example.f1_levier.view.MainActivity.participants;
+import static com.example.f1_levier.view.MainActivity.db;
+import static com.example.f1_levier.view.MainActivity.runnerList;
 
 public class ParticipantActivity extends AppCompatActivity {
 
@@ -50,18 +51,18 @@ public class ParticipantActivity extends AppCompatActivity {
         });
 
         /*number of participant*/
-        tv_nb.setText(String.valueOf(participants.size()));
+        tv_nb.setText(String.valueOf(runnerList.size()));
 
         /*Selection of participant*/
         // Create the adapter to convert the array to views
-        adapter = new ParticipantAdapter(this, participants);
+        adapter = new ParticipantAdapter(this, runnerList);
         // Attach the adapter to a ListView
         listView.setAdapter(adapter);
         //adapter.addAll(participants);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String name = participants.get(i).getName()+" "+participants.get(i).getFirstName();
+                String name = runnerList.get(i).getLastName()+" "+ runnerList.get(i).getFirstName();
                 id_selected = i;
                 tv_selected.setText(name);
             }
@@ -69,7 +70,8 @@ public class ParticipantActivity extends AppCompatActivity {
     }
 
     public void edit_participant() {
-        if(id_selected != -1) {
+        if(id_selected != -1)
+        {
             final Dialog d_edit = new Dialog(ParticipantActivity.this);
             d_edit.setContentView(R.layout.dialog_edit);
 
@@ -77,9 +79,9 @@ public class ParticipantActivity extends AppCompatActivity {
             final EditText te_name = (EditText) d_edit.findViewById(R.id.editText_name);
             final EditText te_fname = (EditText) d_edit.findViewById(R.id.editText_fname);
             final EditText te_lvl = (EditText) d_edit.findViewById(R.id.editText_lvl);
-            te_name.setText(participants.get(id_selected).getName());
-            te_fname.setText(participants.get(id_selected).getFirstName());
-            te_lvl.setText(String.valueOf(participants.get(id_selected).getLevel()));
+            te_name.setText(runnerList.get(id_selected).getLastName());
+            te_fname.setText(runnerList.get(id_selected).getFirstName());
+            te_lvl.setText(String.valueOf(runnerList.get(id_selected).getLevel()));
 
             b_set.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -87,9 +89,10 @@ public class ParticipantActivity extends AppCompatActivity {
                     if (Integer.parseInt(String.valueOf(te_lvl.getText())) < 100 && Integer.parseInt(String.valueOf(te_lvl.getText())) >= 0
                             && !te_name.getText().toString().equals("") && !te_fname.getText().toString().equals("")
                             && !te_name.getText().toString().equals(" ") && !te_fname.getText().toString().equals(" ")) {
-                        participants.get(id_selected).setName(te_name.getText().toString());
-                        participants.get(id_selected).setFirstName(te_fname.getText().toString());
-                        participants.get(id_selected).setLevel(Integer.parseInt(String.valueOf(te_lvl.getText())));
+                        runnerList.get(id_selected).setLastName(te_name.getText().toString());
+                        runnerList.get(id_selected).setFirstName(te_fname.getText().toString());
+                        runnerList.get(id_selected).setLevel(Integer.parseInt(String.valueOf(te_lvl.getText())));
+                        db.runnerDAO().updateRunner(runnerList.get(id_selected));
                         d_edit.dismiss();
                         adapter.notifyDataSetChanged();
                     } else {
@@ -105,9 +108,11 @@ public class ParticipantActivity extends AppCompatActivity {
     }
 
     public void del_participant() {
-        if(id_selected != -1) {
-            participants.remove(id_selected);
-            tv_nb.setText(String.valueOf(participants.size()));
+        if(id_selected != -1)
+        {
+            db.runnerDAO().deleteRunner(runnerList.get(id_selected));
+            runnerList.remove(id_selected);
+            tv_nb.setText(String.valueOf(runnerList.size()));
             adapter.notifyDataSetChanged();
             id_selected = -1;
             tv_selected.setText("");

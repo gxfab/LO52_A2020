@@ -7,12 +7,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.f1_levier.BDD.entity.Runner;
 import com.example.f1_levier.R;
-import com.example.f1_levier.model.Participant;
 
 import java.util.ArrayList;
 
-public class ParticipantAdapter extends ArrayAdapter<Participant> {
+public class ParticipantAdapter extends ArrayAdapter<Runner> {
     // View lookup cache
     private static class ViewHolder {
         TextView name;
@@ -20,14 +20,14 @@ public class ParticipantAdapter extends ArrayAdapter<Participant> {
         TextView level;
     }
 
-    public ParticipantAdapter(Context context, ArrayList<Participant> p) {
+    public ParticipantAdapter(Context context, ArrayList<Runner> p) {
         super(context, R.layout.item_participant, p);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        Participant p = getItem(position);
+        Runner p = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         ViewHolder viewHolder; // view lookup cache stored in tag
         if (convertView == null) {
@@ -46,7 +46,7 @@ public class ParticipantAdapter extends ArrayAdapter<Participant> {
         }
         // Populate the data from the data object via the viewHolder object
         // into the template view.
-        viewHolder.name.setText(p.getName());
+        viewHolder.name.setText(p.getLastName());
         viewHolder.fname.setText(p.getFirstName());
         viewHolder.level.setText(String.valueOf(p.getLevel()));
         // Return the completed view to render on screen

@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.f1_levier.BDD.entity.Runner;
 import com.example.f1_levier.R;
 import com.example.f1_levier.adapter.RunAdapter;
 import com.example.f1_levier.utils.Card;
@@ -23,6 +24,8 @@ import com.example.f1_levier.utils.ElementCard;
 
 import java.util.ArrayList;
 import static com.example.f1_levier.view.TeamActivity.teams;
+import static com.example.f1_levier.view.MainActivity.db;
+import static com.example.f1_levier.view.MainActivity.runnerList;
 
 public class RunActivity extends AppCompatActivity {
     public static View.OnClickListener myOnClickListener;
@@ -33,7 +36,7 @@ public class RunActivity extends AppCompatActivity {
     public static boolean isClickable = false;
     public static Button b_stat;
     public static ArrayList<Integer> win_team;
-   private static Chronometer cdt;
+    private static Chronometer cdt;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,6 +119,42 @@ public class RunActivity extends AppCompatActivity {
             ImageView imageViewStep = viewHolder.itemView.findViewById(R.id.imageView_step);
             ImageView imageViewPerson = viewHolder.itemView.findViewById(R.id.imageView_person);
             int step = teams.get(selectedItemPosition).getNb_step();
+
+            //Find the current runner
+            int runnerId = - 1;
+            switch(teams.get(selectedItemPosition).get_id_p())
+            {
+                case 1:
+                    runnerId = teams.get(selectedItemPosition).getFirstRunnerId();
+                    break;
+                case 2:
+                    runnerId = teams.get(selectedItemPosition).getSecondRunnerId();
+                    break;
+                case 3:
+                    runnerId = teams.get(selectedItemPosition).getThirdRunnerId();
+                    break;
+            }
+            Runner currentRunner = db.getRunnerFromId(runnerList, runnerId);
+            //Update the time of that runner
+            switch (step)
+            {
+                case 0:
+                    currentRunner.setTime1(SystemClock.elapsedRealtime() - cdt.getBase());
+                    break;
+                case 1:
+                    currentRunner.setTime2(SystemClock.elapsedRealtime() - cdt.getBase());
+                    break;
+                case 2:
+                    currentRunner.setTime3(SystemClock.elapsedRealtime() - cdt.getBase());
+                    break;
+                case 3:
+                    currentRunner.setTime4(SystemClock.elapsedRealtime() - cdt.getBase());
+                    break;
+                case 4:
+                    currentRunner.setTime5(SystemClock.elapsedRealtime() - cdt.getBase());
+                    break;
+            }
+
             teams.get(selectedItemPosition).setNb_step(teams.get(selectedItemPosition).getNb_step()+1);
             Log.i("value is",""+step);
             switch (step) {
@@ -125,27 +164,31 @@ public class RunActivity extends AppCompatActivity {
                     break;
                 case 3:
                     imageViewStep.setImageResource(ElementCard.drawableArray[5]);
-                    if (teams.get(selectedItemPosition).getIdP() == 3) {
-                        teams.get(selectedItemPosition).setGoal(true);
+                    if (teams.get(selectedItemPosition).get_id_p() == 3) {
+                        teams.get(selectedItemPosition).set_goal(true);
                     }
                     break;
                 case 4:
-                    if (!teams.get(selectedItemPosition).getGoal()) {
-                        textViewName.setText(ElementCard.nameArray.get(selectedItemPosition).get(teams.get(selectedItemPosition).getIdP()));
+                    db.runnerDAO().updateRunner(currentRunner);
+                    if (!teams.get(selectedItemPosition).is_goal()) {
+                        textViewName.setText(ElementCard.nameArray.get(selectedItemPosition).get(teams.get(selectedItemPosition).get_id_p()));
                         textViewIdStep.setText(String.valueOf(ElementCard.id_step[0]));
                         imageViewStep.setImageResource(ElementCard.drawableArray[4]);
-                        imageViewPerson.setImageResource(ElementCard.drawableArray[teams.get(selectedItemPosition).getIdP()]);
+                        imageViewPerson.setImageResource(ElementCard.drawableArray[teams.get(selectedItemPosition).get_id_p()]);
                         teams.get(selectedItemPosition).setNb_step(0);
-                        teams.get(selectedItemPosition).setIdP(teams.get(selectedItemPosition).getIdP() + 1);
+                        teams.get(selectedItemPosition).set_id_p(teams.get(selectedItemPosition).get_id_p() + 1);
                     } else {
                         imageViewStep.setImageResource(ElementCard.drawableArray[7]);
+                        teams.get(selectedItemPosition).setRating(win_team.size() + 1);
                         win_team.add(selectedItemPosition+1);
-                        //TODO enregistré chrono DB
-
+                        teams.get(selectedItemPosition).setTime(SystemClock.elapsedRealtime() - cdt.getBase());
+                        System.out.println("time ::::::" + teams.get(selectedItemPosition).getTime());
+                        System.out.println("classement ::::::" + teams.get(selectedItemPosition).getRating());
+                        db.teamDAO().updateTeam(teams.get(selectedItemPosition));
                     }
                     break;
                 default:
-                    if (!teams.get(selectedItemPosition).getGoal()) {
+                    if (!teams.get(selectedItemPosition).is_goal()) {
                         imageViewStep.setImageResource(ElementCard.drawableArray[4 + step + 1]);
                     }
             }

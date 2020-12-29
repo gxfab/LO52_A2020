@@ -23,6 +23,9 @@ import com.example.f1_levier.utils.Card;
 import com.example.f1_levier.utils.ElementCard;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import static com.example.f1_levier.view.TeamActivity.teams;
 import static com.example.f1_levier.view.MainActivity.db;
 import static com.example.f1_levier.view.MainActivity.runnerList;
@@ -135,28 +138,50 @@ public class RunActivity extends AppCompatActivity {
                     break;
             }
             Runner currentRunner = db.getRunnerFromId(runnerList, runnerId);
+
             //Update the time of that runner
             switch (step)
             {
                 case 0:
-                    currentRunner.setTime1(SystemClock.elapsedRealtime() - cdt.getBase());
+                    if(currentRunner.getRunnerId() == teams.get(selectedItemPosition).getFirstRunnerId())
+                    {
+                        currentRunner.setTime1(SystemClock.elapsedRealtime() - cdt.getBase());
+                        System.out.println("first time 1: " + currentRunner.getTime1());}
+                    //If it isn't the first runner in the team, we compare to the time5 of the previous runner in this team
+                    else
+                    {
+                        if(currentRunner.getRunnerId() == teams.get(selectedItemPosition).getSecondRunnerId()){
+                            currentRunner.setTime1(SystemClock.elapsedRealtime() - cdt.getBase() - db.getRunnerFromId(runnerList, teams.get(selectedItemPosition).getFirstRunnerId()).getTime5());
+                            System.out.println("second time 1: " + currentRunner.getTime1());}
+                        else
+                        {
+                            if (currentRunner.getRunnerId() == teams.get(selectedItemPosition).getThirdRunnerId()){
+                                currentRunner.setTime1(SystemClock.elapsedRealtime() - cdt.getBase() - db.getRunnerFromId(runnerList, teams.get(selectedItemPosition).getSecondRunnerId()).getTime5());
+                                System.out.println("third time 1: " + currentRunner.getTime1());}
+                        }
+                    }
                     break;
                 case 1:
-                    currentRunner.setTime2(SystemClock.elapsedRealtime() - cdt.getBase());
+                    currentRunner.setTime2(SystemClock.elapsedRealtime() - cdt.getBase() - currentRunner.getTime1());
+                    System.out.println("time2: " + currentRunner.getTime2());
                     break;
                 case 2:
-                    currentRunner.setTime3(SystemClock.elapsedRealtime() - cdt.getBase());
+                    currentRunner.setTime3(SystemClock.elapsedRealtime() - cdt.getBase() - currentRunner.getTime2());
+                    System.out.println("time3: " + currentRunner.getTime3());
                     break;
                 case 3:
-                    currentRunner.setTime4(SystemClock.elapsedRealtime() - cdt.getBase());
+                    currentRunner.setTime4(SystemClock.elapsedRealtime() - cdt.getBase() - currentRunner.getTime3());
+                    System.out.println("time4: " + currentRunner.getTime4());
                     break;
                 case 4:
-                    currentRunner.setTime5(SystemClock.elapsedRealtime() - cdt.getBase());
+                    currentRunner.setTime5(SystemClock.elapsedRealtime() - cdt.getBase() - currentRunner.getTime4());
+                    System.out.println("time5: " + currentRunner.getTime5());
                     break;
             }
 
+
             teams.get(selectedItemPosition).setNb_step(teams.get(selectedItemPosition).getNb_step()+1);
-            Log.i("value is",""+step);
+//            Log.i("value is",""+step);
             switch (step) {
                 case 2:
                     textViewIdStep.setText(String.valueOf(ElementCard.id_step[1]));

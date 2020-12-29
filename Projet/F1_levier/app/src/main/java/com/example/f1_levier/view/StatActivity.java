@@ -7,7 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.f1_levier.R;
 
+import java.util.List;
+
 import static com.example.f1_levier.view.RunActivity.win_team;
+import static com.example.f1_levier.view.MainActivity.db;
+import static com.example.f1_levier.view.MainActivity.runnerList;
 
 public class StatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,5 +23,10 @@ public class StatActivity extends AppCompatActivity {
             temp = temp + win_team.get(i) + " ";
         }
         te_rank.setText(temp);
+        List<String> test = db.getBestTimeAsString(runnerList, 2);
+        for(String s : test)
+        {
+            System.out.println(s);
+        }
     }
 }

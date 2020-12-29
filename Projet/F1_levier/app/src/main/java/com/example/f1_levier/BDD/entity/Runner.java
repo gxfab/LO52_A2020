@@ -123,4 +123,28 @@ public class Runner
     public void setRunnerId(int runnerId) {
         this.runnerId = runnerId;
     }
+
+    public long getTime (int id)
+    {
+        long result = -1;
+        switch(id)
+        {
+            case 1:
+                result = time1;
+                break;
+            case 2:
+                result = time2;
+                break;
+            case 3:
+                result = time3;
+                break;
+            case 4:
+                result = time4;
+                break;
+            case 5:
+                result = time5;
+                break;
+        }
+        return result;
+    }
 }

@@ -75,8 +75,14 @@ public abstract class AppDataBase extends RoomDatabase
      * Return information about the runner who got the best time in a part
      * @param runnerList : List<Runner> the runner list
      * @param teamList : List<Team> the list of teams
-     * @param segment : int, the number of the segment we want the time of, from 1 to 5
-     * @return List<String>: the ID of the best runner,
+     * @param segment : int, the number of the segment we want the time of, from 0 to 5 :
+     *                0 being the complete runner time
+     *                1 the time for the first sprint
+     *                2 the time for the first obstacle
+     *                3 the time for the pitstop
+     *                4 the time for the second sprint
+     *                5 the time for the second obstacle
+     * @return List<String>: the team ID of the best runner,
      *                       his last name,
      *                       his first name,
      *                       his time as n min s sec c cs
@@ -88,11 +94,20 @@ public abstract class AppDataBase extends RoomDatabase
         for(Runner r : runnerList)
         {
             long time = -1;
+            Team t = getTeamFromId(teamList, r.getTeamId());
             switch(segment)
             {
+                case 0:
+                    //Different way to calculate the time depending the position in the team
+                    if(r.getRunnerId() == t.getFirstRunnerId())
+                        time = r.getTime5();
+                    if(r.getRunnerId() == t.getSecondRunnerId())
+                        time = r.getTime5() - getRunnerFromId(runnerList, t.getFirstRunnerId()).getTime5();
+                    if(r.getRunnerId() == t.getThirdRunnerId())
+                        time = r.getTime5() - getRunnerFromId(runnerList, t.getSecondRunnerId()).getTime5();
+                    break;
                 case 1:
                     //Different way to calculate the time depending the position in the team
-                    Team t = getTeamFromId(teamList, r.getTeamId());
                     if(r.getRunnerId() == t.getFirstRunnerId())
                         time = r.getTime1();
                     if(r.getRunnerId() == t.getSecondRunnerId())
@@ -123,7 +138,7 @@ public abstract class AppDataBase extends RoomDatabase
         List<String> result = new ArrayList<String>();
         if(bestRunner != null)
         {
-            result.add(String.valueOf(bestRunner.getRunnerId()));
+            result.add(String.valueOf(bestRunner.getTeamId() + 1));
             result.add(bestRunner.getLastName());
             result.add(bestRunner.getFirstName());
             int minutes = (int)(minTime/60000);

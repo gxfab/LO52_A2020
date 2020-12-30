@@ -88,7 +88,7 @@ public class StatActivity extends AppCompatActivity {
     }
 
     private void best_runner(){
-        List<String> runner = db.getBestTimeAsString(runnerList, teams,6); //TODO ici
+        List<String> runner = db.getBestTimeAsString(runnerList, teams,0);
         te_run.setText(runner.get(1)+" "+runner.get(2));
         te_id_run.setText(runner.get(0));
         te_time_run.setText(runner.get(3));

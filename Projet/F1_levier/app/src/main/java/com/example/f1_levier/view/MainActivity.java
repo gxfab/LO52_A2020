@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     private TextView tv_lvl;
     private EditText te_name;
     private EditText te_fname;
-    private Button b_start;
     public static AppDataBase db;
     public static ArrayList<Runner> runnerList;
 
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         te_name = (EditText) findViewById(R.id.editText_name);
         te_fname = (EditText) findViewById(R.id.editText_fname);
         runnerList = new ArrayList<Runner>();
+        /*to test easy the rest of the app*/
         for(int i=0;i<30;i++)
         {
             int rand = (int)(Math.random() * 100 + 1);
@@ -84,17 +84,9 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
             }
         });
 
-        /*Start*/
-        b_start = (Button) findViewById(R.id.button_start);
-        b_start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                start();
-            }
-        });
     }
 
-    public void numberPicker() {
+    private void numberPicker() {
         final Dialog d_lvl = new Dialog(MainActivity.this);
         d_lvl.setTitle("Niveau");
         d_lvl.setContentView(R.layout.dialog_number);
@@ -119,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         Log.i("value is",""+newVal);
     }
 
-    public void add_participant() {
+    private void add_participant() {
         if(!te_name.getText().toString().equals("") && !te_fname.getText().toString().equals("") && !te_name.getText().toString().equals(" ") && !te_fname.getText().toString().equals(" ") && !tv_lvl.getText().toString().equals("Niveau"))
         {
             Runner newRunner = new Runner(runnerList.size(), te_name.getText().toString(), te_fname.getText().toString(), Integer.parseInt(tv_lvl.getText().toString()));
@@ -135,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         }
     }
 
-    public void check_participant() {
+    private void check_participant() {
         if(runnerList.size() >= 1)
         {
             Intent intent = new Intent(this, ParticipantActivity.class);
@@ -146,33 +138,16 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
         }
     }
 
-    public void team() {
+    private void team() {
         if (runnerList.size() == 30)
         {
             Intent intent = new Intent(this, TeamActivity.class);
             startActivity(intent);
-            b_start.setVisibility(View.VISIBLE);
         }
         else{
             Toast.makeText(MainActivity.this,"Il faut 30 participants",Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void start() {
-        if (runnerList.size() == 30 && teams != null) {
-            ElementCard.nameArray = new ArrayList<>();
-            for (int i = 0; i < teams.size(); i++) {
-                ArrayList<String> t = new ArrayList<>();
-                t.add(db.getRunnerFromId(runnerList, teams.get(i).getFirstRunnerId()).getLastName()+" "+db.getRunnerFromId(runnerList, teams.get(i).getFirstRunnerId()).getFirstName());
-                t.add(db.getRunnerFromId(runnerList, teams.get(i).getSecondRunnerId()).getLastName()+" "+db.getRunnerFromId(runnerList, teams.get(i).getSecondRunnerId()).getFirstName());
-                t.add(db.getRunnerFromId(runnerList, teams.get(i).getThirdRunnerId()).getLastName()+" "+db.getRunnerFromId(runnerList, teams.get(i).getThirdRunnerId()).getFirstName());
-                ElementCard.nameArray.add(t);
-            }
-            Intent intent = new Intent(this, RunActivity.class);
-            startActivity(intent);
-        }
-        else{
-            Toast.makeText(MainActivity.this,"Il faut 30 participants et avoir les équipes de composées",Toast.LENGTH_SHORT).show();
-        }
-    }
+
 }

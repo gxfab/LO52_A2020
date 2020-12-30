@@ -67,7 +67,7 @@ public class TeamAdapter extends ArrayAdapter<Team> {
         viewHolder.fname_p2.setText(db.getRunnerFromId(runnerList, team.getSecondRunnerId()).getFirstName());
         viewHolder.fname_p3.setText(db.getRunnerFromId(runnerList, team.getThirdRunnerId()).getFirstName());
         viewHolder.level.setText(String.valueOf(team.getLevel()));
-        viewHolder.id_team.setText(String.valueOf(team.getTeamId()));
+        viewHolder.id_team.setText(String.valueOf(team.getTeamId()+1));
         // Return the completed view to render on screen
         return convertView;
     }

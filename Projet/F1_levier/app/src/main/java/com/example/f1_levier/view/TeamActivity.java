@@ -1,9 +1,12 @@
 package com.example.f1_levier.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +14,7 @@ import com.example.f1_levier.BDD.entity.Runner;
 import com.example.f1_levier.R;
 import com.example.f1_levier.BDD.entity.Team;
 import com.example.f1_levier.adapter.TeamAdapter;
+import com.example.f1_levier.utils.ElementCard;
 
 import java.util.ArrayList;
 
@@ -23,6 +27,7 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
     static TeamAdapter adapter;
     static int item_selected;
 
+    private Button b_start;
     //Constructeur
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +49,16 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
                 openDialog();
             }
         });
+
+        b_start = (Button) findViewById(R.id.button_start);
+        b_start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                start();
+            }
+        });
     }
-    public void openDialog() {
+    private void openDialog() {
         TeamDialog TeamDialog = new TeamDialog();
         TeamDialog.show(getSupportFragmentManager(), "Passage");
     }
@@ -54,32 +67,50 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
         permutation(place);
         adapter.notifyDataSetChanged();
     }
-    
-    void permutation(String place){
+
+    private void start() {
+        if (runnerList.size() == 30 && teams != null) {
+            ElementCard.nameArray = new ArrayList<>();
+            for (int i = 0; i < teams.size(); i++) {
+                ArrayList<String> t = new ArrayList<>();
+                t.add(db.getRunnerFromId(runnerList, teams.get(i).getFirstRunnerId()).getLastName()+" "+db.getRunnerFromId(runnerList, teams.get(i).getFirstRunnerId()).getFirstName());
+                t.add(db.getRunnerFromId(runnerList, teams.get(i).getSecondRunnerId()).getLastName()+" "+db.getRunnerFromId(runnerList, teams.get(i).getSecondRunnerId()).getFirstName());
+                t.add(db.getRunnerFromId(runnerList, teams.get(i).getThirdRunnerId()).getLastName()+" "+db.getRunnerFromId(runnerList, teams.get(i).getThirdRunnerId()).getFirstName());
+                ElementCard.nameArray.add(t);
+            }
+            Intent intent = new Intent(this, RunActivity.class);
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(TeamActivity.this,"Oups",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void permutation(String place){
         int temp;
         switch(place) {
-            case "1,3,2":
+            case "0,2,1":
                 temp =  teams.get(item_selected).getSecondRunnerId();//sauv 2
                 teams.get(item_selected).setSecondRunnerId(teams.get(item_selected).getThirdRunnerId());
                 teams.get(item_selected).setThirdRunnerId(temp);
                 break;
-            case "2,1,3":
+            case "1,0,2":
                 temp = teams.get(item_selected).getFirstRunnerId();//sauv 1
                 teams.get(item_selected).setFirstRunnerId(teams.get(item_selected).getSecondRunnerId());
                 teams.get(item_selected).setSecondRunnerId(temp);
                 break;
-            case "3,1,2":
+            case "2,0,1":
                 temp = teams.get(item_selected).getFirstRunnerId();//sauv 1
                 teams.get(item_selected).setFirstRunnerId(teams.get(item_selected).getThirdRunnerId());
                 teams.get(item_selected).setThirdRunnerId(teams.get(item_selected).getSecondRunnerId());
                 teams.get(item_selected).setSecondRunnerId(temp);
                 break;
-            case "3,2,1":
+            case "2,1,0":
                 temp = teams.get(item_selected).getFirstRunnerId(); //sauv 1
                 teams.get(item_selected).setFirstRunnerId(teams.get(item_selected).getThirdRunnerId());
                 teams.get(item_selected).setThirdRunnerId(temp);
                 break;
-            case "2,3,1":
+            case "1,2,0":
                 temp = teams.get(item_selected).getFirstRunnerId(); //sauv 1
                 teams.get(item_selected).setFirstRunnerId(teams.get(item_selected).getSecondRunnerId());
                 teams.get(item_selected).setSecondRunnerId(teams.get(item_selected).getThirdRunnerId());

@@ -13,15 +13,15 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="553dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="535dp"
         android:text="F1 Levier"
         android:textColor="#009688"
         android:textSize="60sp" />
 
     <ImageView
         android:id="@+id/imageViewP1"
-        android:layout_width="422dp"
+        android:layout_width="486dp"
         android:layout_height="289dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -101,26 +101,13 @@
         android:textColor="#000000" />
 
     <Button
-        android:id="@+id/button_start"
-        android:layout_width="216dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="529dp"
-        android:layout_marginBottom="82dp"
-        android:backgroundTint="#009688"
-        android:text="Lancer la compétition"
-        android:visibility="invisible" />
-
-    <Button
         android:id="@+id/button_team"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="156dp"
-        android:backgroundTint="#C3C3C3"
+        android:backgroundTint="#009688"
         android:text="Définir l'ordre de passage" />
 
 </RelativeLayout>

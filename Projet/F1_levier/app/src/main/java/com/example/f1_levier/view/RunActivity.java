@@ -198,7 +198,7 @@ public class RunActivity extends AppCompatActivity {
         }
     }
 
-    public void stat(){
+    private void stat(){
         Intent intent = new Intent(this, StatActivity.class);
         startActivity(intent);
     }

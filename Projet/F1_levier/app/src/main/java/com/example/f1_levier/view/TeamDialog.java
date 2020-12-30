@@ -36,7 +36,6 @@ public class TeamDialog extends AppCompatDialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getActivity()));
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.dialog_order, null);
-
         builder.setView(view)
                 .setTitle("Passage")
                 .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -52,7 +51,9 @@ public class TeamDialog extends AppCompatDialogFragment {
                                     Integer.parseInt(s_p2.getSelectedItem().toString()) != Integer.parseInt(s_p3.getSelectedItem().toString()) &&
                                     Integer.parseInt(s_p3.getSelectedItem().toString()) != Integer.parseInt(s_p1.getSelectedItem().toString())){
 
-                                String place = s_p1.getSelectedItem().toString()+","+s_p2.getSelectedItem().toString()+","+s_p3.getSelectedItem().toString();
+                                String place = String.valueOf(Integer.parseInt(s_p1.getSelectedItem().toString())-1)
+                                        +","+String.valueOf(Integer.parseInt(s_p2.getSelectedItem().toString())-1)+","+
+                                        String.valueOf(Integer.parseInt(s_p3.getSelectedItem().toString())-1);
                                 listener.applyTexts(place);
                             }
                             else {

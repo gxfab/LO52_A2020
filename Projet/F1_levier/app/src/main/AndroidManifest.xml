@@ -17,23 +17,25 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.ParticipantActivity"
-            android:parentActivityName=".view.MainActivity">
+            android:parentActivityName=".view.MainActivity"
+            android:label="Participant">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.MainActivity" />
         </activity>
-        <activity android:name=".view.TeamActivity" android:launchMode="singleTask"
-            android:parentActivityName=".view.MainActivity">
-            <!-- The meta-data tag is required if you support API level 15 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.MainActivity" />
+        <activity android:name=".view.TeamActivity"
+            android:parentActivityName=".view.MainActivity"
+            android:label="Equipe">
         </activity>
-        <activity android:name=".view.RunActivity" android:launchMode="singleTask">
+        <activity android:name=".view.RunActivity"
+            android:launchMode="singleTask"
+            android:label="Course">
 
         </activity>
-        <activity android:name=".view.StatActivity" android:launchMode="singleTask">
+        <activity android:name=".view.StatActivity"
+            android:launchMode="singleTask"
+            android:label="Statistique">
 
         </activity>
     </application>

@@ -18,3 +18,5 @@ MainActivity.kt = l'activité qui s'ouvre au lancement de l'application
 Activity_main.xml = interface de MainActivity.kt
 AndroidManifest.xml = décrit les caractéristiques de l'application et défini ses composants
 
+(Images 1,2,3 pour illustrer)
+

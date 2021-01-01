@@ -1,39 +1,46 @@
 branche téléchargée : hikey-linaro-android-4.19
 
-Le but = construire une android device virtuelle pour pouvoir l'utiliser dans android studio?
+[Supprimé, mauvaise compréhension du TP au début. Update grâce aux cours + TD]
 
-Useful link : https://android.googlesource.com/platform/external/qemu/+/emu-master-dev/android/docs/ANDROID-KERNEL.TXT
--> ligne 65 on nous indique les 3 options possibles pour reconstruire un noyau ranchu selon l'architecture du processeur. Pour ARMv8, arch=arm64
+Les étapes jusqu'au chargement de la config ranchu par défaut sont décrites dans les commentaires du script TP2CommandsScript.sh
 
-On est donc sensé avoir des fichiers config qui corresondent à ranchu mais il n'y a que les options pour kasan (4.19) et goldfish/cuttlefish (4.14)....
+On observe ensuite les différences entre les configurations hikey_defconfig et la config chargée pour une carte ranchu avec la commande "diff arch/arm64/configs/ranchu_defconfig arch/arm64/configs/hikey_defconfig" 
+On remarque l’activation d’options liées à Goldfish après le chargement de la config board-ranchu.
+(Image 1 pour illustrer)
 
-https://releases.linaro.org/members/arm/openembedded/aarch64/15.07/
--> test avec build.config.gki.aarch64 (gki = generic kernel image)
-"BUILD_CONFIG=hikey-linaro/build.config.gki.aarch64 build/build.sh"
+Apres installation des qtdeclarative5-dev, on utilise "make xconfig" pour modifier la configuration précédemment créée. Cette commande permet de faciliter le processus grâce à une GUI sur QT.
+Nous avons donc activé les 4 options demandées et sauvegardé la nouvelle configuration appelée "custom".
+(Image 2,3,4,5 pour illustrer)
 
-- Quelques erreurs de chemin, test de remplacer le dossier "common" par "hikey-linaro" dans les 3 premieres lignes du fichier config ci-dessus et du fichier build.config.common
-- Une erreur de librairie dans un fichier "extract-cert" : <openssl/bio.h> not found. On installe ce qu'il faut avec "sudo apt-get install libssl-dev"
--> Build terminé
-
+Nous n'avons pas su déterminer quelles options pouvaient être qualifiées de superflue, l'objectif de la config n'étant pas clairement défini. De plus il y en a énormément ce qui complique la tâche.
 
 
 ------------Script InstallRepo.sh----------------
 On utilise le shell bash car c'est le plus répandu sur linux.
 
 Ce script créé un répertoire bin, l'ajoute à la variable PATH, enregistre dans le fichier .bashrc pour une modification permanente, et télécharge le fichier repo dans ce répertoire.
-On donne enfin les droits d'execution au fichier repo avec chmod.
+On donne enfin les droits d'execution à tous les utilisateurs au fichier repo avec chmod.
 
 Note : il faut penser à donner les droits d'execution au script au préalable avec la commande suivante (depuis le répertoire du script):
-"$ chmod +x InstallRepo.sh"
-Ou bien utiliser sudo pour exécuter
+"chmod +x InstallRepo.sh"
 
 
 
-------------Script RecupBranch.sh-----------------
-Ce script créé un un répertoire "android-kernel" dans le répertoire courant et se place das celui-ci
+------------Script RecupBranch.sh----------------
+Script intégré au script TP2CommandsScript.sh
+(Le choix de la branche a été supprimé, à bien y réfléchir si ils nous demandent un script c'est probablement pour l'exécuter et voir si le TP marche.)
 
-On demande ensuite à l'utilisateur de rentrer le nom de la branche à récupérer, puis on execute la commande repo correspondante pour initialiser le repo.
-Enfin on execute un "repo sync"
 
-Note : Repo doit d'abord être installé, et il faut au préalable autoriser le fichier à s'executer comme pour le script précédent.
-Ou bien utiliser sudo pour exécuter
+------------Script TP2CommandsScript.sh--------------
+Ce script rassemble donc toutes les commandes du TP2, de la création du dossier android-kernel jusqu'à la création de la nouvelle config par défaut.
+
+
+
+
+
+
+
+
+
+
+

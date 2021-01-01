@@ -1,28 +1,28 @@
 But du TP = intégrer un composant (libusb du dossier libusb1.0.3) à un produit android (kernel du TP2, dossier device)
 
 
--------------------Makefiles------------------------
-Il faut un fichier Android.mk dans le dossier libusb-1.0.3 qui va appeler les makesfiles des sous-dossiers :
-"LOCAL_PATH := $(call my-dir)
- ubdirs := $(addprefix $(LOCAL_PATH)/,$(addsuffix /Android.mk, \
-		libusb \
- ))
- include $(subdirs)"
+---------------Implémentation de la libusb-------------------------
 
-Et un Android.mk dans le dossier "libusb-1.0.3/libusb" qui définit les sources et les headers : 
-"LOCAL_PATH := $(call my-dir)
- include $(CLEAR_VARS)
+Les fichiers sources et headers pour la compilation d'une libusb sur Android sont (présents dans le dossier libusb):
+----Sources:
+core.c
+descriptor.c
+io.c
+os/darwin_usb.c et os/linux_usbfs.c
+sync.c
+----Headers:
+libusb.h
+libusbi.h
+os/darwin_usb.h et os/linux_usbfs.h
 
- LOCAL_SRC_FILES := core.c descriptor.c io.c sync.c os/linux_usbfs.c
- LOCAL_C_INCLUDES += $(LOCAL_PATH) $(LOCAL_PATH)/os/
- LOCAL_C_FLAGS += -pthread
- LOCAL_MODULE := libusb
- LOCAL_MODULE_TAGS := optional
-
- include $(BUILD_SHARED_LIBRARY)"
+Nous avons ensuite du écrire un makefile Android.mk relatif à l'implémentation de la libusb. 
+Il y a deux fichiers Android.mk dans le dossier libusb-1.0.3 :
+-Le premier qui va servir à appeler les makesfiles des sous-dossiers
+-Le second, au chemin libusb-1.0.3/libusb qui définit les sources et les headers du composant que l'on va implémenter.
+Celui que nous avons écrit est donc le second.
  
----------------------Erreurs de compilation-----------------
-Pour la 1ère erreur, il faut définir cette macro en rajoutant le code suivant dans le fichier io.c :
+Lors de la compilation avec make, deux erreurs se sont produites :
+Pour la 1ère erreur, il faut définir la macro TIMESPEC_TO_TIMEVAL en rajoutant le code suivant dans le fichier io.c :
 "#define TIMESPEC_TO_TIMEVAL(tv, ts)                                     \
          do {                                                            \
                  (tv)->tv_sec = (ts)->tv_sec;                            \
@@ -32,12 +32,35 @@ Pour la 1ère erreur, il faut définir cette macro en rajoutant le code suivant 
 Pour la seconde, il faut rajouter la librairie dans le fichier "./build/core/prelink-linux-arm.map"
 "libusb.so"
 
--> compiler avec "build/_setup_env.sh" depuis le dossier android-kernel (build/envsetup.sh deprecated)
-
 -------------------Implémentation nouveau produit----------------
+-> compiler avec "build/_setup_env.sh" depuis le dossier android-kernel (build/envsetup.sh deprecated)
+        
+Le produit s'appelera donc lo52_GaujourBastien_PalermoEnzo 
+On doit ensuite ajouter les fichiers de base pour la définition d'un produit : CleanSpeck.mk, AndroidProducts.mk, BoardConfig.mk, vendorsetup.sh et lo52_GaujourBastien_PalermoEnzo.mk.
 
-        
-        
+Dans le fichier lo52_GaujourBastien_PalermoEnzo.mk, on ajoute les lignes suivantes pour définir le produit :
+"PRODUCT_NAME := lo52_GaujourBastien_PalermoEnzo
+ PRODUCT_DEVICE := ranchu
+ PRODUCT_BRAND := Android
+ PRODUCT_MODEL := Ranchu
+ PRODUCT_MANUFACTURER := Google"
+
+On rajoute ensuite cette ligne pour que le produit hérite du produit hikey de linaro :
+"$(call inherit-product, device/linaro/hikey/hikey.mk)"
+
+Puis pour personnaliser le produit avec les 3 options demandées :
+"PRODUCT_PROPERTY_OVERRIDES := \
+        ro.hw=lo52 \ 
+        net.dns1=8.8.8.8 \
+        net.dns2=4.4.4.4 "
+      
+Apres recherche sur android.googlesource, le fichier sym_keyboard_delete.png se trouve dans "android/platform/development/master/./samples/SoftKeyboard/res/drawable-mdpi" et "/drawable-hdpi"
+On rajoute cette ligne pour spécifer le chemin des fichiers d'overlay  "DEVICE_PACKAGE_OVERLAYS := device/lo52_GaujourBastien_PalermoEnzo/overlay"
+       
+Enfin nous ajoutons la libusb aux packages du produit :
+"PRODUCT_PACKAGES += libusb-1.0.3"
+
+Pour ce qui est des 4 autres fichiers .mk/.sh, nous les avons remplis en nous basant sur le cours session 5.
         
         
         

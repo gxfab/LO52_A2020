@@ -1,4 +1,4 @@
-# On définie les cibles pour lunch en user, engineering et userdebug
+# Define targett for lunch (eng, user, userdebug)
 add_lunch_combo lo52_BayoudeIzoukaYosef_kammounyessine-eng
 add_lunch_combo lo52_BayoudeIzoukaYosef_kammounyessine-user
 add_lunch_combo lo52_BayoudeIzoukaYosef_kammounyessine-userdebug

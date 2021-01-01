@@ -1,2 +1,2 @@
-# On défini le Makefile à utiliser pour ce produit Android
+# Define the makefile to use foor this android product
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/lo52_BayoudeIzoukaYosef_kammounyessine.mk

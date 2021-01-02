@@ -2,6 +2,7 @@ package com.tps.apptp4
 
 
 import android.os.Bundle
+import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -30,14 +31,28 @@ class MainActivity : AppCompatActivity() {
             textViewDirection.text = direction
         }
         buttonRead.setOnClickListener {
-            var number: Int = Integer.parseInt(textViewNumber.text.toString()); //Convertion Editable to Int
-            var read: String = callMultiplication(number, "READ")
-            textViewDirection.text = read
+            if (textViewNumber.text.isNotEmpty())
+            {
+                var number: Int = Integer.parseInt(textViewNumber.text.toString()); //Convertion Editable to Int
+                var read: String = callMultiplication(number, "READ")
+                textViewDirection.text = read
+            }
+            else
+            {
+                textViewDirection.text = "Error, editText is empty";
+            }
         }
         buttonWrite.setOnClickListener {
-            var number: Int = Integer.parseInt(textViewNumber.text.toString());
-            var write: String = callMultiplication(number, "WRITE")
-            textViewDirection.text = write
+            if (textViewNumber.text.isNotEmpty())
+            {
+                var number: Int = Integer.parseInt(textViewNumber.text.toString());
+                var write: String = callMultiplication(number, "WRITE")
+                textViewDirection.text = write
+            }
+            else
+            {
+                textViewDirection.text = "Error, editText is empty";
+            }
         }
 
     }

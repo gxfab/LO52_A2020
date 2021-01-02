@@ -11,5 +11,15 @@ La fonction C++ récupère la String en paramètre, la convertie en un format St
 Si il s'agit du bon bouton, le texte en japonais est renvoyé sous format String compatible kotlin, et copié dans la variable de départ ("direction").
 
 Enfin, la zone de texte prend la variable direction pour valeur.
+(J'avais utilisé un widget editText plutôt qu'un textView au début, d'où la difficulté à editer sa valeur)
 
-PS: Grosse difficulté pour le passage en paramètre au moment de l'appel de la fonction du au fait que kotlin ne considère pas la propriété ".text" d'une zone de texte éditable comme une String classique. (D'où la ligne un peu étrange pour éditer sa valeur avec "setText")
+--------------Code boutons READ/WRITE-----------------------------------
+
+On initialise la aussi 1 listener par bouton, au click on vérifie que le champ de texte ne soit pas vide et on lance la fonction callMultiplication avec le nom du bouton et la valeur du champ editText en paramètre (Valeur convertie de Editable vers int au prealable).
+
+La fonction C++ récupère ces paramètres et verifie que le chiffre sois bien entre 1 et 10.
+Si oui elle verifie de quel bouton il s'agit, réalise le calcul et renvoi le résultat dans une string. 
+Sinon elle renvoi un message d'erreur dans une string.
+
+
+

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AppTP4</string>
+    <string name="buttonDown">DOWN</string>
+    <string name="textViewDirection">Def</string>
+    <string name="buttonRead">READ</string>
+    <string name="buttonWrite">WRITE</string>
+    <string name="buttonUp">UP</string>
+    <string name="buttonRight">RIGHT</string>
+    <string name="buttonLeft">LEFT</string>
+    <string name="editTextHint">Type number here...</string>
 </resources>

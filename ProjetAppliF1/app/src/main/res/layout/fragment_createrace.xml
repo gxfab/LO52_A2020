@@ -86,16 +86,17 @@
 
     <TextView
         android:id="@+id/textView_second"
-        android:layout_width="419dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="282dp"
-        android:layout_marginTop="204dp"
-        android:layout_marginEnd="579dp"
-        android:layout_marginBottom="560dp"
+        android:layout_width="609dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="451dp"
+        android:layout_marginBottom="546dp"
         android:text="@string/textView_second"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

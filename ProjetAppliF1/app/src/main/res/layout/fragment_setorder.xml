@@ -273,18 +273,17 @@
 
             <TextView
                 android:id="@+id/textView_Note4"
-                android:layout_width="458dp"
-                android:layout_height="30dp"
+                android:layout_width="489dp"
+                android:layout_height="29dp"
                 android:layout_marginStart="77dp"
                 android:layout_marginTop="436dp"
-                android:layout_marginEnd="126dp"
+                android:layout_marginEnd="95dp"
                 android:layout_marginBottom="306dp"
                 android:text="@string/textView_Note4"
                 android:textSize="18sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

@@ -156,4 +156,59 @@ public abstract class AppDataBase extends RoomDatabase
         }
         return result;
     }
+
+    /**
+     * Return a runner list sorted by their time, the worst time first and the best time at the end
+     * @param runnerList : List<Runner>, the runner list
+     * @return List<Runner> : the sorted runner list
+     */
+    public List<Runner> getRunnersOrderedByRating(List<Runner> runnerList)
+    {
+        List<Runner> result = new ArrayList<Runner>();
+        List<Runner> copyRunnerList = new ArrayList<Runner>();
+        for(Runner r : runnerList)
+            copyRunnerList.add(r);
+
+        while(result.size() < 30 && !copyRunnerList.isEmpty())
+        {
+            int size = copyRunnerList.size();
+            long worstTime = -1;
+            Runner worstRunner =  null;
+            for(Runner r : copyRunnerList)
+            {
+                if(r.getTime5() > worstTime)
+                {
+                    worstRunner = r;
+                    worstTime = r.getTime5();
+                }
+            }
+
+            if(worstRunner != null)
+            {
+                result.add(worstRunner);
+                copyRunnerList.remove(worstRunner);
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * Gets the average runner time for every team
+     * @param teamList : List<Team>, the team list
+     * @return List<String[]> : - 0 being the team ID
+     *                          - 1 being the team average runner time
+     */
+    public List<String[]> getAverageTeamTime(List<Team> teamList)
+    {
+        List<String[]> result = new ArrayList<String[]>();
+        for(Team t : teamList)
+        {
+            String[] s = new String[2];
+            s[0] = String.valueOf(t.getTeamId());
+            s[1] = String.valueOf(t.getTime()/3);
+            result.add(s);
+        }
+        return result;
+    }
 }

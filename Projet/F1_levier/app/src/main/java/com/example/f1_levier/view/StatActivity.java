@@ -5,6 +5,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.f1_levier.BDD.entity.Runner;
 import com.example.f1_levier.R;
 
 import java.util.List;
@@ -67,6 +68,17 @@ public class StatActivity extends AppCompatActivity {
         best_sp();
 
         best_ob();
+
+        List<String[]> averageTime = db.getAverageTeamTime(teams);
+        for(String[] s : averageTime)
+        {
+            System.out.println("team id : " + s[0]);
+            System.out.println("team average runner time : " + s[1]);
+        }
+
+        List<Runner> sortedList = db.getRunnersOrderedByRating(runnerList);
+        for(int i = sortedList.size() - 1; i >= 0; i--)
+            System.out.println("time : " + sortedList.get(i).getTime5());
     }
 
     private void rating() {

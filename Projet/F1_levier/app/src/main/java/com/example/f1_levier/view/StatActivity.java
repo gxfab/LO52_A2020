@@ -1,12 +1,22 @@
 package com.example.f1_levier.view;
 
+import android.app.Dialog;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.f1_levier.BDD.entity.Runner;
 import com.example.f1_levier.R;
+import com.example.f1_levier.adapter.ParticipantAdapter;
+import com.example.f1_levier.adapter.RankAdapter;
+import com.example.f1_levier.adapter.TimeAdapter;
 
 import java.util.List;
 
@@ -32,12 +42,15 @@ public class StatActivity extends AppCompatActivity {
     TextView te_ob2;
     TextView te_id_ob2;
     TextView te_time_ob2;
+    TextView te_pit;
+    TextView te_id_pit;
+    TextView te_time_pit;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stat);
 
-        te_rank = findViewById(R.id.textView_rank);
+        te_rank = findViewById(R.id.tv_rank);
 
         te_run = findViewById(R.id.textView_name_run);
         te_id_run = findViewById(R.id.textView_team_run);
@@ -59,27 +72,84 @@ public class StatActivity extends AppCompatActivity {
         te_id_ob2 = findViewById(R.id.textView_team_ob2);
         te_time_ob2 = findViewById(R.id.textView_time_ob2);
 
+        te_pit = findViewById(R.id.textView_name_pit);
+        te_id_pit = findViewById(R.id.textView_team_pit);
+        te_time_pit = findViewById(R.id.textView_time_pit);
+
+        Button b_participant = findViewById(R.id.button_rank_participant);
+        Button b_team = findViewById(R.id.button_time_team);
+
         /*rating*/
         rating();
 
         /*best runner*/
         best_runner();
 
+        /*best sprinteur*/
         best_sp();
 
+        /*best coureur d'obstacle*/
         best_ob();
 
-        List<String[]> averageTime = db.getAverageTeamTime(teams);
-        for(String[] s : averageTime)
-        {
-            System.out.println("team id : " + s[0]);
-            System.out.println("team average runner time : " + s[1]);
-        }
+        /*best pit*/
+        best_pit();
 
-        List<Runner> sortedList = db.getRunnersOrderedByRating(runnerList);
-        for(int i = sortedList.size() - 1; i >= 0; i--)
-            System.out.println("time : " + sortedList.get(i).getTime5());
+        /*dialog pour classement indiv*/
+        b_participant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rank();
+            }
+        });
+
+        /*dialog pour la liste des temps par equipe*/
+        b_team.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                team_time();
+            }
+        });
+
     }
+
+    private void rank(){
+        List<Runner> sortedList = db.getRunnersOrderedByRating(runnerList);
+        AlertDialog.Builder builder = new AlertDialog.Builder(StatActivity.this);
+        View view = getLayoutInflater().inflate(R.layout.dialog_rank, null);
+        ListView listView = (ListView) view.findViewById(R.id.listView_rank_participant);
+        RankAdapter adapter = new RankAdapter(this, sortedList);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(),
+                        "Rang "+i, Toast.LENGTH_SHORT);
+            }
+        });
+        builder.setView(R.layout.dialog_rank);
+        AlertDialog d_rank = builder.create();
+        d_rank.show();
+    }
+
+    private void team_time(){
+        List<String[]> averageTime = db.getAverageTeamTime(teams);
+        final Dialog d_time = new Dialog(StatActivity.this);
+        View view = getLayoutInflater().inflate(R.layout.dialog_time,null);
+        final ListView listView = (ListView) view.findViewById(R.id.listView_time_team);
+        TimeAdapter adapter = new TimeAdapter(this, averageTime);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(),
+                        "Team "+i, Toast.LENGTH_SHORT);
+            }
+        });
+        d_time.setContentView(R.layout.dialog_time);
+
+        d_time.show();
+    }
+
 
     private void rating() {
         StringBuilder temp = new StringBuilder();
@@ -128,4 +198,10 @@ public class StatActivity extends AppCompatActivity {
         te_time_ob2.setText(ob2.get(3));
     }
 
+    private void best_pit(){
+        List<String> pit = db.getBestTimeAsString(runnerList, teams,3);
+        te_pit.setText(pit.get(1)+" "+pit.get(2));
+        te_id_pit.setText(pit.get(0));
+        te_time_pit.setText(pit.get(3));
+    }
 }

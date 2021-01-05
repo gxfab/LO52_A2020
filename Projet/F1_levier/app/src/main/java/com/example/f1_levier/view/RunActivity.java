@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
@@ -104,7 +103,7 @@ public class RunActivity extends AppCompatActivity {
             if(isClickable) {
                 editItem(v);
             }
-            if(win_team.size() == 10){
+            if(win_team.size() == teams.size()){
                 b_stat.setVisibility(View.VISIBLE);
                 isClickable=false;
                 cdt.stop();
@@ -115,7 +114,7 @@ public class RunActivity extends AppCompatActivity {
             int selectedItemPosition = recyclerView.getChildAdapterPosition(v);
             RecyclerView.ViewHolder viewHolder
                     = recyclerView.findViewHolderForAdapterPosition(selectedItemPosition);
-            TextView textViewName = viewHolder.itemView.findViewById(R.id.textView_name);
+            TextView textViewName = viewHolder.itemView.findViewById(R.id.tv_np);
             TextView textViewIdStep= viewHolder.itemView.findViewById(R.id.textView_id_step);
             ImageView imageViewStep = viewHolder.itemView.findViewById(R.id.imageView_step);
             ImageView imageViewPerson = viewHolder.itemView.findViewById(R.id.imageView_person);

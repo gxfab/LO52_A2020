@@ -46,7 +46,7 @@
                     android:src="@drawable/pf" />
 
                 <TextView
-                    android:id="@+id/textView_name"
+                    android:id="@+id/tv_np"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/_5sdp"

@@ -69,7 +69,7 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
     }
 
     private void start() {
-        if (runnerList.size() == 30 && teams != null) {
+        if (runnerList.size()%3 ==0 && teams != null) {
             ElementCard.nameArray = new ArrayList<>();
             for (int i = 0; i < teams.size(); i++) {
                 ArrayList<String> t = new ArrayList<>();

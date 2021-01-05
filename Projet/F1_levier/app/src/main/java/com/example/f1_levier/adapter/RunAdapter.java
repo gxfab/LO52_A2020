@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.f1_levier.utils.Card;
-import com.example.f1_levier.utils.Card;
 import com.example.f1_levier.R;
 import com.example.f1_levier.view.RunActivity;
 
@@ -30,7 +29,7 @@ public class RunAdapter extends RecyclerView.Adapter<RunAdapter.MyViewHolder> {
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            this.textViewName = itemView.findViewById(R.id.textView_name);
+            this.textViewName = itemView.findViewById(R.id.tv_np);
             this.textViewIdTeam = itemView.findViewById(R.id.textView_id_team);
             this.imageViewPerson = itemView.findViewById(R.id.imageView_person);
             this.textViewIdStep = itemView.findViewById(R.id.textView_id_step);

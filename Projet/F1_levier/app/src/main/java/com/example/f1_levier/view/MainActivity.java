@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements NumberPicker.OnVa
     }
 
     private void team() {
-        if (runnerList.size() == 30)
+        if (runnerList.size()%3 == 0)
         {
             Intent intent = new Intent(this, TeamActivity.class);
             startActivity(intent);

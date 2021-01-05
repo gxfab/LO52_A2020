@@ -28,6 +28,8 @@ class CreateRaceFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_createrace, container, false)
+
+        //Create the Race db
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,7 +62,7 @@ class CreateRaceFragment : Fragment() {
             hr.set(Calendar.HOUR_OF_DAY, hour)
             hr.set(Calendar.MINUTE, minutes)
 
-            val myHFormat = "HH:mm" // mention the format you need
+            val myHFormat = "HH:mm"
             val sdfg = SimpleDateFormat(myHFormat, Locale.FRANCE)
             editText_Heure.setText(sdfg.format(hr.time))
         }

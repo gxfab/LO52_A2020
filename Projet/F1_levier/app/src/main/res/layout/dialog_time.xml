@@ -10,7 +10,7 @@
         android:orientation="vertical">
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="729dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
@@ -20,8 +20,8 @@
 
         <ListView
             android:id="@+id/listView_time_team"
-            android:layout_width="1256dp"
-            android:layout_height="687dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp" />

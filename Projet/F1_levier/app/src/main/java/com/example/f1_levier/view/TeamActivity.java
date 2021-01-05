@@ -17,6 +17,7 @@ import com.example.f1_levier.adapter.TeamAdapter;
 import com.example.f1_levier.utils.ElementCard;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.f1_levier.view.MainActivity.db;
 import static com.example.f1_levier.view.MainActivity.runnerList;
@@ -126,7 +127,6 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
      */
     private ArrayList<Team> teamCreation()
     {
-        ArrayList<Team> result = new ArrayList<Team>();
         ArrayList<Runner> sortedList = new ArrayList<Runner>();
 
         // Sort the participants by level in sortedList
@@ -174,6 +174,50 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
             teamList.get(worstTeamForTheMoment).add(sortedList.get(i));
         }
 
+        ArrayList<Team> result = createTeamListFromListOfList(teamList);
+
+        /*Random doesn't work, guess it need fact(30) to find the best way, and that's too much
+        // If the first way didn't work, let's do it the hard way
+        while(!areTeamBalanced(result))
+        {
+            System.out.println("Team not balanced, let's put some random in there");
+            List<Runner> tmpList = new ArrayList<Runner>();
+            for(Runner r : sortedList)
+                tmpList.add(r);
+            ArrayList<ArrayList<Runner>> arrList = new ArrayList<ArrayList<Runner>>();
+
+            while(arrList.size() < 10)
+            {
+                ArrayList<Runner> team = new ArrayList<Runner>();
+                int rand = 0;
+                for(int i = 0 ; i < 3; i++)
+                {
+                    rand = (int) (Math.random() * (tmpList.size() - 0 ));
+                    team.add(tmpList.get(rand));
+                    tmpList.remove(rand);
+                }
+                arrList.add(team);
+            }
+
+            result = createTeamListFromListOfList(arrList);
+        }*/
+
+        for(Team t : result)
+        {
+            db.teamDAO().insertTeam(t);
+        }
+
+        return result;
+    }
+
+    /**
+     * Creates a List<Team> from an ArrayList<ArrayList<Runner>>
+     * @param teamList : ArrayList<ArrayList<Runner>> the list of list of runner to traduce in List
+     * @return List<Team>
+     */
+    private ArrayList<Team> createTeamListFromListOfList(ArrayList<ArrayList<Runner>> teamList)
+    {
+        ArrayList<Team> result = new ArrayList<Team>();
         int id = 0;
         // Creates the final result
         for(ArrayList<Runner> team : teamList)
@@ -186,14 +230,8 @@ public class TeamActivity extends AppCompatActivity implements TeamDialog.TeamDi
             result.add(newTeam);
             id++;
         }
-
-        for(Team t : result)
-        {
-            db.teamDAO().insertTeam(t);
-        }
         return result;
     }
-
 
     /**
      * Indicates if the teams level are balanced with maximum + or - 15 in team global level

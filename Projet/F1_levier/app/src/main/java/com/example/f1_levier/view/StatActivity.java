@@ -1,6 +1,7 @@
 package com.example.f1_levier.view;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -114,9 +115,10 @@ public class StatActivity extends AppCompatActivity {
 
     private void rank(){
         List<Runner> sortedList = db.getRunnersOrderedByRating(runnerList);
-        AlertDialog.Builder builder = new AlertDialog.Builder(StatActivity.this);
+
         View view = getLayoutInflater().inflate(R.layout.dialog_rank, null);
         ListView listView = (ListView) view.findViewById(R.id.listView_rank_participant);
+
         RankAdapter adapter = new RankAdapter(this, sortedList);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -126,17 +128,26 @@ public class StatActivity extends AppCompatActivity {
                         "Rang "+i, Toast.LENGTH_SHORT);
             }
         });
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(StatActivity.this);
+        builder.setNegativeButton("Fermer", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
         builder.setView(R.layout.dialog_rank);
         AlertDialog d_rank = builder.create();
+
         d_rank.show();
     }
 
     private void team_time(){
         List<String[]> averageTime = db.getAverageTeamTime(teams);
-        final Dialog d_time = new Dialog(StatActivity.this);
+
         View view = getLayoutInflater().inflate(R.layout.dialog_time,null);
         final ListView listView = (ListView) view.findViewById(R.id.listView_time_team);
-        TimeAdapter adapter = new TimeAdapter(this, averageTime);
+
+        final TimeAdapter adapter = new TimeAdapter(this, averageTime);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -145,8 +156,15 @@ public class StatActivity extends AppCompatActivity {
                         "Team "+i, Toast.LENGTH_SHORT);
             }
         });
-        d_time.setContentView(R.layout.dialog_time);
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(StatActivity.this);
+        builder.setNegativeButton("Fermer", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        builder.setView(R.layout.dialog_time);
+        AlertDialog d_time = builder.create();
         d_time.show();
     }
 

@@ -1,0 +1,8 @@
+commande repo de bases
+->export ARCH=arm64
+->make clean && make mrproper
+-> make hikey_defconfig -> ne marche pas doc j'installe flex
+je mesuis aidé de ça justifie le ranchu machin) https://android.googlesource.com/platform/external/qemu/+/emu-master-dev/android/docs/ANDROID-KERNEL.TXT
+j'ai crée un rep configs et sauvé cette configurtion
+j'ai ensuite compilé avec make oldconfig:
+j'ai sauvéça sour ranchuconfig et fait un diff avec hikkey_defcnfig

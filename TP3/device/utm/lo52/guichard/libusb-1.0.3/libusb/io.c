@@ -32,12 +32,6 @@
 
 #include "libusbi.h"
 
-# define TIMESPEC_TO_TIMEVAL(tv,ts)
-do{
-    (tv)-> tv_sec =(ts)->tv_sec;
-    (tv)-> tv_usec =(ts)->tv_nsec/ 1000
-}while ( 0 )
-
 /**
  * \page io Synchronous and asynchronous device I/O
  *
@@ -123,7 +117,7 @@ if (r == 0 && actual_length == sizeof(data)) {
  *
  * For details on how to use the synchronous API, see the
  * \ref syncio "synchronous I/O API documentation" pages.
- *
+ * 
  * \section async The asynchronous interface
  *
  * Asynchronous I/O is the most significant new feature in libusb-1.0.
@@ -244,7 +238,7 @@ if (r == 0 && actual_length == sizeof(data)) {
  * -# <b>Completion handling</b>: examine transfer results in the
  *    libusb_transfer structure
  * -# <b>Deallocation</b>: clean up resources
- *
+ * 
  *
  * \subsection asyncalloc Allocation
  *
@@ -393,7 +387,7 @@ if (r == 0 && actual_length == sizeof(data)) {
  * request was not supported.
  *
  * \section asyncintr Considerations for interrupt transfers
- *
+ * 
  * All interrupt transfers are performed using the polling interval presented
  * by the bInterval value of the endpoint descriptor.
  *
@@ -511,12 +505,12 @@ if (r == 0 && actual_length == sizeof(data)) {
  * -# Repeatedly call libusb_handle_events() in blocking mode from a dedicated
  *    thread.
  *
- * The first option is plainly not very nice, and will cause unnecessary
+ * The first option is plainly not very nice, and will cause unnecessary 
  * CPU wakeups leading to increased power usage and decreased battery life.
  * The second option is not very nice either, but may be the nicest option
  * available to you if the "proper" approach can not be applied to your
  * application (read on...).
- *
+ * 
  * The recommended option is to integrate libusb with your application main
  * event loop. libusb exposes a set of file descriptors which allow you to do
  * this. Your main loop is probably already calling poll() or select() or a
@@ -698,7 +692,7 @@ void myfunc() {
  * the loop, <em>up to 120 seconds later.</em> Clearly a two-minute delay is
  * undesirable, and don't even think about using short timeouts to circumvent
  * this issue!
- *
+ * 
  * The solution here is to ensure that no two threads are ever polling the
  * file descriptors at the same time. A naive implementation of this would
  * impact the capabilities of the library, so libusb offers the scheme
@@ -706,7 +700,7 @@ void myfunc() {
  *
  * Before we go any further, it is worth mentioning that all libusb-wrapped
  * event handling procedures fully adhere to the scheme documented below.
- * This includes libusb_handle_events() and all the synchronous I/O functions -
+ * This includes libusb_handle_events() and all the synchronous I/O functions - 
  * libusb hides this headache from you. You do not need to worry about any
  * of these issues if you stick to that level.
  *
@@ -794,7 +788,7 @@ if (libusb_try_lock_events(ctx) == 0) {
 			libusb_unlock_event_waiters(ctx);
 			goto retry;
 		}
-
+	
 		libusb_wait_for_event(ctx);
 	}
 	libusb_unlock_event_waiters(ctx);
@@ -1007,7 +1001,7 @@ static void add_to_flying_list(struct usbi_transfer *transfer)
 	struct usbi_transfer *cur;
 	struct timeval *timeout = &transfer->timeout;
 	struct libusb_context *ctx = ITRANSFER_CTX(transfer);
-
+	
 	pthread_mutex_lock(&ctx->flying_transfers_lock);
 
 	/* if we have no other flying transfers, start the list with this one */
@@ -1266,7 +1260,7 @@ API_EXPORTED int libusb_try_lock_events(libusb_context *ctx)
 	if (r)
 		return 1;
 
-	ctx->event_handler_active = 1;
+	ctx->event_handler_active = 1;	
 	return 0;
 }
 
@@ -1525,7 +1519,7 @@ static int handle_timeouts(struct libusb_context *ctx)
 				(cur_tv->tv_sec == systime.tv_sec &&
 					cur_tv->tv_usec > systime.tv_usec))
 			goto out;
-
+	
 		/* otherwise, we've got an expired timeout to handle */
 		handle_timeout(transfer);
 	}
@@ -1761,7 +1755,7 @@ API_EXPORTED int libusb_handle_events_locked(libusb_context *ctx,
  * need to use this function if you are calling poll() or select() or similar
  * on libusb's file descriptors yourself - you do not need to use it if you
  * are calling libusb_handle_events() or a variant directly.
- *
+ * 
  * You should call this function in your main loop in order to determine how
  * long to wait for select() or poll() to return results. libusb needs to be
  * called into at this timeout, so you should use it as an upper bound on
@@ -1972,7 +1966,7 @@ void usbi_handle_disconnect(struct libusb_device_handle *handle)
 
 	/* terminate all pending transfers with the LIBUSB_TRANSFER_NO_DEVICE
 	 * status code.
-	 *
+	 * 
 	 * this is a bit tricky because:
 	 * 1. we can't do transfer completion while holding flying_transfers_lock
 	 * 2. the transfers list can change underneath us - if we were to build a

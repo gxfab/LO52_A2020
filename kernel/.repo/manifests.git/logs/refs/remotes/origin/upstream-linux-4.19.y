@@ -1,0 +1,1 @@
+0000000000000000000000000000000000000000 d94aae1149db870f31d39de1b0450f682734d172 root <root@lunatic-Satellite-Pro-R50-C.(none)> 1609674829 +0100	fetch --quiet --progress origin --tags +refs/heads/*:refs/remotes/origin/* +refs/heads/hikey-linaro-android-4.19:refs/remotes/origin/hikey-linaro-android-4.19 +refs/tags/*:refs/tags/*: storing head

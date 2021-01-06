@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">F1Levier</string>
+    <string name="title_participants">Participants</string>
+    <string name="participant_name">Name</string>
+    <string name="participant_echelon">Echelon</string>
+    <string name="title_new_participant">New participant</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
+    <string name="title_races">Races</string>
+    <string name="race_name">Name</string>
+    <string name="title_activity_team">Teams</string>
+    <string name="title_new_team">New team</string>
+    <string name="title_new_race">New race</string>
+    <string name="team_name">Name</string>
+    <string name="title_team_members">Team members</string>
+    <string name="close">Close</string>
+    <string name="team_members_count_and_echelon">
+        <b>%1$d</b> members. Total echelons : <b>%2$d</b>
+    </string>
+    <string name="title_activity_running_race">Running race</string>
+    <string name="toat_team_member_limit_reached">Team members limit reached</string>
+    <string name="running_race_instructions">
+        Click on the time display to start the chronometer.
+    </string>
+    <string name="title_not_started_races">Not started races</string>
+    <string name="title_finished_races">Finished races</string>
+    <string name="title_activity_stats">Stats</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_global_stats">Global stats</string>
+    <string name="some_teams_have_not_finished">Some team(s) have not finished</string>
+    <string name="team_member_lap_and_time">
+        %1$s Member n° %2$d : Lap %3$d Time %4$s
+    </string>
+    <string name="create_one_team_at_least">Create one team at least</string>
+    <string name="each_team_must_contain_three_members">Each team must contain 3 members</string>
+</resources>

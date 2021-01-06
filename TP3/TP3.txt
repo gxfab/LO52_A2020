@@ -1,6 +1,5 @@
-#Telecharger hikey linaro
-git clone https://android.googlesource.com/device/linaro/hikey
-
+#Telecharger du sous module hikey linaro
+git submodule add https://android.googlesource.com/device/linaro/hikey TP3/device/hikey
 #Telecharger les ressources images
 git clone https://android.googlesource.com/platform/frameworks/base 
 

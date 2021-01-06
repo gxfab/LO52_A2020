@@ -199,14 +199,14 @@ public abstract class AppDataBase extends RoomDatabase
      * @return List<String[]> : - 0 being the team ID
      *                          - 1 being the team average runner time
      */
-    public List<String[]> getAverageTeamTime(List<Team> teamList)
+    public List<List<String>> getAverageTeamTime(List<Team> teamList)
     {
-        List<String[]> result = new ArrayList<String[]>();
+        List<List<String>> result = new ArrayList<List<String>>();
         for(Team t : teamList)
         {
-            String[] s = new String[2];
-            s[0] = String.valueOf(t.getTeamId());
-            s[1] = String.valueOf(t.getTime()/3);
+            ArrayList<String> s = new ArrayList<String>();
+            s.add(String.valueOf(t.getTeamId()));
+            s.add(String.valueOf(t.getTime()/3));
             result.add(s);
         }
         return result;

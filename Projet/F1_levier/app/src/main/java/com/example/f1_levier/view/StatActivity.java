@@ -115,56 +115,34 @@ public class StatActivity extends AppCompatActivity {
 
     private void rank(){
         List<Runner> sortedList = db.getRunnersOrderedByRating(runnerList);
-
+        AlertDialog.Builder d_rank = new AlertDialog.Builder(StatActivity.this);
+        d_rank.setNegativeButton("Fermer", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        d_rank.create();
         View view = getLayoutInflater().inflate(R.layout.dialog_rank, null);
+        d_rank.setView(view);
         ListView listView = (ListView) view.findViewById(R.id.listView_rank_participant);
-
         RankAdapter adapter = new RankAdapter(this, sortedList);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(),
-                        "Rang "+i, Toast.LENGTH_SHORT);
-            }
-        });
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(StatActivity.this);
-        builder.setNegativeButton("Fermer", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.dismiss();
-            }
-        });
-        builder.setView(R.layout.dialog_rank);
-        AlertDialog d_rank = builder.create();
-
         d_rank.show();
     }
 
     private void team_time(){
-        List<String[]> averageTime = db.getAverageTeamTime(teams);
-
-        View view = getLayoutInflater().inflate(R.layout.dialog_time,null);
-        final ListView listView = (ListView) view.findViewById(R.id.listView_time_team);
-
-        final TimeAdapter adapter = new TimeAdapter(this, averageTime);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        List<List<String>> averageTime = db.getAverageTeamTime(teams);
+        AlertDialog.Builder d_time = new AlertDialog.Builder(StatActivity.this);
+        d_time.setNegativeButton("Fermer", new DialogInterface.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(),
-                        "Team "+i, Toast.LENGTH_SHORT);
+            public void onClick(DialogInterface dialog, int which) {
             }
         });
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(StatActivity.this);
-        builder.setNegativeButton("Fermer", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.dismiss();
-            }
-        });
-        builder.setView(R.layout.dialog_time);
-        AlertDialog d_time = builder.create();
+        View view = getLayoutInflater().inflate(R.layout.dialog_time, null);
+        d_time.setView(view);
+        ListView listView = (ListView) view.findViewById(R.id.listView_time_team);
+        TimeAdapter adapter = new TimeAdapter(this, averageTime);
+        listView.setAdapter(adapter);
         d_time.show();
     }
 

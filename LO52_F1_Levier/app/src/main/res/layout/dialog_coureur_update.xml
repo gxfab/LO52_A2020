@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="8dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_nom"
+        android:hint="Nom"
+        android:padding="12dp"
+        android:lines="1"
+        android:gravity="top"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_prenom"
+        android:hint="Prenom"
+        android:padding="12dp"
+        android:lines="1"
+        android:gravity="top"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_niveau"
+        android:hint="Niveau"
+        android:inputType="number"
+        android:padding="12dp"
+        android:lines="1"
+        android:gravity="top"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/coureur_update"
+        android:text="Actualiser"
+        android:layout_marginTop="8dp"/>
+
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+2020-12-21 10:31:30,934 [  28821]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.AndroidInitialConfigurator) 
+2020-12-21 10:32:53,272 [ 111159]   WARN - nSystem.impl.ActionManagerImpl - keymap "ReSharper" not found [Plugin: com.android.tools.ndk] 
+2020-12-21 10:32:54,480 [ 112367]   WARN - nsions.impl.ExtensionPointImpl - Extension to be removed not found: class org.jetbrains.plugins.gradle.execution.test.runner.TestClassGradleConfigurationProducer 
+2020-12-21 10:33:05,824 [ 123711]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=org.jetbrains.android.compose.AndroidComposeAutoDocumentation) 
+2020-12-21 10:33:06,972 [ 124859]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.ApkProjectComponent) 
+2020-12-21 10:33:06,974 [ 124861]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.issues.SetupIssueReporter) 
+2020-12-21 10:33:23,221 [ 141108]   WARN - openapi.wm.impl.ToolWindowImpl - ToolWindow icons should be 13x13. Please fix ToolWindow (ID:  Android Emulator) or icon jar:file:/home/lunatic/android-studio/plugins/android/lib/artwork.jar!/studio/icons/shell/tool-windows/emulator.svg 
+2020-12-21 10:33:23,678 [ 141565]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.symbols.DebugSymbolNotifications) 
+2020-12-21 10:33:24,594 [ 142481]   WARN - .diagnostic.PerformanceWatcher - UI was frozen for 9306ms, details saved to /home/lunatic/.cache/Google/AndroidStudio4.1/log/threadDumps-freeze-20201221-103320-AI-201.8743.12.41.6858069-FileSystemUtil$JnaUnixMediatorImpl$LinuxLibC.__lxstat64-9sec 
+2020-12-21 10:33:27,627 [ 145514]   WARN - ugins.textmate.TextMateService - Missing builtin bundles, checked: 
+/home/lunatic/.local/share/Google/AndroidStudio4.1/textmate/lib/bundles
+/home/lunatic/android-studio/plugins/textmate/lib/bundles 
+2020-12-21 10:33:38,117 [ 156004]   WARN - com.intellij.util.xmlb.Binding - no accessors for class org.jetbrains.kotlin.idea.highlighter.KotlinDefaultHighlightingSettingsProvider 
+2020-12-21 10:33:38,367 [ 156254]   WARN - .diagnostic.PerformanceWatcher - UI was frozen for 5586ms, details saved to /home/lunatic/.cache/Google/AndroidStudio4.1/log/threadDumps-freeze-20201221-103337-AI-201.8743.12.41.6858069-ZipFile.read-5sec 
+2020-12-21 10:33:44,925 [ 162812]   WARN -            #com.android.ddmlib - * daemon not running; starting now at tcp:5037 
+2020-12-21 10:33:45,711 [ 163598]   WARN -            #com.android.ddmlib - * daemon started successfully 
+2020-12-21 10:33:48,086 [ 165973]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.ApkWritingAccessProvider) 
+2020-12-21 10:33:53,422 [ 171309]   WARN - openapi.wm.impl.ToolWindowImpl - ToolWindow icons should be 13x13. Please fix ToolWindow (ID:  Problems View) or icon jar:file:/home/lunatic/android-studio/lib/icons.jar!/general/warning.svg 
+2020-12-21 10:33:53,584 [ 171471]   WARN - .diagnostic.PerformanceWatcher - UI was frozen for 5821ms, details saved to /home/lunatic/.cache/Google/AndroidStudio4.1/log/threadDumps-freeze-20201221-103352-AI-201.8743.12.41.6858069-ZipFile.read-5sec 
+2020-12-21 10:34:07,421 [ 185308]   WARN - .diagnostic.PerformanceWatcher - UI was frozen for 10324ms, details saved to /home/lunatic/.cache/Google/AndroidStudio4.1/log/threadDumps-freeze-20201221-103402-AI-201.8743.12.41.6858069-ChangesViewManager.updateCommitWorkflow-10sec 
+2020-12-21 10:34:08,837 [ 186724]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.gradle.notification.GeneratedFileNotificationProvider) 
+2020-12-21 10:34:08,945 [ 186832]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.editor.notification.ApkReloadNotificationProvider) 
+2020-12-21 10:34:16,968 [ 194855]   WARN - dering.imagepool.ImagePoolImpl - 0 maxSize for Bucket. This Bucket will not be used. 
+2020-12-21 10:34:25,443 [ 203330]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.lang.androidSql.room.RoomDependencyChecker) 
+2020-12-21 10:34:25,749 [ 203636]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.lang.androidSql.room.RoomSchemaManager) 
+2020-12-21 10:36:59,869 [ 357756]   WARN - com.intellij.util.xmlb.Binding - no accessors for class org.jetbrains.kotlin.idea.scripting.gradle.GradleScriptInputsWatcher$Storage 
+2020-12-21 10:36:59,905 [ 357792]   WARN - com.intellij.util.xmlb.Binding - no accessors for class org.jetbrains.kotlin.idea.core.script.configuration.utils.ScriptClassRootsStorage 
+2020-12-21 10:49:56,451 [1134338]   WARN - ystem.impl.ActionPopupMenuImpl - 1439ms to fill popup menu EditorPopup 
+2020-12-21 10:50:40,690 [1178577]   WARN - com.intellij.util.xmlb.Binding - no accessors for class com.android.build.attribution.data.SuppressedWarnings 
+2020-12-21 11:10:51,913 [2389800]   WARN - s.idea.rendering.RenderService - Waited 1 seconds (plus 104011 nanoseconds delay) for com.google.common.util.concurrent.Futures$NonCancellationPropagatingFuture@744a6ba7[status=PENDING, info=[delegate=[com.google.common.util.concurrent.SettableFuture@7b29930a[status=PENDING]]]] 
+java.util.concurrent.TimeoutException: Waited 1 seconds (plus 104011 nanoseconds delay) for com.google.common.util.concurrent.Futures$NonCancellationPropagatingFuture@744a6ba7[status=PENDING, info=[delegate=[com.google.common.util.concurrent.SettableFuture@7b29930a[status=PENDING]]]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:495)
+	at com.google.common.util.concurrent.AbstractFuture$TrustedFuture.get(AbstractFuture.java:98)
+	at com.android.tools.idea.rendering.RenderService$RenderTaskBuilder.lambda$new$0(RenderService.java:368)
+	at com.android.tools.idea.rendering.RenderTask.createRenderSession(RenderTask.java:649)
+	at com.android.tools.idea.rendering.RenderTask.lambda$inflate$6(RenderTask.java:844)
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2020-12-21 11:12:08,528 [2466415]   WARN - actions.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio 
+2020-12-21 11:12:10,027 [2467914]   WARN - ystem.impl.ActionPopupMenuImpl - 3440ms to fill popup menu ProjectViewPopup 
+2020-12-21 11:12:10,041 [2467928]   WARN - actions.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio 
+2020-12-21 11:33:03,465 [3721352]   WARN - ues.SyncIssueUsageReporterImpl - Multiple sync failures reported. Discarding: SDK_BUILD_TOOLS_TOO_LOW 
+2020-12-21 11:33:09,956 [3727843]   WARN - ues.SyncIssueUsageReporterImpl - Multiple sync failures reported. Discarding: SDK_BUILD_TOOLS_TOO_LOW 
+2020-12-21 11:33:09,957 [3727844]   WARN - ues.SyncIssueUsageReporterImpl - Multiple sync failures reported. Discarding: SDK_BUILD_TOOLS_TOO_LOW 
+2020-12-21 11:33:43,975 [3761862]   WARN - ues.SyncIssueUsageReporterImpl - Multiple sync failures reported. Discarding: SDK_BUILD_TOOLS_TOO_LOW 
+2020-12-21 11:33:43,975 [3761862]   WARN - ues.SyncIssueUsageReporterImpl - Multiple sync failures reported. Discarding: SDK_BUILD_TOOLS_TOO_LOW 
+2020-12-21 11:40:09,109 [4146996]   WARN - pl.local.NativeFileWatcherImpl - File watcher is still alive. Doing a force quit. 
+2020-12-21 11:40:11,180 [4149067]   WARN - ution.process.OSProcessHandler - Process has been already terminated: fsnotifier64 

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_createrace.*
 import java.text.SimpleDateFormat
@@ -38,7 +39,12 @@ class CreateRaceFragment : Fragment() {
         //Verifie que les champs date et heure sont bien remplis lors du clic
         view.findViewById<Button>(R.id.button_CreateRace2).setOnClickListener {
             if(editText_Date.text.isNotEmpty() && editText_Heure.text.isNotEmpty()){
+                //Update Race db
                 findNavController().navigate(R.id.action_CreateRaceFragment_to_CreateTeamFragment)
+            }
+            else
+            {
+                Toast.makeText(context, "Les champs date et heure sont obligatoire", Toast.LENGTH_SHORT).show()
             }
         }
 

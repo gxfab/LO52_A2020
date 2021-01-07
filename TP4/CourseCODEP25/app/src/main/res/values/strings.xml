@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CourseCODEP25</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_participant">Participant</string>
+    <string name="menu_course">Course</string>
+    <string name="historique_course"><u>HISTORIQUE DES COURSES</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="titre_create_course_fragment"><u>AJOUT DE COURSE</u></string>
+    <string name="mesures">CONSIGNE DE SECURITE COVID19: VEUILLEZ RESPECTER LES MESURES DE DISTANCIATION DE 1M | SAFETY INSTRUCTION COVID19: PLEASE OBSERVE THE DISTANCE MEASUREMENTS OF 1M. | تعليمات السلامة الخاصة بـ COVID19: يرجى احترام إجراءات الفصل عند 1 مليون</string>
+</resources>

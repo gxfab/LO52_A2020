@@ -141,11 +141,7 @@ public abstract class AppDataBase extends RoomDatabase
             result.add(String.valueOf(bestRunner.getTeamId() + 1));
             result.add(bestRunner.getLastName());
             result.add(bestRunner.getFirstName());
-            int minutes = (int)(minTime/60000);
-            int sec = (int)((minTime - minutes*60000))/1000;
-            long ms = minTime%1000;
-            String timeString = minutes + " min " + sec + " s " + ms + " ms";
-            result.add(timeString);
+            result.add(traduceLongTimeAsString(minTime));
         }
         else
         {
@@ -155,6 +151,19 @@ public abstract class AppDataBase extends RoomDatabase
             result.add("not found");
         }
         return result;
+    }
+
+    /**
+     * Traduces a time as long into a time as String (min, s, ms)
+     * @param time : long, the time value as long
+     * @return String : the time in min sec ms format
+     */
+    private String traduceLongTimeAsString(long time)
+    {
+        int minutes = (int)(time/60000);
+        int sec = (int)((time - minutes*60000))/1000;
+        long ms = time%1000;
+        return minutes + " min " + sec + " s " + ms + " ms";
     }
 
     /**
@@ -206,7 +215,7 @@ public abstract class AppDataBase extends RoomDatabase
         {
             ArrayList<String> s = new ArrayList<String>();
             s.add(String.valueOf(t.getTeamId()));
-            s.add(String.valueOf(t.getTime()/3));
+            s.add(traduceLongTimeAsString(t.getTime()/3));
             result.add(s);
         }
         return result;

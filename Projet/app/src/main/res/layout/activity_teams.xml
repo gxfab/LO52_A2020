@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#70ad46"
+    tools:context=".TeamsActivity">
+
+    <LinearLayout
+        android:weightSum="100"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:paddingTop="95dp"
+            android:paddingStart="330dp"
+            android:paddingEnd="330dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/codep25"
+                style="@style/textView"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"/>
+
+            <TextView
+                style="@style/textView"
+                android:layout_marginEnd="20dp"
+                android:text="@string/teamsList" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:paddingTop="95dp"
+            android:paddingStart="330dp"
+            android:paddingEnd="330dp"
+            android:orientation="horizontal" >
+
+            <Spinner
+                android:id="@+id/teams"
+                android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:layout_marginEnd="20dp"
+                android:text = "@string/teams"/>
+
+            <Button
+                android:id="@+id/consult"
+                android:layout_height="75dp"
+                android:layout_width="150dp"
+                style="@style/mainActivityButton"
+                android:onClick="consultTeam"
+                android:text="@string/consulter" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:paddingTop="95dp"
+            android:paddingStart="420dp"
+            android:paddingEnd="330dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/leave"
+                android:layout_height="75dp"
+                android:layout_width="150dp"
+                style="@style/mainActivityButton"
+                android:text="@string/startRace"
+                android:onClick="startRace"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#70ad46"
+    tools:context=".RaceActivity">
+
+    <LinearLayout
+        android:weightSum="100"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:paddingTop="10dp"
+            android:paddingStart="330dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/courseName"
+                android:id="@+id/courseName"
+                style="@style/textView"
+                android:layout_marginEnd="40dp"
+                android:gravity="center"/>
+
+            <ImageView
+                android:src="@drawable/stopwatch"
+                android:layout_height="52dp"
+                android:layout_width="40dp"
+                android:maxWidth="20dp"
+                android:maxHeight="20dp"
+                android:layout_marginEnd="10dp"
+                android:onClick="activateStopwatch"/>
+
+            <TextView
+                android:id="@+id/counter"
+                style="@style/textView"
+                android:gravity="center"
+                android:text="@string/counter"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
+
+            <LinearLayout
+                android:id="@+id/firstTeam"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="25"
+                android:background="@drawable/customborder"
+                android:clickable="false"
+                android:onClick="onTeamClick"
+                android:orientation="vertical"
+                android:visibility="invisible"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="33"
+                    android:gravity="center"
+                    android:text="@string/firstTeam" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="33"
+                    android:gravity="center"
+                    android:text="COUREUR" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="33"
+                    android:gravity="center"
+                    android:text="@string/firstSprint" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:weightSum="100"
+                android:visibility="invisible"
+                android:id="@+id/secondTeam"
+                android:background="@drawable/customborder"
+                android:onClick="onTeamClick"
+                android:clickable="false">
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/secondTeam"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="COUREUR"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="SPRINT 1"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:weightSum="100"
+                android:visibility="invisible"
+                android:background="@drawable/customborder"
+                android:onClick="onTeamClick"
+                android:id="@+id/thirdTeam"
+                android:clickable="false">
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/thirdTeam"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="COUREUR"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="SPRINT 1"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:weightSum="100"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:visibility="invisible"
+                android:background="@drawable/customborder"
+                android:onClick="onTeamClick"
+                android:id="@+id/fourthTeam"
+                android:clickable="false">
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/fourthTeam"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="COUREUR"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="SPRINT 1"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:weightSum="100"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/customborder"
+                android:onClick="onTeamClick"
+                android:id="@+id/fifthTeam"
+                android:visibility="invisible"
+                android:clickable="false">
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/fifthTeam"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="COUREUR"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="SPRINT 1"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:weightSum="100"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:visibility="invisible"
+                android:background="@drawable/customborder"
+                android:onClick="onTeamClick"
+                android:id="@+id/sixthTeam"
+                android:clickable="false">
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/sixthTeam"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="COUREUR"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="SPRINT 1"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:weightSum="100"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:visibility="invisible"
+                android:background="@drawable/customborder"
+                android:onClick="onTeamClick"
+                android:id="@+id/seventhTeam"
+                android:clickable="false">
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/seventhTeam"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="COUREUR"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="SPRINT 1"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:weightSum="100"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:visibility="invisible"
+                android:background="@drawable/customborder"
+                android:onClick="onTeamClick"
+                android:id="@+id/eightTeam"
+                android:clickable="false">
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/eightTeam"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="COUREUR"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="SPRINT 1"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:weightSum="100"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:visibility="invisible"
+                android:background="@drawable/customborder"
+                android:onClick="onTeamClick"
+                android:id="@+id/ninthTeam"
+                android:clickable="false">
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/ninthTeam"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="COUREUR"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="SPRINT 1"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:weightSum="100"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:visibility="invisible"
+                android:background="@drawable/customborder"
+                android:onClick="onTeamClick"
+                android:id="@+id/tenthTeam"
+                android:clickable="false">
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/tenthTeam"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="COUREUR"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="SPRINT 1"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:weightSum="100"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:visibility="invisible"
+                android:background="@drawable/customborder"
+                android:onClick="onTeamClick"
+                android:id="@+id/eleventhTeam"
+                android:clickable="false">
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/eleventhTeam"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="COUREUR"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="SPRINT 1"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:weightSum="100"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:visibility="invisible"
+                android:background="@drawable/customborder"
+                android:onClick="onTeamClick"
+                android:id="@+id/twelthTeam"
+                android:clickable="false">
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/twelthTeam"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="COUREUR"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_height="10dp"
+                    android:layout_width="match_parent"
+                    android:text="SPRINT 1"
+                    android:layout_weight="33"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

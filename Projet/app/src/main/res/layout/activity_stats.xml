@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#70ad46"
+    tools:context=".StatsActivity">
+
+    <LinearLayout
+        android:weightSum="100"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="right">
+
+            <Button
+                android:id="@+id/detailedStats"
+                android:layout_height="75dp"
+                android:layout_width="150dp"
+                style="@style/mainActivityButton"
+                android:text="@string/detailedStats"
+                android:onClick="detailedStats"/>
+
+            <Button
+                android:id="@+id/ranking"
+                android:layout_height="75dp"
+                android:layout_width="150dp"
+                style="@style/mainActivityButton"
+                android:text="@string/course_Ranking"
+                android:onClick="ranking"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/course_Stats"
+                style="@style/textView"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:paddingTop="25dp"
+            android:paddingStart="340dp"
+            android:paddingEnd="100dp"
+            android:orientation="horizontal" >
+
+            <Spinner
+                android:id="@+id/teamsSpinner"
+                android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:layout_marginEnd="20dp"
+                android:text = "@string/runners"/>
+
+            <Spinner
+                android:id="@+id/runnersSpinner"
+                android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:layout_marginEnd="20dp"
+                android:text = "@string/runners"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:paddingTop="95dp"
+            android:paddingStart="199dp"
+            android:paddingEnd="10dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp">
+
+                <TextView
+                    android:text=""
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:text="@string/chronoTime"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:text="@string/stepTime"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp">
+
+                <TextView
+                    android:text="@string/firstSprint"
+                    style="@style/textView"
+                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text=""
+                    style="@style/textView"
+                    android:id="@+id/sprint1"
+                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/sprint1time"
+                    style="@style/stepTimeTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp">
+
+                <TextView
+                    android:text="@string/firstObstacle"
+                    style="@style/textView"
+                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text=""
+                    android:id="@+id/obstacle1"
+                    style="@style/textView"
+                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/obstacle1time"
+                    style="@style/stepTimeTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp">
+
+                <TextView
+                    android:text="@string/pitStop"
+                    style="@style/textView"
+                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text=""
+                    style="@style/textView"
+                    android:id="@+id/pitstop"
+                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/pitstoptime"
+                    style="@style/stepTimeTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp">
+
+                <TextView
+                    android:text="@string/secondSprint"
+                    style="@style/textView"
+                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text=""
+                    style="@style/textView"
+                    android:id="@+id/sprint2"
+                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/sprint2time"
+                    style="@style/stepTimeTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:text="@string/secondObstacle"
+                    style="@style/textView"
+                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text=""
+                    style="@style/textView"
+                    android:id="@+id/obstacle2"
+                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/obstacle2time"
+                    style="@style/stepTimeTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:paddingStart="420dp"
+            android:paddingEnd="330dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/leave"
+                android:layout_height="75dp"
+                android:layout_width="150dp"
+                style="@style/mainActivityButton"
+                android:text="@string/goBack"
+                android:onClick="finish"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

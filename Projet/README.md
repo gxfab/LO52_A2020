@@ -1,0 +1,1 @@
+Pour facilier les tests, certains coureurs ont été par défaut ajouté à l'application au premier lancement.

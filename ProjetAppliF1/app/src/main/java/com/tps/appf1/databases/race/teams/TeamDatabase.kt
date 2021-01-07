@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [TeamEntity::class], version = 1, exportSchema = false)
 abstract class TeamDatabase : RoomDatabase() {
-    abstract val teamDatabaseDao: TeamDAO  //Refers the Database Access Object
+    abstract fun teamDatabaseDao(): TeamDAO  //Refers the Database Access Object
     companion object {    //Allows to create and use db without instantiating the class
         @Volatile
         private var INSTANCE: TeamDatabase? = null   //Instantly sync the db to all threads + avoid repeatedly opening connections to the database

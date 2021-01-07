@@ -174,4 +174,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="251dp"
+        android:layout_height="90dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="642dp"
+        tools:layout_editor_absoluteY="394dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

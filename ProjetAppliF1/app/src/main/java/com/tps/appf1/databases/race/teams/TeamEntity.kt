@@ -7,20 +7,29 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "Teams Table")
 data class TeamEntity(
         @PrimaryKey(autoGenerate = true)  //This guarantees that the ID for each night is unique.
-        var TeamID: Long = 0L,
+        val TeamID: Long = 0L,
 
-        @ColumnInfo(name = "Nom Coureur 1")
-        val TeamRunner1: String = "none",
+        @ColumnInfo(name = "ID Coureur 1")
+        var TeamRunner1: Int = 0,
 
-        @ColumnInfo(name = "Nom Coureur 2")
-        val TeamRunner2: String = "none",
+        @ColumnInfo(name = "Lvl Coureur 1")
+        var TeamRunner1Level: Int = 0,
 
-        @ColumnInfo(name = "Nom Coureur 3")
-        val TeamRunner3: String = "none",
+        @ColumnInfo(name = "ID Coureur 2")
+        var TeamRunner2: Int = 0,
+
+        @ColumnInfo(name = "Lvl Coureur 2")
+        var TeamRunner2Level: Int = 0,
+
+        @ColumnInfo(name = "ID Coureur 3")
+        var TeamRunner3: Int = 0,
+
+        @ColumnInfo(name = "Lvl Coureur 3")
+        var TeamRunner3Level: Int = 0,
 
         @ColumnInfo(name = "Niveau Total")
-        val TeamLevel: Int = 0,
+        var TeamLevel: Int = 0,
 
         @ColumnInfo(name = "Temps Total Course")
-        val TeamTime: String = "none"
+        var TeamTime: String = "none"
 )

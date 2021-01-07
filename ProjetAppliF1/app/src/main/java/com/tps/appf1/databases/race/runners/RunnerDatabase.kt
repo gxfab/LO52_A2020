@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [RunnerEntity::class], version = 1, exportSchema = false)
 abstract class RunnerDatabase : RoomDatabase() {
-    abstract val runnerDatabaseDao: RunnerDAO  //Refers the Database Access Object
+    abstract fun runnerDatabaseDao(): RunnerDAO  //Refers the Database Access Object
     companion object {    //Allows to create and use db without instantiating the class
         @Volatile
         private var INSTANCE: RunnerDatabase? = null   //Instantly sync the db to all threads + avoid repeatedly opening connections to the database

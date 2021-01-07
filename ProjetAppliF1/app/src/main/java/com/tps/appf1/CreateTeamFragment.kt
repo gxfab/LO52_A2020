@@ -76,7 +76,7 @@ class CreateTeamFragment : Fragment() {
         view.findViewById<Button>(R.id.button_Terminer).setOnClickListener {
             //vérifie que le nb total de partiticipant est multiple de 3 grâce au modulo 3
             var reste: Int = Integer.parseInt(NbParticipants.text.toString())%3
-            if(reste == 0)
+            if(reste == 0 /*&& NbParticipants.text != "00"*/)
             {
                 val builder = AlertDialog.Builder(context)
                 builder.setMessage("Le programme va maintenant créer les équipes. Voulez-vous continuer ?")
@@ -87,8 +87,8 @@ class CreateTeamFragment : Fragment() {
                         var team: TeamEntity = TeamEntity()
 
                         //Recup level list from runners db
-                        var levelList: MutableList<Int> = mutableListOf()
-                        levelList.addAll(runnersDB.runnerDatabaseDao().getLevelList())
+                      /*  var levelList: MutableList<Int> = mutableListOf()
+                        levelList.addAll(runnersDB.runnerDatabaseDao().getLevelList()) */
                         //
                         //
                         //Puis algorithme de création d'équipe here (Voir mutableList sur android developers)
@@ -96,13 +96,13 @@ class CreateTeamFragment : Fragment() {
                         //levelList.remove(15) = remove number "15" from list
                         //levelList.first() = first element
                         //levelList.last() = last element
-                        team.TeamRunner1 = runnersDB.runnerDatabaseDao().getRunnerID(levelList.first())  //Get ID of the runner by passing his level. If there is multiples same levels, random pick
+                     /*   team.TeamRunner1 = runnersDB.runnerDatabaseDao().getRunnerID(levelList.first())  //Get ID of the runner by passing his level. If there is multiples same levels, random pick
                         team.TeamRunner1Level = levelList.first()      //Set the Runner 1 Level
                         team.TeamRunner2
                         team.TeamRunner2Level
                         team.TeamRunner3
                         team.TeamRunner3Level
-                        teamsDB.teamDatabaseDao().insert(team) //Ajoute la team 1 dans la db
+                        teamsDB.teamDatabaseDao().insert(team) */ //Ajoute la team 1 dans la db
                         //...etc
                         //Peut-etre qu'il faudrait faire un fichier dedier à cette fonction parce que ca va faire beaucoup de ligne
                         //

@@ -41,4 +41,5 @@
     <string name="tabItem_classementcoureurs">Classement Coureurs</string>
     <string name="textView_TeamNumber">1</string>
     <string name="textView_TeamText">Equipe n°</string>
+    <string name="button_StartChrono">Start</string>
 </resources>

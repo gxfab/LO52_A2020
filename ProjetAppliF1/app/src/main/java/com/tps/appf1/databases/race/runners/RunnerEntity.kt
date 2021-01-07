@@ -9,6 +9,9 @@ data class RunnerEntity (
     @PrimaryKey(autoGenerate = true)  //This guarantees that the ID for each entity is unique.
     val RunnerID: Long = 0L,
 
+    @ColumnInfo(name = "Ordre")
+    var RunnerOrder: Int = 0,
+
     @ColumnInfo(name = "Nom")
     var RunnerName: String = "none",
 

@@ -220,22 +220,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView_Note2"
-        android:layout_width="625dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="248dp"
-        android:layout_marginTop="644dp"
-        android:layout_marginEnd="407dp"
-        android:layout_marginBottom="128dp"
-        android:singleLine="true"
-        android:text="@string/textView_Note2"
-        android:textAlignment="viewStart"
-        android:textSize="18sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

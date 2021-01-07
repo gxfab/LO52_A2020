@@ -9,6 +9,9 @@ data class TeamEntity(
         @PrimaryKey(autoGenerate = true)  //This guarantees that the ID for each night is unique.
         val TeamID: Long = 0L,
 
+        @ColumnInfo(name = "Ordre")
+        var Order: Int = 0,
+
         @ColumnInfo(name = "ID Coureur 1")
         var TeamRunner1: Int = 0,
 

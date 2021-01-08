@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".teamView">
+
+
+    <TextView
+        android:id="@+id/title_team"
+        android:layout_width="367dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:text="TextView"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/num_player_team"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/title_team"
+        app:layout_constraintTop_toBottomOf="@+id/title_team"
+        app:srcCompat="@drawable/pict1" />
+
+    <ImageView
+        android:id="@+id/step_team"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toStartOf="@+id/but_team"
+        app:layout_constraintStart_toEndOf="@+id/num_player_team"
+        app:layout_constraintTop_toTopOf="@+id/num_player_team"
+        app:srcCompat="@drawable/sprint1" />
+
+    <Button
+        android:id="@+id/but_team"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:background="#F44336"
+        android:clickable="true"
+        android:linksClickable="true"
+        android:text="NEXT STEP"
+        app:layout_constraintEnd_toEndOf="@+id/title_team"
+        app:layout_constraintTop_toTopOf="@+id/step_team" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

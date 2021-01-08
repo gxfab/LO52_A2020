@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RaceActivity">
+
+    <TextView
+        android:id="@+id/timeJ"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/stepJ"
+        app:layout_constraintEnd_toEndOf="@+id/buttonJ" />
+
+    <TextView
+        android:id="@+id/timeI"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/stepI"
+        app:layout_constraintEnd_toEndOf="@+id/buttonI" />
+
+    <TextView
+        android:id="@+id/timeH"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonH"
+        app:layout_constraintEnd_toEndOf="@+id/buttonH" />
+
+    <TextView
+        android:id="@+id/timeG"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonG"
+        app:layout_constraintEnd_toEndOf="@+id/buttonG" />
+
+    <TextView
+        android:id="@+id/timeF"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonF"
+        app:layout_constraintEnd_toEndOf="@+id/buttonF" />
+
+    <TextView
+        android:id="@+id/timeE"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonE"
+        app:layout_constraintEnd_toEndOf="@+id/buttonE" />
+
+    <TextView
+        android:id="@+id/timeB"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonB"
+        app:layout_constraintEnd_toEndOf="@+id/buttonB" />
+
+    <TextView
+        android:id="@+id/timeA"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonA"
+        app:layout_constraintEnd_toEndOf="@+id/buttonA" />
+
+    <TextView
+        android:id="@+id/timeD"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonD"
+        app:layout_constraintEnd_toEndOf="@+id/buttonD" />
+
+    <ImageView
+        android:id="@+id/stepJ"
+        android:layout_width="160dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageJ"
+        app:layout_constraintEnd_toEndOf="@+id/buttonJ"
+        app:srcCompat="@drawable/step0" />
+
+    <ImageView
+        android:id="@+id/stepI"
+        android:layout_width="160dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageI"
+        app:layout_constraintEnd_toEndOf="@+id/buttonI"
+        app:srcCompat="@drawable/step0" />
+
+    <ImageView
+        android:id="@+id/stepH"
+        android:layout_width="160dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageH"
+        app:layout_constraintEnd_toEndOf="@+id/buttonH"
+        app:srcCompat="@drawable/step0" />
+
+    <ImageView
+        android:id="@+id/stepG"
+        android:layout_width="160dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageG"
+        app:layout_constraintEnd_toEndOf="@+id/buttonG"
+        app:srcCompat="@drawable/step0" />
+
+    <ImageView
+        android:id="@+id/stepF"
+        android:layout_width="160dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageF"
+        app:layout_constraintEnd_toEndOf="@+id/buttonF"
+        app:srcCompat="@drawable/step0" />
+
+    <ImageView
+        android:id="@+id/stepE"
+        android:layout_width="160dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageE"
+        app:layout_constraintEnd_toEndOf="@+id/buttonE"
+        app:srcCompat="@drawable/step0" />
+
+    <ImageView
+        android:id="@+id/stepD"
+        android:layout_width="160dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageD"
+        app:layout_constraintEnd_toEndOf="@+id/buttonD"
+        app:srcCompat="@drawable/step0" />
+
+    <ImageView
+        android:id="@+id/stepC"
+        android:layout_width="160dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageC"
+        app:layout_constraintEnd_toEndOf="@+id/buttonC"
+        app:srcCompat="@drawable/step0" />
+
+    <ImageView
+        android:id="@+id/stepB"
+        android:layout_width="160dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageB"
+        app:layout_constraintEnd_toEndOf="@+id/buttonB"
+        app:srcCompat="@drawable/step0" />
+
+    <Button
+        android:id="@+id/resultsButton"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="12dp"
+        android:onClick="results"
+        android:text="Results"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageI" />
+
+    <TextView
+        android:id="@+id/runnerJ"
+        android:layout_width="250dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelJ"
+        app:layout_constraintTop_toTopOf="@+id/labelJ" />
+
+    <TextView
+        android:id="@+id/runnerI"
+        android:layout_width="250dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelI"
+        app:layout_constraintTop_toTopOf="@+id/labelI" />
+
+    <TextView
+        android:id="@+id/runnerH"
+        android:layout_width="250dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelH"
+        app:layout_constraintTop_toTopOf="@+id/labelH" />
+
+    <TextView
+        android:id="@+id/runnerG"
+        android:layout_width="250dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelG"
+        app:layout_constraintTop_toTopOf="@+id/labelG" />
+
+    <TextView
+        android:id="@+id/runnerF"
+        android:layout_width="250dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelF"
+        app:layout_constraintTop_toTopOf="@+id/labelF" />
+
+    <TextView
+        android:id="@+id/runnerE"
+        android:layout_width="250dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelE"
+        app:layout_constraintTop_toTopOf="@+id/labelE" />
+
+    <TextView
+        android:id="@+id/runnerD"
+        android:layout_width="250dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelD"
+        app:layout_constraintTop_toTopOf="@+id/labelD" />
+
+    <TextView
+        android:id="@+id/runnerC"
+        android:layout_width="250dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelC"
+        app:layout_constraintTop_toTopOf="@+id/labelC" />
+
+    <TextView
+        android:id="@+id/runnerB"
+        android:layout_width="250dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelB"
+        app:layout_constraintTop_toTopOf="@+id/labelB" />
+
+    <Button
+        android:id="@+id/buttonJ"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:onClick="timeButton"
+        android:text="J"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:backgroundTint="#838383"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toTopOf="@+id/stepJ"
+        app:layout_constraintEnd_toEndOf="@+id/runnerJ" />
+
+    <Button
+        android:id="@+id/buttonI"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:onClick="timeButton"
+        android:text="I"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:backgroundTint="#8BC34A"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toTopOf="@+id/stepI"
+        app:layout_constraintEnd_toEndOf="@+id/runnerI" />
+
+    <Button
+        android:id="@+id/buttonH"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:onClick="timeButton"
+        android:text="H"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:backgroundTint="#00BCD4"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toTopOf="@+id/stepH"
+        app:layout_constraintEnd_toEndOf="@+id/runnerH" />
+
+    <Button
+        android:id="@+id/buttonG"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:onClick="timeButton"
+        android:text="G"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:backgroundTint="#E91E63"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toTopOf="@+id/stepG"
+        app:layout_constraintEnd_toEndOf="@+id/runnerG" />
+
+    <Button
+        android:id="@+id/buttonF"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:onClick="timeButton"
+        android:text="F"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:backgroundTint="#673AB7"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toTopOf="@+id/stepF"
+        app:layout_constraintEnd_toEndOf="@+id/runnerF" />
+
+    <Button
+        android:id="@+id/buttonE"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:onClick="timeButton"
+        android:text="E"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:backgroundTint="#FF9800"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toTopOf="@+id/stepE"
+        app:layout_constraintEnd_toEndOf="@+id/runnerE" />
+
+    <Button
+        android:id="@+id/buttonD"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:onClick="timeButton"
+        android:text="D"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:backgroundTint="#4CAF50"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toTopOf="@+id/stepD"
+        app:layout_constraintEnd_toEndOf="@+id/runnerD" />
+
+    <Button
+        android:id="@+id/buttonC"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:onClick="timeButton"
+        android:text="C"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:backgroundTint="#FFC107"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toTopOf="@+id/stepC"
+        app:layout_constraintEnd_toEndOf="@+id/runnerC" />
+
+    <Button
+        android:id="@+id/buttonB"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:onClick="timeButton"
+        android:text="B"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:backgroundTint="#F44336"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toTopOf="@+id/stepB"
+        app:layout_constraintEnd_toEndOf="@+id/runnerB" />
+
+    <ImageView
+        android:id="@+id/imageJ"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/runnerJ"
+        app:layout_constraintTop_toBottomOf="@+id/runnerJ"
+        app:srcCompat="@drawable/sprint1" />
+
+    <ImageView
+        android:id="@+id/imageI"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/runnerI"
+        app:layout_constraintTop_toBottomOf="@+id/runnerI"
+        app:srcCompat="@drawable/sprint1" />
+
+    <ImageView
+        android:id="@+id/imageH"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/runnerH"
+        app:layout_constraintTop_toBottomOf="@+id/runnerH"
+        app:srcCompat="@drawable/sprint1" />
+
+    <ImageView
+        android:id="@+id/imageG"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/runnerG"
+        app:layout_constraintTop_toBottomOf="@+id/runnerG"
+        app:srcCompat="@drawable/sprint1" />
+
+    <ImageView
+        android:id="@+id/imageE"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/runnerE"
+        app:layout_constraintTop_toBottomOf="@+id/runnerE"
+        app:srcCompat="@drawable/sprint1" />
+
+    <ImageView
+        android:id="@+id/imageC"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/runnerC"
+        app:layout_constraintTop_toBottomOf="@+id/runnerC"
+        app:srcCompat="@drawable/sprint1" />
+
+    <ImageView
+        android:id="@+id/imageD"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/runnerD"
+        app:layout_constraintTop_toBottomOf="@+id/runnerD"
+        app:srcCompat="@drawable/sprint1" />
+
+    <ImageView
+        android:id="@+id/imageB"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/runnerB"
+        app:layout_constraintTop_toBottomOf="@+id/runnerB"
+        app:srcCompat="@drawable/sprint1" />
+
+    <Button
+        android:id="@+id/startRaceButton"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="208dp"
+        android:onClick="startRace"
+        android:text="Start Race"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageF"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/runnerF"
+        app:layout_constraintTop_toBottomOf="@+id/runnerF"
+        app:srcCompat="@drawable/sprint1" />
+
+    <TextView
+        android:id="@+id/labelJ"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="J"
+        android:textColor="#838383"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelH"
+        app:layout_constraintTop_toTopOf="@+id/runnerI" />
+
+    <TextView
+        android:id="@+id/labelI"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="I"
+        android:textColor="#8BC34A"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelG"
+        app:layout_constraintTop_toBottomOf="@+id/labelG" />
+
+    <TextView
+        android:id="@+id/labelH"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="H"
+        android:textColor="#00BCD4"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelF"
+        app:layout_constraintTop_toTopOf="@+id/runnerG" />
+
+    <TextView
+        android:id="@+id/labelG"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="G"
+        android:textColor="#E91E63"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelE"
+        app:layout_constraintTop_toBottomOf="@+id/labelE" />
+
+    <TextView
+        android:id="@+id/labelD"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="D"
+        android:textColor="#4CAF50"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelB"
+        app:layout_constraintTop_toTopOf="@+id/runnerC" />
+
+    <TextView
+        android:id="@+id/labelF"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="F"
+        android:textColor="#673AB7"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelD"
+        app:layout_constraintTop_toTopOf="@+id/runnerE" />
+
+    <TextView
+        android:id="@+id/labelE"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="E"
+        android:textColor="#FF9800"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelC"
+        app:layout_constraintTop_toBottomOf="@+id/labelC" />
+
+    <TextView
+        android:id="@+id/labelC"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="C"
+        android:textColor="#FFC107"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelA"
+        app:layout_constraintTop_toBottomOf="@+id/labelA" />
+
+    <TextView
+        android:id="@+id/labelA"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="120dp"
+        android:gravity="center_horizontal"
+        android:text="A"
+        android:textColor="#3F51B5"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelB"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:gravity="center"
+        android:text="B"
+        android:textColor="#F44336"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/runnerA"
+        app:layout_constraintTop_toTopOf="@+id/runnerA" />
+
+    <TextView
+        android:id="@+id/raceText"
+        android:layout_width="100dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginLeft="196dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="Race"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/raceTime"
+        android:layout_width="0dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/raceText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageA"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/runnerA"
+        app:layout_constraintTop_toBottomOf="@+id/runnerA"
+        app:srcCompat="@drawable/sprint1" />
+
+    <Button
+        android:id="@+id/buttonA"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:onClick="timeButton"
+        android:text="A"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:backgroundTint="#3F51B5"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toTopOf="@+id/stepA"
+        app:layout_constraintEnd_toEndOf="@+id/runnerA" />
+
+    <TextView
+        android:id="@+id/runnerA"
+        android:layout_width="250dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelA"
+        app:layout_constraintTop_toTopOf="@+id/labelA" />
+
+    <ImageView
+        android:id="@+id/stepA"
+        android:layout_width="160dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageA"
+        app:layout_constraintEnd_toEndOf="@+id/buttonA"
+        app:srcCompat="@drawable/step0" />
+
+    <TextView
+        android:id="@+id/timeC"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonC"
+        app:layout_constraintEnd_toEndOf="@+id/buttonC" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

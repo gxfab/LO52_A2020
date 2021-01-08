@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultsActivity">
+
+    <ImageView
+        android:id="@+id/images2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintStart_toEndOf="@+id/imagep"
+        app:layout_constraintTop_toTopOf="@+id/imagep"
+        app:srcCompat="@drawable/sprint2" />
+
+    <ImageView
+        android:id="@+id/imageo2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintStart_toEndOf="@+id/images2"
+        app:layout_constraintTop_toTopOf="@+id/images2"
+        app:srcCompat="@drawable/obstacle2" />
+
+    <ImageView
+        android:id="@+id/imagep"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintStart_toEndOf="@+id/imageo1"
+        app:layout_constraintTop_toTopOf="@+id/imageo1"
+        app:srcCompat="@drawable/pitstop" />
+
+    <ImageView
+        android:id="@+id/imageo1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintStart_toEndOf="@+id/images1"
+        app:layout_constraintTop_toTopOf="@+id/images1"
+        app:srcCompat="@drawable/obstacle1" />
+
+    <ImageView
+        android:id="@+id/images1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/runner11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/sprint1" />
+
+    <ImageView
+        android:id="@+id/imagerecord"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="484dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sprint1" />
+
+    <TextView
+        android:id="@+id/runner3"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/runner2"
+        app:layout_constraintTop_toBottomOf="@+id/runner2" />
+
+    <TextView
+        android:id="@+id/runner35"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner34"
+        app:layout_constraintTop_toTopOf="@+id/runner34" />
+
+    <TextView
+        android:id="@+id/runner34"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner33"
+        app:layout_constraintTop_toTopOf="@+id/runner33" />
+
+    <TextView
+        android:id="@+id/runner33"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner32"
+        app:layout_constraintTop_toTopOf="@+id/runner32" />
+
+    <TextView
+        android:id="@+id/runner32"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner31"
+        app:layout_constraintTop_toTopOf="@+id/runner31" />
+
+    <TextView
+        android:id="@+id/runner31"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner3"
+        app:layout_constraintTop_toTopOf="@+id/runner3" />
+
+    <TextView
+        android:id="@+id/runner25"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner24"
+        app:layout_constraintTop_toTopOf="@+id/runner24" />
+
+    <TextView
+        android:id="@+id/runner24"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner23"
+        app:layout_constraintTop_toTopOf="@+id/runner23" />
+
+    <TextView
+        android:id="@+id/runner23"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner22"
+        app:layout_constraintTop_toTopOf="@+id/runner22" />
+
+    <TextView
+        android:id="@+id/runner22"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner21"
+        app:layout_constraintTop_toTopOf="@+id/runner21" />
+
+    <TextView
+        android:id="@+id/runner21"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner2"
+        app:layout_constraintTop_toTopOf="@+id/runner2" />
+
+    <TextView
+        android:id="@+id/runner15"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner14"
+        app:layout_constraintTop_toTopOf="@+id/runner14" />
+
+    <TextView
+        android:id="@+id/runner14"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner13"
+        app:layout_constraintTop_toTopOf="@+id/runner13" />
+
+    <TextView
+        android:id="@+id/runner13"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner12"
+        app:layout_constraintTop_toTopOf="@+id/runner12" />
+
+    <TextView
+        android:id="@+id/runner12"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner11"
+        app:layout_constraintTop_toTopOf="@+id/runner11" />
+
+    <TextView
+        android:id="@+id/recordname"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/imagerecord"
+        app:layout_constraintTop_toTopOf="@+id/imagerecord" />
+
+    <TextView
+        android:id="@+id/runner1"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="188dp"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recordspinner" />
+
+    <TextView
+        android:id="@+id/runner2"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/runner1"
+        app:layout_constraintTop_toBottomOf="@+id/runner1" />
+
+    <Spinner
+        android:id="@+id/recordspinner"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="368dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ResultsText" />
+
+    <TextView
+        android:id="@+id/teamtime10"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/teamname10"
+        app:layout_constraintTop_toTopOf="@+id/teamname10" />
+
+    <TextView
+        android:id="@+id/teamtime9"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/teamname9"
+        app:layout_constraintTop_toTopOf="@+id/teamname9" />
+
+    <TextView
+        android:id="@+id/teamtime8"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/teamname8"
+        app:layout_constraintTop_toTopOf="@+id/teamname8" />
+
+    <TextView
+        android:id="@+id/teamtime6"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/teamname6"
+        app:layout_constraintTop_toTopOf="@+id/teamname6" />
+
+    <TextView
+        android:id="@+id/teamtime7"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/teamname7"
+        app:layout_constraintTop_toTopOf="@+id/teamname7" />
+
+    <TextView
+        android:id="@+id/teamtime5"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/teamname5"
+        app:layout_constraintTop_toTopOf="@+id/teamname5" />
+
+    <TextView
+        android:id="@+id/runner11"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/runner1"
+        app:layout_constraintTop_toTopOf="@+id/runner1" />
+
+    <TextView
+        android:id="@+id/recordtime"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:gravity="right|center_vertical"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/recordname"
+        app:layout_constraintTop_toTopOf="@+id/recordname" />
+
+    <TextView
+        android:id="@+id/teamtime4"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/teamname4"
+        app:layout_constraintTop_toTopOf="@+id/teamname4" />
+
+    <TextView
+        android:id="@+id/teamtime3"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:background="#6DA57A54"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/teamname3"
+        app:layout_constraintTop_toTopOf="@+id/teamname3" />
+
+    <TextView
+        android:id="@+id/teamname6"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/image6"
+        app:layout_constraintTop_toTopOf="@+id/image6" />
+
+    <ImageView
+        android:id="@+id/image6"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintStart_toEndOf="@+id/teamtime1"
+        app:layout_constraintTop_toTopOf="@+id/teamtime1"
+        app:srcCompat="@drawable/sixth" />
+
+    <ImageView
+        android:id="@+id/image10"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="@+id/image9"
+        app:layout_constraintTop_toTopOf="@+id/teamtime5"
+        app:srcCompat="@drawable/tenth" />
+
+    <TextView
+        android:id="@+id/teamname10"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="Team J"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/image10"
+        app:layout_constraintTop_toTopOf="@+id/image10" />
+
+    <ImageView
+        android:id="@+id/image8"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="@+id/image7"
+        app:layout_constraintTop_toTopOf="@+id/teamtime3"
+        app:srcCompat="@drawable/eighth" />
+
+    <ImageView
+        android:id="@+id/image9"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="@+id/image8"
+        app:layout_constraintTop_toTopOf="@+id/teamtime4"
+        app:srcCompat="@drawable/ninth" />
+
+    <ImageView
+        android:id="@+id/image7"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="@+id/image6"
+        app:layout_constraintTop_toTopOf="@+id/teamtime2"
+        app:srcCompat="@drawable/seventh" />
+
+    <TextView
+        android:id="@+id/teamname9"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/image9"
+        app:layout_constraintTop_toTopOf="@+id/image9" />
+
+    <TextView
+        android:id="@+id/teamname8"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/image8"
+        app:layout_constraintTop_toTopOf="@+id/image8" />
+
+    <TextView
+        android:id="@+id/teamname7"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/image7"
+        app:layout_constraintTop_toTopOf="@+id/image7" />
+
+    <ImageView
+        android:id="@+id/image4"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/image3"
+        app:layout_constraintTop_toBottomOf="@+id/image3"
+        app:srcCompat="@drawable/fourth" />
+
+    <ImageView
+        android:id="@+id/image5"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/image4"
+        app:layout_constraintTop_toBottomOf="@+id/image4"
+        app:srcCompat="@drawable/fifth" />
+
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/image2"
+        app:layout_constraintTop_toBottomOf="@+id/image2"
+        app:srcCompat="@drawable/third" />
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/image1"
+        app:layout_constraintTop_toBottomOf="@+id/image1"
+        app:srcCompat="@drawable/second" />
+
+    <TextView
+        android:id="@+id/ResultsText"
+        android:layout_width="154dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Results"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/teamname1"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="#79FBCD57"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/image1"
+        app:layout_constraintTop_toTopOf="@+id/image1" />
+
+    <TextView
+        android:id="@+id/teamtime1"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:background="#79FBCD57"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/teamname1"
+        app:layout_constraintTop_toTopOf="@+id/teamname1" />
+
+    <TextView
+        android:id="@+id/teamtime2"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:background="#9AE3E3E3"
+        android:gravity="center"
+        android:text="00:00:000"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/teamname2"
+        app:layout_constraintTop_toTopOf="@+id/teamname2" />
+
+    <TextView
+        android:id="@+id/teamname2"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="#9AE3E3E3"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/image2"
+        app:layout_constraintTop_toTopOf="@+id/image2" />
+
+    <TextView
+        android:id="@+id/teamname3"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="#6DA57A54"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/image3"
+        app:layout_constraintTop_toTopOf="@+id/image3" />
+
+    <TextView
+        android:id="@+id/teamname4"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/image4"
+        app:layout_constraintTop_toTopOf="@+id/image4" />
+
+    <TextView
+        android:id="@+id/teamname5"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/image5"
+        app:layout_constraintTop_toTopOf="@+id/image5" />
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="128dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/first" />
+
+    <Spinner
+        android:id="@+id/racespinner"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ResultsText" />
+
+    <Spinner
+        android:id="@+id/teamnamespinner"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recordname" />
+
+    <Button
+        android:id="@+id/homebutton"
+        android:layout_width="156dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="12dp"
+        android:onClick="toHome"
+        android:text="Home"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/runner3" />
+
+    <Button
+        android:id="@+id/clearbutton"
+        android:layout_width="198dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:onClick="deleteResults"
+        android:text="Clear History"
+        android:textSize="18sp"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintStart_toEndOf="@+id/homebutton"
+        app:layout_constraintTop_toTopOf="@+id/homebutton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

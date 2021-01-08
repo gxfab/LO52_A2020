@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TeamsView">
+
+    <TextView
+        android:id="@+id/teamLevelC"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="99"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelC"
+        app:layout_constraintTop_toBottomOf="@+id/labelC" />
+
+    <TextView
+        android:id="@+id/teamLevelJ"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="99"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelJ"
+        app:layout_constraintTop_toBottomOf="@+id/labelJ" />
+
+    <TextView
+        android:id="@+id/teamLevelI"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="99"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelI"
+        app:layout_constraintTop_toBottomOf="@+id/labelI" />
+
+    <TextView
+        android:id="@+id/teamLevelE"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="99"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelE"
+        app:layout_constraintTop_toBottomOf="@+id/labelE" />
+
+    <Button
+        android:id="@+id/startRaceButton"
+        android:layout_width="200dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="40dp"
+        android:onClick="okteamsview"
+        android:text="@android:string/ok"
+        android:textSize="30sp"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/runnerI3" />
+
+    <Button
+        android:id="@+id/orderbutton"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:onClick="orderChangeOK"
+        android:text="@android:string/ok"
+        android:textSize="14sp"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintStart_toEndOf="@+id/orderspinner"
+        app:layout_constraintTop_toBottomOf="@+id/raceText" />
+
+    <TextView
+        android:id="@+id/runnerJ3"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelJ3"
+        app:layout_constraintTop_toBottomOf="@+id/runnerJ2" />
+
+    <TextView
+        android:id="@+id/runnerJ2"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelJ2"
+        app:layout_constraintTop_toBottomOf="@+id/runnerJ1" />
+
+    <TextView
+        android:id="@+id/runnerJ1"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelJ1"
+        app:layout_constraintTop_toTopOf="@+id/levelJ1" />
+
+    <TextView
+        android:id="@+id/runnerI3"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelI3"
+        app:layout_constraintTop_toBottomOf="@+id/runnerI2" />
+
+    <TextView
+        android:id="@+id/runnerI2"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelI2"
+        app:layout_constraintTop_toBottomOf="@+id/runnerI1" />
+
+    <TextView
+        android:id="@+id/runnerI1"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelI1"
+        app:layout_constraintTop_toTopOf="@+id/levelI1" />
+
+    <TextView
+        android:id="@+id/runnerF3"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelF3"
+        app:layout_constraintTop_toBottomOf="@+id/runnerF2" />
+
+    <TextView
+        android:id="@+id/runnerG3"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelG3"
+        app:layout_constraintTop_toBottomOf="@+id/runnerG2" />
+
+    <TextView
+        android:id="@+id/runnerG2"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelG2"
+        app:layout_constraintTop_toBottomOf="@+id/runnerG1" />
+
+    <TextView
+        android:id="@+id/runnerG1"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelG1"
+        app:layout_constraintTop_toTopOf="@+id/levelG1" />
+
+    <TextView
+        android:id="@+id/runnerH3"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelH3"
+        app:layout_constraintTop_toBottomOf="@+id/runnerH2" />
+
+    <TextView
+        android:id="@+id/runnerH2"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelH2"
+        app:layout_constraintTop_toBottomOf="@+id/runnerH1" />
+
+    <TextView
+        android:id="@+id/runnerH1"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelH1"
+        app:layout_constraintTop_toTopOf="@+id/levelH1" />
+
+    <TextView
+        android:id="@+id/runnerF2"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelF2"
+        app:layout_constraintTop_toBottomOf="@+id/runnerF1" />
+
+    <TextView
+        android:id="@+id/runnerF1"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelF1"
+        app:layout_constraintTop_toTopOf="@+id/levelF1" />
+
+    <TextView
+        android:id="@+id/runnerE3"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelE3"
+        app:layout_constraintTop_toBottomOf="@+id/runnerE2" />
+
+    <TextView
+        android:id="@+id/runnerE2"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelE2"
+        app:layout_constraintTop_toBottomOf="@+id/runnerE1" />
+
+    <TextView
+        android:id="@+id/runnerD3"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelD3"
+        app:layout_constraintTop_toBottomOf="@+id/runnerD2" />
+
+    <TextView
+        android:id="@+id/runnerE1"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelE1"
+        app:layout_constraintTop_toTopOf="@+id/levelE1" />
+
+    <TextView
+        android:id="@+id/runnerD2"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelD2"
+        app:layout_constraintTop_toBottomOf="@+id/runnerD1" />
+
+    <TextView
+        android:id="@+id/runnerD1"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelD1"
+        app:layout_constraintTop_toTopOf="@+id/levelD1" />
+
+    <TextView
+        android:id="@+id/runnerC3"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelC3"
+        app:layout_constraintTop_toBottomOf="@+id/runnerC2" />
+
+    <TextView
+        android:id="@+id/runnerC2"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelC2"
+        app:layout_constraintTop_toBottomOf="@+id/runnerC1" />
+
+    <TextView
+        android:id="@+id/labelJ"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="J"
+        android:textColor="#838383"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelH"
+        app:layout_constraintTop_toTopOf="@+id/runnerI1" />
+
+    <TextView
+        android:id="@+id/labelI"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:text="I"
+        android:textColor="#8BC34A"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelG"
+        app:layout_constraintTop_toBottomOf="@+id/labelG" />
+
+    <TextView
+        android:id="@+id/labelH"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="H"
+        android:textColor="#00BCD4"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelF"
+        app:layout_constraintTop_toTopOf="@+id/runnerG1" />
+
+    <TextView
+        android:id="@+id/labelG"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:text="G"
+        android:textColor="#E91E63"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelE"
+        app:layout_constraintTop_toBottomOf="@+id/labelE" />
+
+    <TextView
+        android:id="@+id/labelD"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="D"
+        android:textColor="#4CAF50"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelB"
+        app:layout_constraintTop_toTopOf="@+id/runnerC1" />
+
+    <TextView
+        android:id="@+id/labelF"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="F"
+        android:textColor="#673AB7"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelD"
+        app:layout_constraintTop_toTopOf="@+id/runnerE1" />
+
+    <TextView
+        android:id="@+id/labelE"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:text="E"
+        android:textColor="#FF9800"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelC"
+        app:layout_constraintTop_toBottomOf="@+id/labelC" />
+
+    <TextView
+        android:id="@+id/labelC"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:text="C"
+        android:textColor="#FFC107"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelA"
+        app:layout_constraintTop_toBottomOf="@+id/labelA" />
+
+    <TextView
+        android:id="@+id/runnerB3"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/levelB3"
+        app:layout_constraintTop_toBottomOf="@+id/runnerB2" />
+
+    <TextView
+        android:id="@+id/levelB1"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/labelB"
+        app:layout_constraintTop_toTopOf="@+id/labelB" />
+
+    <TextView
+        android:id="@+id/levelJ1"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelJ"
+        app:layout_constraintTop_toTopOf="@+id/labelJ" />
+
+    <TextView
+        android:id="@+id/levelJ3"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelJ2"
+        app:layout_constraintTop_toBottomOf="@+id/levelJ2" />
+
+    <TextView
+        android:id="@+id/levelI1"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelI"
+        app:layout_constraintTop_toTopOf="@+id/labelI" />
+
+    <TextView
+        android:id="@+id/levelI2"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelI1"
+        app:layout_constraintTop_toBottomOf="@+id/levelI1" />
+
+    <TextView
+        android:id="@+id/levelI3"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelI2"
+        app:layout_constraintTop_toBottomOf="@+id/levelI2" />
+
+    <TextView
+        android:id="@+id/levelH1"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelH"
+        app:layout_constraintTop_toTopOf="@+id/labelH" />
+
+    <TextView
+        android:id="@+id/levelH2"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelH1"
+        app:layout_constraintTop_toBottomOf="@+id/levelH1" />
+
+    <TextView
+        android:id="@+id/levelH3"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelH2"
+        app:layout_constraintTop_toBottomOf="@+id/levelH2" />
+
+    <TextView
+        android:id="@+id/levelG2"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelG1"
+        app:layout_constraintTop_toBottomOf="@+id/levelG1" />
+
+    <TextView
+        android:id="@+id/levelG3"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelG2"
+        app:layout_constraintTop_toBottomOf="@+id/levelG2" />
+
+    <TextView
+        android:id="@+id/levelJ2"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelJ1"
+        app:layout_constraintTop_toBottomOf="@+id/levelJ1" />
+
+    <TextView
+        android:id="@+id/levelF1"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelF"
+        app:layout_constraintTop_toTopOf="@+id/labelF" />
+
+    <TextView
+        android:id="@+id/levelF2"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelF1"
+        app:layout_constraintTop_toBottomOf="@+id/levelF1" />
+
+    <TextView
+        android:id="@+id/levelF3"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelF2"
+        app:layout_constraintTop_toBottomOf="@+id/levelF2" />
+
+    <TextView
+        android:id="@+id/levelE3"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelE2"
+        app:layout_constraintTop_toBottomOf="@+id/levelE2" />
+
+    <TextView
+        android:id="@+id/levelE1"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelE"
+        app:layout_constraintTop_toTopOf="@+id/labelE" />
+
+    <TextView
+        android:id="@+id/levelE2"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelE1"
+        app:layout_constraintTop_toBottomOf="@+id/levelE1" />
+
+    <TextView
+        android:id="@+id/levelD2"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelD1"
+        app:layout_constraintTop_toBottomOf="@+id/levelD1" />
+
+    <TextView
+        android:id="@+id/levelD3"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelD2"
+        app:layout_constraintTop_toBottomOf="@+id/levelD2" />
+
+    <TextView
+        android:id="@+id/levelD1"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelD"
+        app:layout_constraintTop_toTopOf="@+id/labelD" />
+
+    <TextView
+        android:id="@+id/levelC1"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:text="10"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelC"
+        app:layout_constraintTop_toTopOf="@+id/labelC" />
+
+    <TextView
+        android:id="@+id/levelC2"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelC1"
+        app:layout_constraintTop_toBottomOf="@+id/levelC1" />
+
+    <TextView
+        android:id="@+id/levelC3"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/levelC2"
+        app:layout_constraintTop_toBottomOf="@+id/levelC2" />
+
+    <TextView
+        android:id="@+id/levelA3"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/levelA2"
+        app:layout_constraintTop_toBottomOf="@+id/levelA2" />
+
+    <TextView
+        android:id="@+id/labelA"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="176dp"
+        android:gravity="center_horizontal"
+        android:text="A"
+        android:textColor="#3F51B5"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelB"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:gravity="center"
+        android:text="B"
+        android:textColor="#F44336"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/runnerA1"
+        app:layout_constraintTop_toTopOf="@+id/runnerA1" />
+
+    <TextView
+        android:id="@+id/raceText"
+        android:layout_width="284dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="Teams"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/runnerA1"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/levelA1"
+        app:layout_constraintTop_toTopOf="@+id/levelA1" />
+
+    <TextView
+        android:id="@+id/levelA1"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/labelA"
+        app:layout_constraintTop_toTopOf="@+id/labelA" />
+
+    <TextView
+        android:id="@+id/levelG1"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/labelG"
+        app:layout_constraintTop_toTopOf="@+id/labelG" />
+
+    <TextView
+        android:id="@+id/levelB2"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/levelB1"
+        app:layout_constraintTop_toBottomOf="@+id/levelB1" />
+
+    <TextView
+        android:id="@+id/levelB3"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/levelB2"
+        app:layout_constraintTop_toBottomOf="@+id/levelB2" />
+
+    <TextView
+        android:id="@+id/levelA2"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/levelA1"
+        app:layout_constraintTop_toBottomOf="@+id/levelA1" />
+
+    <TextView
+        android:id="@+id/runnerA2"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/levelA2"
+        app:layout_constraintTop_toBottomOf="@+id/runnerA1" />
+
+    <TextView
+        android:id="@+id/runnerB2"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/levelB2"
+        app:layout_constraintTop_toBottomOf="@+id/runnerB1" />
+
+    <TextView
+        android:id="@+id/runnerB1"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/levelB1"
+        app:layout_constraintTop_toTopOf="@+id/levelB1" />
+
+    <TextView
+        android:id="@+id/runnerA3"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/levelA3"
+        app:layout_constraintTop_toBottomOf="@+id/runnerA2" />
+
+    <TextView
+        android:id="@+id/runnerC1"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:text="player Joueru"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/levelC1"
+        app:layout_constraintTop_toTopOf="@+id/levelC1" />
+
+    <Spinner
+        android:id="@+id/teamspinner"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/raceText" />
+
+    <Spinner
+        android:id="@+id/orderspinner"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintStart_toEndOf="@+id/teamspinner"
+        app:layout_constraintTop_toTopOf="@+id/teamspinner" />
+
+    <TextView
+        android:id="@+id/teamLevelA"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="99"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/labelA"
+        app:layout_constraintTop_toBottomOf="@+id/labelA" />
+
+    <TextView
+        android:id="@+id/teamLevelB"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="99"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/labelB"
+        app:layout_constraintTop_toBottomOf="@+id/labelB" />
+
+    <TextView
+        android:id="@+id/teamLevelD"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="99"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelD"
+        app:layout_constraintTop_toBottomOf="@+id/labelD" />
+
+    <TextView
+        android:id="@+id/teamLevelH"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="99"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelH"
+        app:layout_constraintTop_toBottomOf="@+id/labelH" />
+
+    <TextView
+        android:id="@+id/teamLevelF"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="99"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelF"
+        app:layout_constraintTop_toBottomOf="@+id/labelF" />
+
+    <TextView
+        android:id="@+id/teamLevelG"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="99"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/labelG"
+        app:layout_constraintTop_toBottomOf="@+id/labelG" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

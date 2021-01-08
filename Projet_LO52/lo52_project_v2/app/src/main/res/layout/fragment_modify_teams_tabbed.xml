@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ModifyTeamsTabbedFragment">
+
+    <TextView
+        android:id="@+id/races_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available Races"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/races_lv"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/races_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/races_tv"></ListView>
+
+    <TextView
+        android:id="@+id/correspondingTeams_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/races_lv"
+        android:text="Corresponding Teams"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/races_lv" />
+
+    <ListView
+        android:id="@+id/correspondingTeams_lv"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/correspondingTeams_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correspondingTeams_tv">
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/correspondingParticipants_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/correspondingTeams_lv"
+        android:text="Corresponding Teams Members"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correspondingTeams_lv" />
+
+    <ListView
+        android:id="@+id/correspondingParticipants_lv"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/correspondingParticipants_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correspondingParticipants_tv">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/modify_order_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/correspondingParticipants_lv"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:text="Modify Order"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correspondingParticipants_lv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

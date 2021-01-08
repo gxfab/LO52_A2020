@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_participants"
+            android:icon="@drawable/ic_participant"
+            android:title="Participants"
+            ></item>
+        <item android:id="@+id/nav_teams"
+            android:icon="@drawable/ic_team"
+            android:title="Teams"></item>
+        <item android:id="@+id/nav_race"
+            android:icon="@drawable/ic_race"
+            android:title="Race"></item>
+    </group>
+
+
+
+</menu>

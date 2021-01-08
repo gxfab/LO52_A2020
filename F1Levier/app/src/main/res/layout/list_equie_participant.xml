@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="6dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mouhamed DIAGNE"
+            android:layout_marginVertical="15dp"
+            android:layout_weight="1"
+            android:id="@+id/text_view_nom"
+            android:textSize="18dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="20dp"
+                android:text="S1"
+                android:layout_weight="1"
+                android:id="@+id/text_view_s1"
+                android:textSize="14sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="20dp"
+                android:text="S2"
+                android:layout_weight="1"
+                android:id="@+id/text_view_s2"
+                android:textSize="14sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="20dp"
+                android:text="PS"
+                android:layout_weight="1"
+                android:id="@+id/text_view_ps"
+                android:textSize="14sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="20dp"
+                android:text="S3"
+                android:layout_weight="1"
+                android:id="@+id/text_view_s3"
+                android:textSize="14sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="20dp"
+                android:text="S4"
+                android:layout_weight="1"
+                android:id="@+id/text_view_s4"
+                android:textSize="14sp"/>
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="3dp"
+            android:layout_weight="5"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="#673AB7" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/btn_sp1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorPrimary"
+                android:onClick="saveStep"
+                android:text="Sprint 1" />
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/btn_sp2"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:visibility="invisible"
+                android:background="@color/colorPrimary"
+                android:onClick="saveStep"
+                android:text="Sprint 2" />
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/btn_ps"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:visibility="invisible"
+                android:background="@color/colorPrimary"
+                android:onClick="saveStep"
+                android:text="PS" />
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/btn_sp3"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:visibility="invisible"
+                android:background="@color/colorPrimary"
+                android:onClick="saveStep"
+                android:text="SP3" />
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/btn_sp4"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:visibility="invisible"
+                android:background="@color/colorPrimary"
+                android:onClick="saveStep"
+                android:text="SP4" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">F1 Levier</string>
+    <string name="title_home">Accueil</string>
+    <string name="title_participant">Participants</string>
+    <string name="title_equipe">Equipes</string>
+    <string name="title_classement">Classement</string>
+
+</resources>

@@ -1,0 +1,2 @@
+foundation-v8.o: arch/arm64/boot/dts/arm/foundation-v8.dts \
+ arch/arm64/boot/dts/arm/foundation-v8.dtsi

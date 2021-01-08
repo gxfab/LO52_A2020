@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "fr.utbm.runf1"
+        minSdkVersion 29
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    //Room
+    def room_version = "2.2.6"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    //RecyclerView
+    implementation "androidx.recyclerview:recyclerview:1.2.0-beta01"
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc03"
+
+    //Cardview
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    //Theme
+    implementation 'com.google.android.material:material:1.2.1'
+
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "android.arch.lifecycle:viewmodel:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+
+}

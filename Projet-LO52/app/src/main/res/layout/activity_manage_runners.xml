@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewManageRunners"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#EEEEEE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/activity_manage_runners_row"
+        android:padding="@dimen/default_padding_half"
+        />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_bar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        app:contentInsetStart="0dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <EditText
+                    android:id="@+id/firstNameInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="First Name"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/lastNameInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Last Name"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/levelInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:hint="Level"
+                    android:layout_margin="10dp"/>
+
+
+                <Button
+                    android:id="@+id/addRunnerButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:text="Add"
+                    app:elevation="@dimen/default_button_elevation"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/green_400"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

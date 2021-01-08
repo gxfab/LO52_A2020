@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/default_padding_quarter">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        style="@style/Default.CarView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        app:cardElevation="@dimen/default_card_elevation"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/default_padding"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            > <!--clipToPadding prevents clipping of button shadow -->
+
+            <TextView
+                android:id="@+id/recyclerViewManageRunnersRowPosition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/default_margin"
+                android:text="0"
+                android:textColor="#65000000"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/default_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/recyclerViewManageRunnersRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/default_margin"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans"
+                    android:text="test"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/recyclerViewManageRunnersRowLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/default_margin"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans"
+                    android:text="level"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/deleteRunnerButton"
+                style="@style/Widget.App.Button.Button.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/default_margin"
+                android:backgroundTint="@color/red_400"
+                android:elevation="10dp"
+                android:onClick="DeleteRunner"
+                app:icon="@drawable/ic_round_delete_forever_24" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

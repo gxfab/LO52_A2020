@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="number_of_runners_per_team">3</integer>
+</resources>

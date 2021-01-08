@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="fr.utbm.runf1">
+
+    <application
+        android:allowBackup="true"
+        android:configChanges="orientation"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".view.statistics.RacesActivity"></activity>
+        <activity android:name=".view.statistics.StatisticsActivity" />
+        <activity android:name=".view.time_runners.TimeRunnersActivity" />
+        <activity android:name=".view.manage_order_in_team.ManageOrderInTeamActivity" />
+        <activity android:name=".view.manage_teams.ManageTeamsActivity" />
+        <activity android:name=".view.manage_runners.ManageRunnersActivity" />
+        <activity android:name=".view.main_activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

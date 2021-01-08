@@ -47,10 +47,9 @@ class RaceManagementFragment : Fragment() {
             }
             else
             {
-                TODO("Recupère le temps des ateliers à chaque clic du bouton Split")
+                /* TODO("Recupère le temps des ateliers à chaque clic du bouton Split") */
             }
         }
-
 
     }
 }

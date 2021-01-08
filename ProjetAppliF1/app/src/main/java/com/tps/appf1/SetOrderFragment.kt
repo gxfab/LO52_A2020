@@ -32,8 +32,8 @@ class SetOrderFragment : Fragment() {
             findNavController().navigate(R.id.action_SetOrderFragment_to_RaceManagementFragment)
         }
 
-        TODO("Récupérer la liste des équipes et l'afficher dans le recyclerView" +
+        /* TODO("Récupérer la liste des équipes et l'afficher dans le recyclerView" +
                 "Au clic sur une équipe, afficher ses membres et modifier leur ordre de passage dans l'équipe" +
-                "Gérer l'ordre de passage des équipes")
+                "Gérer l'ordre de passage des équipes") */
     }
 }

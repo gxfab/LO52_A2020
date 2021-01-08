@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NamedFab">
+        <attr name="textSize" format="dimension"/>
+        <attr name="textColor" format="color|reference"/>
+        <attr name="text" format="string"/>
+        <attr name="namedFabSize" format="enum">
+            <enum name="auto" value="-1"/>
+            <enum name="normal" value="0"/>
+            <enum name="mini" value="1"/>
+        </attr>
+        <attr name="namedFabIcon" format="reference"/>
+        <attr name="backgroundTint" format="color|reference"/>
+    </declare-styleable>
+</resources>

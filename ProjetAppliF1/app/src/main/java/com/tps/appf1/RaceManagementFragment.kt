@@ -5,9 +5,10 @@ import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Chronometer
+import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.room.Room
+import com.tps.appf1.databases.race.teams.TeamDatabase
 import kotlinx.android.synthetic.main.fragment_racemanagement.*
 
 /**
@@ -26,13 +27,6 @@ class RaceManagementFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        /* To access the db from other fragment. Make sur to use the right name "runners-db", otherwise it will create another one */
-        //var db = Room.databaseBuilder(this.requireContext(), RunnerDatabase::class.java, "runners-db").allowMainThreadQueries().build()
-        //var runner: RunnerEntity = RunnerEntity()
-        //runner.RunnerName = "TestFromOtherFrag"
-        //db.runnerDatabaseDao().insertRunner(runner)
-
 
         view.findViewById<Button>(R.id.button_StartChrono).setOnClickListener {
             counter += 1    //Incremente counter pour différencier le premier click et le reste
@@ -53,10 +47,10 @@ class RaceManagementFragment : Fragment() {
             }
             else
             {
-                //Recupère le temps des ateliers à chaque clic
+                TODO("Recupère le temps des ateliers à chaque clic du bouton Split")
             }
         }
-        //}
+
 
     }
 }

@@ -9,7 +9,7 @@
 
     <string name="textView_first">Veuillez ajouter des participants :</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="textView_Name">Name :</string>
+    <string name="textView_Name">Nom :</string>
     <string name="textView_Surname">Prénom :</string>
     <string name="textView_Level">Niveau :</string>
     <string name="textView_MaxLevel">/100</string>

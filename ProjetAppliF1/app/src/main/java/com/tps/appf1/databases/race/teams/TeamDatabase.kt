@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [TeamEntity::class], version = 1, exportSchema = false)
+@Database(entities = [TeamEntity::class], version = 2, exportSchema = false)
 abstract class TeamDatabase : RoomDatabase() {
     abstract fun teamDatabaseDao(): TeamDAO  //Refers the Database Access Object
     companion object {    //Allows to create and use db without instantiating the class

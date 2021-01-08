@@ -2,6 +2,7 @@ package com.tps.appf1.databases.race.teams
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.Query
 import androidx.room.Update
 
 @Dao
@@ -11,5 +12,11 @@ interface TeamDAO {
 
     @Update
     fun update(teamEntity: TeamEntity)  //The entity that's updated is the entity that has the same key as the one that's passed in
+
+    @Query("SELECT TeamID FROM `teams table`")
+    fun getTeamsList(): List<Int>
+
+    @Query("DELETE FROM `teams table`")
+    fun deleteALL()
 
 }

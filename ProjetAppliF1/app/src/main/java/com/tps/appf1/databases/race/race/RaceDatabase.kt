@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [RaceEntity::class], version = 1, exportSchema = false)
+@Database(entities = [RaceEntity::class], version = 2, exportSchema = false)
 abstract class RaceDatabase : RoomDatabase() {
     abstract val raceDatabaseDao: RaceDAO  //Refers the Database Access Object
     companion object {    //Allows to create and use db without instantiating the class

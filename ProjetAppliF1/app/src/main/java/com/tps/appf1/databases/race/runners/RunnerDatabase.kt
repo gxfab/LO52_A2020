@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [RunnerEntity::class], version = 1, exportSchema = false)
+@Database(entities = [RunnerEntity::class], version = 2, exportSchema = false)
 abstract class RunnerDatabase : RoomDatabase() {
     abstract fun runnerDatabaseDao(): RunnerDAO  //Refers the Database Access Object
     companion object {    //Allows to create and use db without instantiating the class

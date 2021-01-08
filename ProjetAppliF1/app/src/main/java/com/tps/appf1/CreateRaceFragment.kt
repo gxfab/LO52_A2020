@@ -12,11 +12,8 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_createrace.*
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
 import java.util.*
-import java.time.LocalTime as LocalTime1
-import com.tps.appf1.databases.race.runners.RunnerDatabase
-import com.tps.appf1.databases.race.runners.RunnerEntity
+
 
 
 /**
@@ -32,7 +29,9 @@ class CreateRaceFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_createrace, container, false)
 
-        //Create the Race db
+        TODO("Create the Race db" +
+                "Link the teams and runners DB to it in CreateTeamFragment.kt" +
+                "Make it persistant")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

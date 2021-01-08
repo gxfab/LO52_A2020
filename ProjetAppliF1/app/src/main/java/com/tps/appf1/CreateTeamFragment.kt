@@ -45,6 +45,9 @@ class CreateTeamFragment : Fragment() {
         //The runners db should later be linked with the race db
         //runnersDB.runnerDatabaseDao().deleteALL()
 
+        //Set the Nb of participants, used for demonstration only
+        NbParticipants.text = runnersDB.runnerDatabaseDao().count().toString()
+
         //Create runner entity to add rows in the db
         var runner: RunnerEntity = RunnerEntity()
 
@@ -76,7 +79,7 @@ class CreateTeamFragment : Fragment() {
         view.findViewById<Button>(R.id.button_Terminer).setOnClickListener {
             //vérifie que le nb total de partiticipant est multiple de 3 grâce au modulo 3
             var reste: Int = Integer.parseInt(NbParticipants.text.toString())%3
-            if(reste == 0 /*&& NbParticipants.text != "00"*/)
+            if(reste == 0 && NbParticipants.text != "00")   //Test si NbParticipants = 0 pour éviter le passage sans création de joueurs
             {
                 val builder = AlertDialog.Builder(context)
                 builder.setMessage("Le programme va maintenant créer les équipes. Voulez-vous continuer ?")
@@ -84,34 +87,38 @@ class CreateTeamFragment : Fragment() {
                     .setPositiveButton("Oui") { dialog, id ->
                         //create db Team and Team entity
                         var teamsDB = Room.databaseBuilder(this.requireContext(), TeamDatabase::class.java, "teams-db").allowMainThreadQueries().build()
+                        //
+                        //teamsDB.teamDatabaseDao().deleteALL()
                         var team: TeamEntity = TeamEntity()
 
                         //Recup level list from runners db
-                      /*  var levelList: MutableList<Int> = mutableListOf()
-                        levelList.addAll(runnersDB.runnerDatabaseDao().getLevelList()) */
-                        //
-                        //
-                        //Puis algorithme de création d'équipe here (Voir mutableList sur android developers)
-                        //1er element = index 0
-                        //levelList.remove(15) = remove number "15" from list
-                        //levelList.first() = first element
-                        //levelList.last() = last element
-                     /*   team.TeamRunner1 = runnersDB.runnerDatabaseDao().getRunnerID(levelList.first())  //Get ID of the runner by passing his level. If there is multiples same levels, random pick
+                        var levelList: MutableList<Int> = mutableListOf()
+                        levelList.addAll(runnersDB.runnerDatabaseDao().getLevelList())
+
+                        /* TODO("Algorithme de création d'équipes : voir Rapport")
+                          Puis algorithme de création d'équipe here (Voir mutableList sur android developers)
+                          1er element = index 0
+                          levelList.remove(15) = remove number "15" from list
+                          levelList.first() = first element
+                          levelList.last() = last element */
+
+                        //Used pour la presentation only :
+                        team.TeamRunner1 = runnersDB.runnerDatabaseDao().getRunnerID(levelList.first())  //Get ID of the runner by passing his level. If there is multiples same levels in the db, random pick
                         team.TeamRunner1Level = levelList.first()      //Set the Runner 1 Level
-                        team.TeamRunner2
-                        team.TeamRunner2Level
-                        team.TeamRunner3
-                        team.TeamRunner3Level
-                        teamsDB.teamDatabaseDao().insert(team) */ //Ajoute la team 1 dans la db
-                        //...etc
-                        //Peut-etre qu'il faudrait faire un fichier dedier à cette fonction parce que ca va faire beaucoup de ligne
+                        team.TeamRunner2 = runnersDB.runnerDatabaseDao().getRunnerID(levelList[1])
+                        team.TeamRunner2Level = levelList[1]
+                        team.TeamRunner3 = runnersDB.runnerDatabaseDao().getRunnerID(levelList[2])
+                        team.TeamRunner3Level = levelList[2]
+                        teamsDB.teamDatabaseDao().insert(team)         //Ajoute la team 1 dans la db
+
+                        //Peut-etre qu'il faudrait faire un fichier dedié à cette fonction parce que ca va faire beaucoup de ligne
                         //
                         //(Ecran de chargement selon le temps que ca prend)
                         //
                         //Add équipes finales à la db
                         findNavController().navigate(R.id.action_CreateTeamFragment_to_SetOrderFragment)
                     }
-                    .setNegativeButton("No") { dialog, id ->
+                    .setNegativeButton("Non") { dialog, id ->
                         //Dismiss the dialog
                         dialog.dismiss()
                     }
